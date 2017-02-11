@@ -1,0 +1,13 @@
+# robots.txt file for http://codegeass.us/forum/
+User-agent: *
+Allow: /
+Disallow: /(backup)
+Disallow: /admin
+Disallow: /img
+Disallow: /resume
+Disallow: /benjaminlouie
+Disallow: /include
+Disallow: /domains
+Disallow: /bathingbabescentral
+Disallow: /tmp
+sitemap: http://cdn.attracta.com/sitemap/21713.xml.gz

@@ -1,0 +1,93 @@
+@CHARSET "ISO-8859-1";
+* {
+	margin: 0;
+	padding: 0;
+	/*Scrollbar color - ie only*/
+	scrollbar-face-color: #41464E;
+	scrollbar-highlight-color: #575F68;
+	scrollbar-3dlight-color: #000000;
+	scrollbar-darkshadow-color: #000000;
+	scrollbar-shadow-color: #33373C;
+	scrollbar-arrow-color: #FFCC00;
+	scrollbar-track-color: #2F3238;
+}
+
+body, container
+{	
+	color: #AF89E8;
+	background-image: url('../img/menu/sky.jpg');
+	background-attachment: fixed;
+	background-repeat: repeat-x;
+	background-color: #FFFFFF;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: small;
+	font-weight: 100;
+	text-align: center;
+	margin: 0px;
+}
+
+ 
+a
+{
+	color: #AF89E8;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: #AF89E8;
+	text-decoration: none;
+}
+
+a:hover 
+{ 
+	color: #AF89E8; 
+	background-color: transparent;
+	text-decoration: underline;	
+}
+
+
+fieldset a, fieldset legend
+{
+	color: #AF89E8;
+}
+
+.thelist th
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 90%;
+	text-align: center;
+	padding: 0.5em 0;
+	background: #531D2A;
+}
+
+table .thelist td
+{
+	padding: 6px 10px 6px 10px;
+}
+
+.thelist td a
+{
+	color: blue;
+}
+
+.thelist .moduleHead
+{
+	color: #fff;
+	font-size: 1em;
+}
+
+text .input
+{
+	border: 1px solid #000000;
+	background: #FFFFFF;
+	margin-bottom: 5px;
+	height: 20px;
+}
+
+.input:hover 
+{
+	border: 1px solid #000;
+	background: #FFFF99;
+}

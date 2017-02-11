@@ -1,0 +1,582 @@
+/* Global Items */
+* {
+    margin: 0;
+    padding: 0;
+    cursor: url(../images/mouse.cur), progress;	
+    /*Scrollbar color - ie only*/
+    scrollbar-face-color: #41464E;
+    scrollbar-highlight-color: #575F68;
+    scrollbar-3dlight-color: #000000;
+    scrollbar-darkshadow-color: #000000;
+    scrollbar-shadow-color: #33373C;
+    scrollbar-arrow-color: #FFCC00;
+    scrollbar-track-color: #2F3238;
+}
+
+body {	
+    color: #FFFFFF;
+    background: #000000; 
+    font-family: Tahoma, Geneva;
+    font-size: small;
+    font-weight: 200;
+    text-align: center;
+    margin: 0px;
+}
+
+#container  {
+    width: 900px;
+    /*background: url(../images/menu/lelouch.png) top no-repeat fixed #000;*/
+    text-align: left;
+    border: none;
+}
+
+/* Header Items */
+#banner {
+    width: 900px;
+    height: 257px;
+    background: url(../images/menu/banner.jpg) top no-repeat;
+}
+
+#search {
+    width: 100%;
+    float: left;
+    text-align: left;
+    height: 0px;
+    margin: 0px;
+}
+
+/* Content */
+.content, .credits
+{
+    opacity: 0.50;
+    filter: alpha(opacity=50);
+    background-color: #990000;
+    text-align: left;
+    overflow: auto;
+    margin-bottom: 10px;
+    vertical-align: top; 
+    padding: 10px 10px 5px 10px; 
+    overflow: auto;
+}
+
+.content:hover, .credits:hover, .linkTree, .linkBranch 
+{
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+    background-color: #990000;
+    text-align: left;
+    overflow: auto;
+}
+
+.credits {
+    text-align: left;
+    overflow: auto;
+    margin: 2px 0px 2px 0px;
+    /*top right bottom left*/
+    padding: 5px 5px 2px 5px;	
+    float: right;
+    width: 130px;
+    height: 20px;	
+}
+
+#space {
+    height: 145px;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover  {
+    color: #EAA2AC; 
+    background-color: #723942; 
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+a .img {
+    background: transparent;
+    border: solid 3px #531d2a; 
+}
+
+a img {
+    cursor:pointer;
+}
+
+.morebutt{
+    float: right; 
+    text-decoration: underline; 
+}
+
+.crosshair {
+    cursor: crosshair;
+    border: solid 3px #531d2a; 
+}
+
+.crosshair:hover {
+    border: solid 3px #fff;
+    cursor: crosshair;
+}
+
+p {
+    margin: 10px 0px; 
+}
+
+.downloadLink { 
+    color: #CCCCCC;
+    text-decoration: underline;	
+}
+
+.content h1 {
+    font-size: 160%;
+    margin-bottom: 7px;
+    margin-top: 5px;
+}
+
+.content h2
+{
+    font-size: 130%;
+    margin-bottom: 7px;
+    margin-top: 5px;
+}
+
+.content p {
+    color: #FFFFFF;
+    margin: 0.5em;
+}
+
+.content ul, .content li {
+    margin-left: 10px;
+}
+
+.content a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.content a:visited, .linkTree a:visited {
+    color: #AE8D92; 
+    text-decoration: none;
+}
+
+.moduleBlack .top {
+    padding-top: 0px;
+    text-align: center;
+    float: right; 
+    font-size: 12px; 
+}
+
+.moduleBlack .top a {
+    text-decoration: none; 
+}
+
+/* Right side menu */
+ul#menu, ul#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul#menu li a 
+{
+    background: #666;
+    color: #fff;
+    display: block;
+    font-size: 90%;
+    line-height: default;
+    padding-left: 5px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    text-decoration: none;
+    text-align: left;
+    font-weight:600;
+    text-transform: uppercase;
+}
+
+ul#menu li 
+{
+    border: 1px solid #000E2E; 
+    border-bottom: none;
+}
+
+ul#menu li a 
+{
+    background: #333; 
+    color: #fff; 
+}
+
+ul#menu li a:hover 
+{
+    background: #000;
+}
+
+ul#menu li ul li 
+{
+    border: none; 
+    color: #999;
+    margin: 0;
+}
+
+ul#menu li ul li a 
+{
+    background: #ccc;
+    color: #000;
+    margin: 0;
+    text-transform: none;
+}
+
+ul#menu li ul li a:hover 
+{
+    background: #aaa;
+    color: #000;
+}
+/* right side menu */
+
+
+fieldset {
+    padding-top: 5px; 
+    padding-left: 5px; 
+    padding-right: 5px; 
+    padding-bottom: 5px;
+}
+
+fieldset a, #linkTree a:visited {
+    color: #FFFFFF;
+}
+
+fieldset ul
+{
+    margin-left: 20px;
+}
+
+#listing {
+    border-left: 1;
+    border-right: 2;
+}
+
+#listing th {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 130%;
+    margin-top: 5px;
+}
+
+legend, legend a {
+    color: white;
+}
+
+text .input {
+    background: #FFFFFF;
+}
+
+.input:hover {
+    background: #FFFF99;
+}
+
+/* Quotes */
+.quote {
+    color: #3a3a3a;
+    background: url(../images/quote.png) 0 5px no-repeat #edebeb;
+    border: 1px solid #353535;
+    margin: 1px;
+    padding: 10px 5px 10px 40px;
+    font-family: "lucida console";
+    line-height: 1.4em;
+}
+
+.code ul {
+    margin-left: 20px;
+}
+
+/* moduleGreen - moduleBlack */
+.moduleGreen {
+    background-color: #999933;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.moduleGreen div {
+    padding: 5px; 
+    text-align: left; 
+}
+
+.moduleGreen p {	
+    padding: 2px;
+}
+
+.moduleBlack  {
+    font-family: Tahoma, Geneva, sans-serif;
+    border: solid 1px #531d2a;
+    font-weight: 500;
+    text-align: left;
+    background: #000;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.moduleGreen h2, .moduleBlack h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 90%;
+    text-align: center;
+    display: block;
+    padding: 0.5em 0;
+    background: #531D2A;
+}
+
+.moduleBlack h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    padding: 0.4em 0;
+    background: #531D2A;
+}
+
+.moduleGreen h2:hover, .moduleGreen a:hover,
+.moduleBlack h1:hover, .moduleBlack a:hover {
+    color: #FF99CC;
+    text-decoration: none;
+}
+
+.moduleBlack a:hover span {
+    background-color: gray;
+}
+
+.moduleBlack div{
+    padding: 9px; 
+}
+
+.moduleBlack table {
+    margin: 5px;
+    color: #fff;
+}
+
+.moduleBlack p {
+    font-size: 12px;
+    line-height: 18px; 
+    margin: 1em 0em;
+}
+
+.moduleBlack a {
+    text-decoration: underline; 
+}
+
+.moduleGreen div {
+    padding-bottom: 7px; 
+}
+
+.moduleGreen {
+    background-color: #999933;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+}
+
+.moduleGreen a, .listing th a 
+{
+    color: #FFFFFF;
+    text-decoration: none;	
+    font-weight: bold;	 
+}
+
+.moduleGreen p
+{
+    padding-left: 2px;
+    padding-bottom: 2px;
+}
+
+div .error p {
+    color: #DDDDDD;
+    border: 1px solid white; 
+    padding: 2px; }
+
+.listing td a
+{
+    color: #FFFFFF;
+    text-decoration: none;	
+}
+
+.listing td
+{
+    padding: 2px;
+    background: #000;
+    opacity: 0.50;
+    filter: alpha(opacity=50);
+}
+
+.listing td:hover
+{
+    background: #fff;
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+}
+
+.listing td:hover a
+{
+    color: #EAA2AC; 
+    background-color: #723942; 
+    text-decoration: underline;
+}
+
+table tr td span, moduleBlack span
+{
+    font-weight: 600;
+    color: #224561;
+}
+/* modules */
+
+
+/* Hoverbox Code */
+.hoverbox
+{
+    cursor: default;
+    list-style: none;
+}
+
+.hoverbox a .preview, .hoverbox a .tall
+{
+    display: none;
+}
+
+.hoverbox a:hover .preview
+{
+    display: block;
+    position: absolute;
+    top: -33px;
+    left: -45px;
+    z-index: 1;
+}
+
+.hoverbox a:hover .tall
+{
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: -10px;
+    z-index: 1;
+}
+
+.hoverbox li
+{
+    background: #eee;
+    border-color: #ddd #bbb #aaa #ccc;
+    border-style: solid;
+    border-width: 1px;
+    color: inherit;
+    display: inline;
+    float: left;
+    margin: 3px;
+    padding: 5px;
+    position: relative;
+}
+
+.hoverbox img
+{
+    background: #fff;
+    border-color: #aaa #ccc #ddd #bbb;
+    border-style: solid;
+    border-width: 1px;
+    color: inherit;
+    padding: 2px;
+    vertical-align: top;
+    width: 100px;
+    height: 75px;
+}
+
+
+.hoverbox .preview
+{
+    border-color: #FFF;
+    width: 200px;
+    height: 150px;
+    cursor: crosshair;
+}
+
+.hoverbox .tall
+{
+    border-color: #FFF;
+    width: 150px;
+    height: 200px;
+    cursor: crosshair;
+}
+
+.joinNow {
+    -moz-box-shadow: -1px -2px 23px -1px #f29c93;
+    -webkit-box-shadow: -1px -2px 23px -1px #f29c93;
+    box-shadow: -1px -2px 23px -1px #f29c93;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+    background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+    background-color:#fe1a00;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    border:3px solid #d83526;
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+}
+
+.joinNow:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
+    background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
+    background-color:#ce0100;
+}
+
+.joinNow:active {
+    position:relative;
+    top:1px;
+}
+
+
+/* Footer Style */
+#page_spacing 
+{
+    clear: both;
+    float: none;
+}
+
+#page_footer 
+{
+    margin: 0px auto;
+    width: 100%;
+    background-color: #5C5E5F;
+    font-size: 12px;
+    color: #C8C6C6;
+}
+
+#page_footer a 
+{
+    color: #E4E1E1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#page_footer a:hover 
+{
+    color: #fff;
+    text-decoration: underline;
+}
+
+#page_footer #links 
+{
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+#disclaimer {
+    font-size: 11px;
+}
+/* Footer Style */

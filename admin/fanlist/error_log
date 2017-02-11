@@ -1,0 +1,33 @@
+[16-Jun-2009 11:04:38] PHP Fatal error:  Call to undefined function  log_error() in /home6/codegeas/public_html/tianzi/enth3/mod_settings.php on line 31
+[16-Jun-2009 11:04:46] PHP Fatal error:  Call to undefined function  log_error() in /home6/codegeas/public_html/tianzi/enth3/mod_settings.php on line 31
+[16-Jun-2009 11:05:55] PHP Fatal error:  Call to undefined function  log_error() in /home6/codegeas/public_html/tianzi/fanlist/mod_settings.php on line 31
+[08-Nov-2009 12:39:08] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[08-Nov-2009 12:39:08] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[09-Nov-2009 13:30:18] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[09-Nov-2009 13:30:18] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[09-Nov-2009 15:05:46] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[09-Nov-2009 15:05:46] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[09-Nov-2009 15:05:53] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[09-Nov-2009 15:05:53] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[09-Nov-2009 15:07:59] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[09-Nov-2009 15:07:59] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[10-Nov-2009 10:36:00] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[10-Nov-2009 10:36:00] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[10-Nov-2009 11:33:31] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[10-Nov-2009 11:33:31] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[10-Nov-2009 15:52:29] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[10-Nov-2009 15:52:29] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[13-Nov-2009 20:00:38] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[13-Nov-2009 20:00:38] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
+[13-Nov-2009 21:54:17] PHP Warning:  MagpieRSS: Failed to fetch http://scripts.indisguise.org/category/enthusiast/feed/ (HTTP Response: HTTP/1.1 404 Not Found
+) in /home6/codegeas/public_html/admin/fanlist/rss_fetch.inc on line 238
+[13-Nov-2009 21:54:17] PHP Warning:  Invalid argument supplied for foreach() in /home6/codegeas/public_html/admin/fanlist/dashboard.php on line 180
