@@ -10,7 +10,7 @@ while($rowA = mysql_fetch_assoc($resA))
 	$cat = $rowA[category];
 	
 	$theList[$cat] .= '<td align="left"><a href="'.$rowA[url].'" title="'.$rowA[name].'" rel="nofollow">
-	<img src="'.$dir.'allies/sites/'.$rowA[category].'/'.$rowA[img].'" class="plain"></a><br>
+	<img src="'.$dir.'allies/banners/'.$rowA[img].'" class="plain"></a><br>
 	<a href = "'.$rowA[url].'" title="'.$rowA[name].'" rel="nofollow">'.$rowA[name].'</a>
 	<br><br></td>';
 	

@@ -63,6 +63,10 @@ function topAllies($dir) {
 			'name' => 'Yuri Fan',
 			'img' => 'yurifan.net.fanlisting.png',
 			'url' => 'http://yurifan.net/fanlisting/' ),
+		'1' => array(
+			'name' => 'Angel Flower Anime',
+			'img' => 'afanime.net.gif',
+			'url' => 'http://afanime.net/' ),
 		'2' => array(
 			'name' => 'Li Xingke: Star in Heaven',
 			'img' => 'xingke.radiant-illusion.net.jpg',
@@ -71,6 +75,12 @@ function topAllies($dir) {
 			'name' => 'Fairy Tale: Guildford and Cornelia',
 			'img' => 'fallingslowly.altervista.org.fairytale.jpg',
 			'url' => 'http://fallingslowly.altervista.org/fairytale/' ),
+		
+		'4' => array(
+			'name' => "Stage 0",
+			'img' => 'stage0.altervista.jpg',
+			'url' => 'http://www.stage0.altervista.org/' ),
+	 
 		'5' => array(
 			'name' => 'Zero Requiem: Code Geass R2',
 			'img' => 'marheavenj.net.cgr2.jpg',
@@ -87,10 +97,7 @@ function topAllies($dir) {
 			'name' => 'Reincarnation',
 			'img' => 'marheavenj.net.reincarnation.jpg',
 			'url' => 'http://www.marheavenj.net/reincarnation' ),
-		'9' => array(
-			'name' => 'Angel Flower Anime',
-			'img' => 'afanime.net.gif',
-			'url' => 'http://afanime.net/' ),
+		
     ); 
     
     $alliesContent = '<center>
@@ -104,23 +111,24 @@ function topAllies($dir) {
     <tr valign="top">
         <td align="left">';
     
-    for($a = 0; $a <= 5; $a++)
-    {
+    for($a = 0; $a <= 4; $a++) {
         $name = $alliesList[$a]['name'];
-        $alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target=_blank rel=nofollow>
-        <img src="'.$dir.'images/allies/'.$alliesList[$a]['img'].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
+        $alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target="_blank">
+        <img src="'.$dir.'allies/banners/'.$alliesList[$a]['img'].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
         <br />';
     }
             
     $alliesContent .= '</td>
         <td>';
         
-    for($a = 6; $a <= 11; $a++)
-    {
+    for($a = 5; $a <= 10; $a++) {
+
         $name = $alliesList[$a][name];
-        $alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target="_blank">
-        <img src="'.$dir.'images/allies/'.$alliesList[$a]['img'].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
-        <br />';
+		
+		if($name)
+			$alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target="_blank">
+			<img src="'.$dir.'allies/banners/'.$alliesList[$a]['img'].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
+			<br />';
     }
         
     $alliesContent .= '</td>
