@@ -21,13 +21,13 @@ function featuredTrack($dir) {
                         $song = str_replace("_", "", $song); //clean up song #
                         $title = str_replace("_", " ", $title);//clean up title
 
-                        $trackModule[$count][key] = $track.'_'.$song;
-                        $trackModule[$count][season] = $season;
-                        $trackModule[$count][track] = $track;
-                        $trackModule[$count][song] = $song;
-                        $trackModule[$count][title] = $title;
-                        $trackModule[$count][file] = $file;
-                        $trackModule[$count][download] = 'ost_'.$season.'_'.$track;
+                        $trackModule[$count]['key'] = $track.'_'.$song;
+                        $trackModule[$count]['season'] = $season;
+                        $trackModule[$count]['track'] = $track;
+                        $trackModule[$count]['song'] = $song;
+                        $trackModule[$count]['title'] = $title;
+                        $trackModule[$count]['file'] = $file;
+                        $trackModule[$count]['download'] = 'ost_'.$season.'_'.$track;
                         $count++;
                     }//if
                 }//while
@@ -39,15 +39,15 @@ function featuredTrack($dir) {
     $opath = $dir.'img/ost/'; //directory of ost images
     $random = date('h', time()) % $count;//random number
     $featured = $trackModule[$random];//featured track array
-    $trackImg = $opath.$featured[season].'/'.$featured[key].'.jpg';
+    $trackImg = $opath.$featured['season'].'/'.$featured['key'].'.jpg';
 
     $tContent = '
-    <center><p><a '.$popup.' title="'.$featured[title].'" target="_blank">
-    Track '.$featured[track].'-'.$featured[song].' - '.$featured[title].'</a><br>';
+    <center><p><a '.$popup.' title="'.$featured['title'].'" target="_blank">
+    Track '.$featured['track'].'-'.$featured['song'].' - '.$featured['title'].'</a><br>';
 
     if(file_exists($trackImg))
         $tContent .= '<a href="'.$dir.'media/music/ost.php" target="_blank">
-        <p><img src="'.$trackImg.'" alt="'.$featured[title].'" title="'.$featured[title].'" class="crosshair"></a></p>';
+        <p><img src="'.$trackImg.'" alt="'.$featured['title'].'" title="'.$featured['title'].'" class="crosshair"></a></p>';
 
     $tContent .= '<p><a href="'.$dir.'media/music/ost.php" title="Download this track">Download this track</a>
     <br />
@@ -59,54 +59,38 @@ function featuredTrack($dir) {
 
 function topAllies($dir) {    
     $alliesList = array(
-    '0' => array(
-        'name' => 'Dark Prince & White Knight',
-        'img' => 'anime.akichigo.org.jpg', 
-        'url' => 'http://anime.akichigo.org/codegeass'),
-    '1' => array(
-        'name' => 'Code Geass Music',
-        'img' => 'fan.ethereal-world.net.cgmusic.jpg',
-        'url' => 'http://fan.ethereal-world.net/cgmusic' ),
-    '2' => array(
-        'name' => 'Li Xingke: Star in Heaven',
-        'img' => 'xingke.radiant-illusion.net.jpg',
-        'url' => 'http://xingke.radiant-illusion.net/' ),
-    '3' => array(
-        'name' => 'Fairy Tale: Guildford and Cornelia',
-        'img' => 'fallingslowly.altervista.org.fairytale.jpg',
-        'url' => 'http://fallingslowly.altervista.org/fairytale/' ),
-    '4' => array(
-        'name' => 'L\'Uomo del Secolo: Gilbert GP Guilford',
-        'img' => 'fallingslowly.altervista.org.gilber.jpg',
-        'url' => 'http://fallingslowly.altervista.org/gilbert' ),
-    '5' => array(
-        'name' => 'Zero Requiem: Code Geass R2',
-        'img' => 'marheavenj.net.cgr2.jpg',
-        'url' => 'http://www.marheavenj.net/cgr2/' ),
-    '6' => array(
-        'name' => 'Zero\'s Black Knights',
-        'img' => 'zero.jpg',
-        'url' => 'http://www.fanpop.com/spots/followers-of-zero-of-the-revolutio' ),
-    '7' => array(
-        'name' => 'The Second Movement: Lelouch Lamperouge',
-        'img' => 'fan.sakuradreams.net.jpg',
-        'url' => 'http://fan.sakuradreams.net/lelouch' ),
-    '8' => array(
-        'name' => 'Reincarnation',
-        'img' => 'marheavenj.net.reincarnation.jpg',
-        'url' => 'http://www.marheavenj.net/reincarnation' ),
-    '9' => array(
-        'name' => 'Angel Flower Anime',
-        'img' => 'afanime.net.gif',
-        'url' => 'http://afanime.net/' ),
-    '10' => array(
-        'name' => 'Yuri Fan',
-        'img' => 'yurifan.net.fanlisting.png',
-        'url' => 'http://yurifan.net/fanlisting/' ),
-    '11' => array(
-        'name' => 'PXOrigin',
-        'img' => 'pxorigin.org.jpg',
-        'url' => 'http://pxorigin.org' ),
+		'0' => array(
+			'name' => 'Yuri Fan',
+			'img' => 'yurifan.net.fanlisting.png',
+			'url' => 'http://yurifan.net/fanlisting/' ),
+		'2' => array(
+			'name' => 'Li Xingke: Star in Heaven',
+			'img' => 'xingke.radiant-illusion.net.jpg',
+			'url' => 'http://xingke.radiant-illusion.net/' ),
+		'3' => array(
+			'name' => 'Fairy Tale: Guildford and Cornelia',
+			'img' => 'fallingslowly.altervista.org.fairytale.jpg',
+			'url' => 'http://fallingslowly.altervista.org/fairytale/' ),
+		'5' => array(
+			'name' => 'Zero Requiem: Code Geass R2',
+			'img' => 'marheavenj.net.cgr2.jpg',
+			'url' => 'http://www.marheavenj.net/cgr2/' ),
+		'6' => array(
+			'name' => 'Zero\'s Black Knights',
+			'img' => 'zero.jpg',
+			'url' => 'http://www.fanpop.com/spots/followers-of-zero-of-the-revolutio' ),
+		'7' => array(
+			'name' => 'The Second Movement: Lelouch Lamperouge',
+			'img' => 'fan.sakuradreams.net.jpg',
+			'url' => 'http://fan.sakuradreams.net/lelouch' ),
+		'8' => array(
+			'name' => 'Reincarnation',
+			'img' => 'marheavenj.net.reincarnation.jpg',
+			'url' => 'http://www.marheavenj.net/reincarnation' ),
+		'9' => array(
+			'name' => 'Angel Flower Anime',
+			'img' => 'afanime.net.gif',
+			'url' => 'http://afanime.net/' ),
     ); 
     
     $alliesContent = '<center>
@@ -122,9 +106,9 @@ function topAllies($dir) {
     
     for($a = 0; $a <= 5; $a++)
     {
-        $name = $alliesList[$a][name];
-        $alliesContent .= '<a href="'.$alliesList[$a][url].'" target=_blank rel=nofollow>
-        <img src="'.$dir.'images/allies/'.$alliesList[$a][img].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
+        $name = $alliesList[$a]['name'];
+        $alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target=_blank rel=nofollow>
+        <img src="'.$dir.'images/allies/'.$alliesList[$a]['img'].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
         <br />';
     }
             
@@ -134,8 +118,8 @@ function topAllies($dir) {
     for($a = 6; $a <= 11; $a++)
     {
         $name = $alliesList[$a][name];
-        $alliesContent .= '<a href="'.$alliesList[$a][url].'" target=_blank>
-        <img src="'.$dir.'images/allies/'.$alliesList[$a][img].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
+        $alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target="_blank">
+        <img src="'.$dir.'images/allies/'.$alliesList[$a]['img'].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
         <br />';
     }
         

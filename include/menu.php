@@ -94,10 +94,10 @@ $menu = array(
                     'link' => $dir.'allies/', 
                     'title' => 'Allies', 
                     'subMenu' => array(
-                        'Apply Here' => array(
-                            'link' => $dir.'allies/'),
                         'Allies List' => array(
                             'link' => $dir.'allies/list.php'),
+                        'Apply Here' => array(
+                            'link' => $dir.'allies/'),
                         'Marketing Division' => array()
                     )
                 )
