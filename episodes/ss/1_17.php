@@ -1,0 +1,3 @@
+<?
+$dir = '../../';
+include('../ssCode.php');  ?>
