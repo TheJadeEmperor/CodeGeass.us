@@ -36,7 +36,7 @@ function featuredTrack($dir) {
         closedir($handle);
     }//for
 
-    $opath = $dir.'img/ost/'; //directory of ost images
+    $opath = $dir.'images/ost/'; //directory of ost images
     $random = date('h', time()) % $count;//random number
     $featured = $trackModule[$random];//featured track array
     $trackImg = $opath.$featured['season'].'/'.$featured['key'].'.jpg';
@@ -197,7 +197,7 @@ function featuredAmazon($conn) {
             <center>
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="NSEMYW3SPFA6S">
-            <input type="image" class="crosshair" src="<?=$dir?>img/menu/donate.png" width="220"
+            <input type="image" class="crosshair" src="<?=$dir?>images/menu/donate.png" width="220"
             name="submit" alt="Donate Using Paypal" title="Donate to keep this site running!">
             <img alt="Donate to keep this site running!" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" 
             width="1" height="1">   
