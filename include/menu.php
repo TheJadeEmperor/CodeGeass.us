@@ -260,7 +260,10 @@ $menu = array(
     'Wallpapers' => array(
         'link' => $dir.'media/wallpapers/',
         'title' => 'Code Geass Wallpapers'),
-    'Forum' => array(
+    'Chat' => array(
+        'link' => $dir.'chat',
+        'title' => 'Chatroom'),
+	'Forum' => array(
         'link' => 'https://www.facebook.com/groups/cgrefrain3/',
         'title' => 'Anime Forum'),
 )//item
