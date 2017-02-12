@@ -57,7 +57,7 @@ body {
     overflow: auto;
 }
 
-.content:hover, .credits:hover, .linkTree, .linkBranch  {
+.content:hover, .credits:hover, .linkBranch  {
     opacity: 0.80;
     filter: alpha(opacity=80);
     background-color: #990000;

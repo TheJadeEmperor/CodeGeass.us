@@ -252,14 +252,15 @@ $menu = array(
                         'title' => 'Imprisoned in Campus')
                 )  
             ),
-        ), 
+			'Wallpapers' => array(
+				'link' => $dir.'media/wallpapers/',
+				'title' => 'Code Geass Wallpapers'),
+			), 
     ),
-    'Knightmare Frames' => array(
+    'Knightmares' => array(
         'link' => $dir.'knightmares/',
         'title' => 'Code Geass Knightmare Frames'),
-    'Wallpapers' => array(
-        'link' => $dir.'media/wallpapers/',
-        'title' => 'Code Geass Wallpapers'),
+    
     'Chat' => array(
         'link' => $dir.'chat',
         'title' => 'Chatroom'),
