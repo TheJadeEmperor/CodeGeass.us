@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    cursor: url(../images/mouse.cur), progress;	
+    cursor: url(../images/global/mouse.cur), progress;	
     /*Scrollbar color - ie only*/
     scrollbar-face-color: #41464E;
     scrollbar-highlight-color: #575F68;
