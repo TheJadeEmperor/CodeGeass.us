@@ -9,8 +9,7 @@ function mainMenu($menu) {
             <a class="pureCssMenui" href="'.$value[link].'"><span>'.$name.'</span></a>
             <ul class="pureCssMenum">';
           
-            foreach($value[subMenu] as $name1 => $val1) 
-            {
+            foreach($value[subMenu] as $name1 => $val1) {
                 if(sizeof($val1[subMenu]) > 0) //sub-menu
                 {
                     $content .= '<li class="pureCssMenui" title="'.$val1[title].'">
@@ -262,7 +261,7 @@ $menu = array(
         'link' => $dir.'media/wallpapers/',
         'title' => 'Code Geass Wallpapers'),
     'Forum' => array(
-        'link' => $dir.'chat.php',
+        'link' => 'https://www.facebook.com/groups/cgrefrain3/',
         'title' => 'Anime Forum'),
 )//item
 );//$menu

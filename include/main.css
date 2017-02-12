@@ -25,7 +25,6 @@ body {
 
 #container  {
     width: 900px;
-    /*background: url(../images/menu/lelouch.png) top no-repeat fixed #000;*/
     text-align: left;
     border: none;
 }
@@ -46,8 +45,7 @@ body {
 }
 
 /* Content */
-.content, .credits
-{
+.content, .credits {
     opacity: 0.50;
     filter: alpha(opacity=50);
     background-color: #990000;
@@ -59,8 +57,7 @@ body {
     overflow: auto;
 }
 
-.content:hover, .credits:hover, .linkTree, .linkBranch 
-{
+.content:hover, .credits:hover, .linkTree, .linkBranch  {
     opacity: 0.80;
     filter: alpha(opacity=80);
     background-color: #990000;
@@ -105,7 +102,7 @@ a img {
     cursor:pointer;
 }
 
-.morebutt{
+.morebutt {
     float: right; 
     text-decoration: underline; 
 }
@@ -135,8 +132,7 @@ p {
     margin-top: 5px;
 }
 
-.content h2
-{
+.content h2 {
     font-size: 130%;
     margin-bottom: 7px;
     margin-top: 5px;
@@ -179,8 +175,7 @@ ul#menu, ul#menu ul {
     padding: 0;
 }
 
-ul#menu li a 
-{
+ul#menu li a  {
     background: #666;
     color: #fff;
     display: block;
@@ -195,40 +190,34 @@ ul#menu li a
     text-transform: uppercase;
 }
 
-ul#menu li 
-{
+ul#menu li  {
     border: 1px solid #000E2E; 
     border-bottom: none;
 }
 
-ul#menu li a 
-{
+ul#menu li a  {
     background: #333; 
     color: #fff; 
 }
 
-ul#menu li a:hover 
-{
+ul#menu li a:hover  {
     background: #000;
 }
 
-ul#menu li ul li 
-{
+ul#menu li ul li  {
     border: none; 
     color: #999;
     margin: 0;
 }
 
-ul#menu li ul li a 
-{
+ul#menu li ul li a  {
     background: #ccc;
     color: #000;
     margin: 0;
     text-transform: none;
 }
 
-ul#menu li ul li a:hover 
-{
+ul#menu li ul li a:hover  {
     background: #aaa;
     color: #000;
 }
@@ -246,8 +235,7 @@ fieldset a, #linkTree a:visited {
     color: #FFFFFF;
 }
 
-fieldset ul
-{
+fieldset ul {
     margin-left: 20px;
 }
 
@@ -379,15 +367,13 @@ text .input {
     padding-bottom: 0px;
 }
 
-.moduleGreen a, .listing th a 
-{
+.moduleGreen a, .listing th a  {
     color: #FFFFFF;
     text-decoration: none;	
     font-weight: bold;	 
 }
 
-.moduleGreen p
-{
+.moduleGreen p {
     padding-left: 2px;
     padding-bottom: 2px;
 }
@@ -403,30 +389,26 @@ div .error p {
     text-decoration: none;	
 }
 
-.listing td
-{
+.listing td {
     padding: 2px;
     background: #000;
     opacity: 0.50;
     filter: alpha(opacity=50);
 }
 
-.listing td:hover
-{
+.listing td:hover {
     background: #fff;
     opacity: 0.80;
     filter: alpha(opacity=80);
 }
 
-.listing td:hover a
-{
+.listing td:hover a {
     color: #EAA2AC; 
     background-color: #723942; 
     text-decoration: underline;
 }
 
-table tr td span, moduleBlack span
-{
+table tr td span, moduleBlack span {
     font-weight: 600;
     color: #224561;
 }
@@ -434,19 +416,16 @@ table tr td span, moduleBlack span
 
 
 /* Hoverbox Code */
-.hoverbox
-{
+.hoverbox {
     cursor: default;
     list-style: none;
 }
 
-.hoverbox a .preview, .hoverbox a .tall
-{
+.hoverbox a .preview, .hoverbox a .tall {
     display: none;
 }
 
-.hoverbox a:hover .preview
-{
+.hoverbox a:hover .preview {
     display: block;
     position: absolute;
     top: -33px;
@@ -454,8 +433,7 @@ table tr td span, moduleBlack span
     z-index: 1;
 }
 
-.hoverbox a:hover .tall
-{
+.hoverbox a:hover .tall {
     display: block;
     position: absolute;
     top: -50px;
@@ -463,8 +441,7 @@ table tr td span, moduleBlack span
     z-index: 1;
 }
 
-.hoverbox li
-{
+.hoverbox li {
     background: #eee;
     border-color: #ddd #bbb #aaa #ccc;
     border-style: solid;
@@ -477,8 +454,7 @@ table tr td span, moduleBlack span
     position: relative;
 }
 
-.hoverbox img
-{
+.hoverbox img {
     background: #fff;
     border-color: #aaa #ccc #ddd #bbb;
     border-style: solid;
@@ -490,17 +466,14 @@ table tr td span, moduleBlack span
     height: 75px;
 }
 
-
-.hoverbox .preview
-{
+.hoverbox .preview {
     border-color: #FFF;
     width: 200px;
     height: 150px;
     cursor: crosshair;
 }
 
-.hoverbox .tall
-{
+.hoverbox .tall {
     border-color: #FFF;
     width: 150px;
     height: 200px;
@@ -542,14 +515,12 @@ table tr td span, moduleBlack span
 
 
 /* Footer Style */
-#page_spacing 
-{
+#page_spacing  {
     clear: both;
     float: none;
 }
 
-#page_footer 
-{
+#page_footer  {
     margin: 0px auto;
     width: 100%;
     background-color: #5C5E5F;
@@ -557,21 +528,18 @@ table tr td span, moduleBlack span
     color: #C8C6C6;
 }
 
-#page_footer a 
-{
+#page_footer a  {
     color: #E4E1E1;
     text-decoration: none;
     font-weight: bold;
 }
 
-#page_footer a:hover 
-{
+#page_footer a:hover  {
     color: #fff;
     text-decoration: underline;
 }
 
-#page_footer #links 
-{
+#page_footer #links  {
     padding-right: 10px;
     font-weight: bold;
 }
