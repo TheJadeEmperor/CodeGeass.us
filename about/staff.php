@@ -2,9 +2,9 @@
 $dir = '../';
 include($dir.'about/aboutCode.php');
 
-mysql_select_db('codegeas_smf');
+//mysql_select_db('codegeas_smf');
 
-$selS = 'select * from codegeas_refrain.staff s left join smf_members m on s.forum_id = m.ID_MEMBER 
+/*$selS = 'select * from codegeas_refrain.staff s left join smf_members m on s.forum_id = m.ID_MEMBER 
 left join smf_attachments a on m.ID_MEMBER = a.ID_MEMBER order by m.ID_MEMBER';
 $resS = mysql_query($selS, $conn) or mysql_error();
 
@@ -17,7 +17,7 @@ while($info = mysql_fetch_assoc($resS))
 	
 	$staff[ $info[ID_MEMBER] ][bio] = stripslashes($info[bio]);
 }//
-
+*/
 
 $retiredStaff = array(
 'vcassa' => array(

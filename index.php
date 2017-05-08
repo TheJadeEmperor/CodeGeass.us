@@ -151,6 +151,6 @@ $optinBox = '
 $birthdayCard = '<a href="about/fanart" title="The Emperor\'s Birthday">
 	<h2>Best Fanart Ever</h2></a>
 	'.popUpImg('img/index/emp1.jpg', 'img/index/emp2.jpg', 'The Emperor\'s Birthday').'
-	<br><p class="staffLink">Picture drawn by '.staff(171, 'L').'</p>';
+	<br><p class="staffLink">Picture drawn by Kaito Shion</p>';
 
 include($dir.'include/bottom.php'); ?>

@@ -106,7 +106,7 @@ foreach($manga as $comic => $stat)
 	</td><td>'.div( $statTable ).'</td></tr></table>';
 	
 	if($stat[desc] != '')
-		$profile .= div( $stat[desc].'<p> Written by '.staff(92, 'L').'</p>' );
+		$profile .= div( $stat[desc].'<p> Written by Staff Member</p>' );
 	
 	$content .= moduleBlack($profile);
 }

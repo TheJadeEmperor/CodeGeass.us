@@ -28,17 +28,17 @@ function staff($memberID, $field)
     
     if($field == 'L')
     {
-        $selS = 'select realName from codegeas_smf.smf_members where ID_MEMBER = "'.$memberID.'"';
+   /*     $selS = 'select realName from codegeas_smf.smf_members where ID_MEMBER = "'.$memberID.'"';
         $resS = mysql_query($selS, $conn) or print(mysql_error());
         
         $info = mysql_fetch_assoc($resS);
         
         return '<a href="'.$links[forum][link].'/index.php?action=profile;u='.$memberID.'" 
-        target="_blank" title="Visit this user"><strong>'.$info[realName].'</strong></a>';
+        target="_blank" title="Visit this user"><strong>'.$info[realName].'</strong></a>';*/
     }
     else
     {
-        $selS = 'select '.$field.' from codegeas_smf.smf_members where ID_MEMBER = "'.$memberID.'"';
+    /*    $selS = 'select '.$field.' from codegeas_smf.smf_members where ID_MEMBER = "'.$memberID.'"';
         $resS = mysql_query($selS, $conn) or print(mysql_error());
     
         $info = mysql_fetch_assoc($resS);
@@ -46,7 +46,7 @@ function staff($memberID, $field)
         if(mysql_num_rows($resS) > 0)
         {
             return $info[$field];
-        }
+        }*/
     }
 }
 

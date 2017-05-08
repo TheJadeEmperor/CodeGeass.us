@@ -244,7 +244,7 @@ function featuredAmazon($conn) {
                         <td width="5px"></td>
                         <td id="rights" width="300px">
                             CodeGeass.us &copy; Copyright by BL Web Solutions<br />
-                            Concept design by <?= staff(97, 'L') ?>
+                            Concept design by Shadowboy
                         </td><td width="20px"></td>
                         <td>
                             

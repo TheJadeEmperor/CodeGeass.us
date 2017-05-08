@@ -177,7 +177,7 @@ function gallery($directory)//
     
     $galleryContent .= '</ul></td>
     </tr></table><br>'.page_number($num_pages, $_GET[n], $_GET[p]).'<br><br>
-    Gallery script developed by <a href="mailto:'.staff(1, 'emailAddress').'&subject=Code Geass Gallery" 
+    Gallery script developed by <a href="mailto:'.$supportEmail.'&subject=Code Geass Gallery" 
     title="The Emperor">The Emperor</a></center><br></div>';
     
     return $galleryContent;

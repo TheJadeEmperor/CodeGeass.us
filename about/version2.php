@@ -73,7 +73,7 @@ $v12 = "<h3>Version 1.2</h3><p>As you can see, this one is much improved.
 The banner looks like an actual banner, with our logo on it, next to Lelouch's face, 
 which is what I envisioned. I added a search engine and put it on the right side, so
 now people can search through our content. It is around this time that I found 
-".staff(14, 'L').", and with our partnership, we started the forum 
+Knight of Zero and with our partnership, we started the forum 
 from scratch. From merely 2 people, we created a community!</p>";
 
 echo div(top().processText($v12));
@@ -99,11 +99,11 @@ echo div(top().processText($v15));
  
 $v2 = "<h3>The World is Not Enough</h3>
 <p>Yet for The Emperor, it is still not enough. It is around this time we recruited 
-".staff(97, 'L').", a web designer who is also a fan of Code Geass.</p>
+shadowboy17, a web designer who is also a fan of Code Geass.</p>
 
 <p>And at last, we have version 2.0, which is this very website. It is thanks to the 
-brilliant mind of ".staff(97, 'L').", who came up with this concept. 
-With the valiant efforts of I, The Emperor, and ".staff(97, 'L')." we 
+brilliant mind of shadowboy17, who came up with this concept. 
+With the valiant efforts of I, The Emperor, and shadowboy17, we 
 re-designed the entire website, so that you, the fans can have a better viewing experience.
 Hopefully, this will be the last re-design, in our journey to becoming the Number 1 
 Code Geass Website that has ever existed! On with the rebellion!</p>";
@@ -123,7 +123,7 @@ with an offer that he could not refuse.</p>
 <p>"I can transform you glorious kingdom for you, if you allow me to work for you." said he.</p>
 
 <p>After being presented with a glimpse of what the website could look like, The Emperor decided
-to make '.staff(97, 'L').' his accomplice.</p>
+to make shadowboy17 his accomplice.</p>
 
 <p>The Emperor said: "You have my interest. Very well, then. We shall make a "Contract" and become 
 accomplices and forever be glorious on my eternal kingdom."</p>

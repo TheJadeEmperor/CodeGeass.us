@@ -17,7 +17,7 @@ This time however he is being watched, by not only Rolo but also by his teacher 
 as well as Suzaku who is now an official Knight of the Rounds. (Developed by Sunrise and Bandai 
 Entertainment)</p>
 
-<p>Written by '.staff(108, 'L').'</p>';
+<p>Written by Staff Member</p>';
 
 echo '<br><br>'.div( processText($string) ).'<br><br>';
 

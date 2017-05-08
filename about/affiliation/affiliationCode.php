@@ -113,7 +113,7 @@ $orgContent = array(
 		larger hovercrafts, such as the Avalon, dominate the skies in battle. But, like any other 
 		Britannian weapon, VTOL gunships have several purposes [like launching Knightmares]. </p>
 	
-		<p>Article written by ".staff(483, 'L')."</p>",
+		<p>Article written by Knight of Zero</p>",
 
 	'charsIn' => array('Cornelia', 'Euphemia', 'Darlton', 'Guilford', 'Clovis', 'Bartley', 'Schneizel',
 	'Kanon', 'Cecile', 'Lloyd', 'Kewell', 'Suzaku')
@@ -193,7 +193,7 @@ $orgContent = array(
 		royal princesses are obliged to select a 'knight' for assistance and personal security. 
 		Princes are also provided warfare options, such as military positions early in life. </p>
 		
-		<p>Article written by ".staff(483, 'L')."</p>",
+		<p>Article written by Knight of Zero</p>",
 
 	'charsIn' => array('Charles', 'Marianne', 'Lelouch', 'Nunnally', 'Clovis', 'Cornelia', 'Euphemia',
 	'Carine', 'Guinevere', 'Odysseus')),
@@ -222,7 +222,7 @@ $orgContent = array(
 		is most universally known as the most valiant and worthy knight of Britannia. As seen in the anime, 
 		each knight pilots a unique, more specialized Knightmare maintained by its own support team.</p>
 	
-	<p>Article written by ".staff(483, 'L').'</p>',
+	<p>Article written by Knight of Zero</p>",
 
 	'charsIn' => array('Suzaku', 'Gino', 'Anya', 'Luciano', 'Marianne', 'Waldstein', 'Vergamon', 'Nonette',
 	'Monica', 'Dorothea')
@@ -300,7 +300,7 @@ $section = array(
 	'display' => 'Black Knights / Kuro no Kishidan',
 	'link' => 'BlackKnights.php',
 	'leftBox' => '<h1>Black Knights / Kuro no Kishidan</h1><h2>Code Geass Groups</h2>
-		Fanlisting installed by '.staff(1, 'L').'<br>Owned and managed by '.staff(86, 'L')
+		Fanlisting installed by Admin<br>Owned and managed by Zero'
 ),
 'Area11' => array(
 	'meta' => array(
@@ -311,7 +311,7 @@ $section = array(
 	'display' => 'Area 11 / Japan',
 	'link' => 'Area11.php',
 	'leftBox' => '<h1>Area 11 / Japan</h1><h2>Code Geass Locations</h2>
-		Fanlisting installed by '.staff(1, 'L')
+		Fanlisting installed by Admin'
 ),
 'GeassOrder' => array(
 	'meta' => array(
@@ -322,7 +322,7 @@ $section = array(
 	'display' => 'Geass Order / Geass Directorate',
 	'link' => 'GeassOrder.php',
 	'leftBox' => '<h1>Geass Order / Geass Directorate</h1><h2>Code Geass Groups</h2>
-		Fanlisting installed by '.staff(1, 'L')
+		Fanlisting installed by Admin'
 ),
 );
 

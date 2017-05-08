@@ -53,8 +53,8 @@ $folder_100x100 = 'allies/100x100/';
 echo '<div class="moduleBlack"><h2>50 x 50 banners</h2>
 <table cellspacing="5">
 <tr>
-	<td>'.displayImage($folder_50x50.'Ashelia_1.jpg', 'Code Geass', staff(104, 'L')).'</td>
- 	<td>'.displayImage($folder_50x50.'Ashelia_2.jpg', 'Code Geass', staff(104, 'L')).'</td>
+	<td>'.displayImage($folder_50x50.'Ashelia_1.jpg', 'Code Geass', 'Staff Member').'</td>
+ 	<td>'.displayImage($folder_50x50.'Ashelia_2.jpg', 'Code Geass', 'Staff Member').'</td>
  	<td>'.displayImage($folder_50x50.'ayafls@gmail.com.png', 'Tianzi', 'ayafls@gmail.com').'</td>
  	<td>'.displayImage($folder_50x50.'fanlistings@star0cean.org.png', 'C.C.', 'fanlistings@star0cean.org').'</td>
 </tr>
@@ -65,11 +65,11 @@ echo '<div class="moduleBlack"><h2>50 x 50 banners</h2>
 <div class="moduleBlack"><h2>88 x 31 banners</h2>
 <table cellspacing="5">
 <tr>
-	<td>'.displayImage($folder_88x31.'Arthur_1.jpg', 'Lelouch', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_88x31.'Arthur_2.jpg', 'Lelouch', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_88x31.'Arthur_3.jpg', 'Lelouch', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_88x31.'Ashelia_1.jpg', 'Kallen', staff(104, 'L')).'</td> 
-	<td>'.displayImage($folder_88x31.'Emperor_1.jpg', 'Lelouch', staff(1, 'L')).'</td>
+	<td>'.displayImage($folder_88x31.'Arthur_1.jpg', 'Lelouch', 'Staff Member').'</td>
+	<td>'.displayImage($folder_88x31.'Arthur_2.jpg', 'Lelouch', 'Staff Member').'</td>
+	<td>'.displayImage($folder_88x31.'Arthur_3.jpg', 'Lelouch', 'Staff Member').'</td>
+	<td>'.displayImage($folder_88x31.'Ashelia_1.jpg', 'Kallen', 'Staff Member').'</td> 
+	<td>'.displayImage($folder_88x31.'Emperor_1.jpg', 'Lelouch', 'Staff Member').'</td>
 </tr>
 </table>
 </div><br><br>
@@ -77,8 +77,8 @@ echo '<div class="moduleBlack"><h2>50 x 50 banners</h2>
 <div class="moduleBlack"><h2>100 x 50 banners</h2>
 <table cellspacing="5">
 <tr>
-	<td>'.displayImage($folder_100x50.'Lelouch_1.jpg', 'Lelouch', staff(104, 'L')).'</td>
-	<td>'.displayImage($folder_100x50.'Lelouch_2.jpg', 'Lelouch', staff(104, 'L')).'</td>
+	<td>'.displayImage($folder_100x50.'Lelouch_1.jpg', 'Lelouch', 'Staff Member').'</td>
+	<td>'.displayImage($folder_100x50.'Lelouch_2.jpg', 'Lelouch', 'Staff Member').'</td>
 </tr>
 </table>
 </div>
@@ -87,16 +87,16 @@ echo '<div class="moduleBlack"><h2>50 x 50 banners</h2>
 <div class="moduleBlack"><h2>100 x 100 banners</h2>
 <table>
 <tr>
-	<td>'.displayImage($folder_100x100.'1.jpg', 'Code Geass', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_100x100.'2.jpg', 'Code Geass', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_100x100.'3.jpg', 'Code Geass', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_100x100.'4.jpg', 'Code Geass', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_100x100.'5.jpg', 'Code Geass', staff(1, 'L')).'</td>
+	<td>'.displayImage($folder_100x100.'1.jpg', 'Code Geass', 'Staff Member').'</td>
+	<td>'.displayImage($folder_100x100.'2.jpg', 'Code Geass', 'Staff Member').'</td>
+	<td>'.displayImage($folder_100x100.'3.jpg', 'Code Geass', 'Staff Member').'</td>
+	<td>'.displayImage($folder_100x100.'4.jpg', 'Code Geass', 'Staff Member').'</td>
+	<td>'.displayImage($folder_100x100.'5.jpg', 'Code Geass', 'Staff Member').'</td>
 </tr><tr>
-	<td>'.displayImage($folder_100x100.'6.jpg', 'Code Geass', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_100x100.'7.jpg', 'Code Geass', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_100x100.'8.jpg', 'Code Geass', staff(1, 'L')).'</td>
-	<td>'.displayImage($folder_100x100.'9.jpg', 'Code Geass', staff(1, 'L')).'</td>
+	<td>'.displayImage($folder_100x100.'6.jpg', 'Code Geass', 'Staff Member').'</td>
+	<td>'.displayImage($folder_100x100.'7.jpg', 'Code Geass', 'Staff Member').'</td>
+	<td>'.displayImage($folder_100x100.'8.jpg', 'Code Geass', 'Staff Member').'</td>
+	<td>'.displayImage($folder_100x100.'9.jpg', 'Code Geass', 'Staff Member').'</td>
 </tr>
 </table>
 </div>
