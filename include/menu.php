@@ -103,8 +103,26 @@ $menu = array(
             )
 	),
 	'Characters' => array(
-            'link' => $dir.'chars.php',
-            'title' => 'Code Geass Characters'),
+		'link' => $dir.'chars.php',
+		'title' => 'Code Geass Characters',
+		'subMenu' => array(
+			'All Characters' => array(
+				'link' => $dir.'chars/',
+				'title' => 'Code Geass Characters'),
+			'Lelouch Lamperouge' => array(
+				'link' => $dir.'characters/Lelouch',
+				'title' => 'Lelouch Lamperouge'),
+			'Kallen Stadtfeld' => array(
+				'link' => $dir.'characters/Kallen',
+				'title' => 'Kallen Stadtfeld'),
+			'C.C.' => array(
+				'link' => $dir.'characters/CC',
+				'title' => 'C.C.'),   
+			'Suzaku Kururugi' => array(
+				'link' => $dir.'characters/Suzaku',
+				'title' => 'Suzaku Kururugi')
+		)
+	),
 	'Area 11' => array(
             'link' => 'javascript:void',
             'title' => 'The Code Geass Library',
@@ -115,10 +133,7 @@ $menu = array(
                 'Locations & Groups' => array(
                     'link' => $dir.'about/affiliation/',
                     'title' => 'Code Geass Groups'),
-                'Fanfiction' => array(
-            'link' => $dir.'fanfiction/',
-                'title' => 'Code Geass Fanfiction'),
-            'Manga' => array(
+            'Code Geass Manga' => array(
                 'link' => $dir.'about/manga.php',
                 'title' => 'Code Geass Manga'),    
             )

@@ -243,7 +243,7 @@ function featuredAmazon($conn) {
                     <tr valign="top">
                         <td width="5px"></td>
                         <td id="rights" width="300px">
-                            CodeGeass.us &copy; Copyright by BL Web Solutions<br />
+                            CodeGeass.us &copy; Copyright by <a href="mailto:<?=$supportEmail?>">TheEmperor</a><br />
                             Concept design by Shadowboy
                         </td><td width="20px"></td>
                         <td>

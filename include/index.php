@@ -295,6 +295,9 @@ $context = array(
 'staff' => $staff,
 'links' => $links);
 
+//support email address
+$supportEmail = 'support@bestpayingsites.com';
+
 //delete error logs, if applicable
 if(file_exists('error_log')) 
     unlink('error_log');
