@@ -1,10 +1,11 @@
 <?php
-/////////////////////
+////////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
 include($dir.'include/config.php');
 include($dir.'include/index.php');
-/////////////////////
+////////////////////////////////////////
+
 $section = array( 
 'index' => array(
 	'meta' => array(
@@ -60,30 +61,8 @@ $section = array(
 	'link' => $apath.'version2.php',
 	'display' => 'Refrain 2.0',
 	'title' => 'Refrain Version 2.0'
-),	
-'staff' => array(
-	'meta' => array(
-		'tags' => 'code geass team, code geass staff', 
-		'title' => "Refrain: No 1. for Code Geass - Staff Members"
-	),	
-	'leftBox' => '<h1>About the Refrain Staff</h1><h2>Our dedicated team of volunteers</h2>
-	<h3>They are the ones who make our website possible!</h3>',
-	'link' => $apath.'staff.php',
-	'display' => 'About the staff',
-	'title' => 'About the staff'
-),	
-'recruit' => array(
-	$meta = array(
-		'tags' => 'refrain team, join the team', 
-		'title' => 'Refrain: Join the Refrain Team - We Need Your Help'
-	),
-	'leftBox' => '<h1>Join the Refrain Team</h1>Please read below on how you can help us
-	and commence the rebellion.',
-	'link' => $apath.'recruit.php',
-	'display' => 'Join the team',
-	'title' => 'Join the team'
-),	
-);//
+)
+);
 
 
 $rightBox = showRightBox($section);
@@ -98,25 +77,20 @@ $linkTree = array(
 )
 );
 
-$linkTree[aboutMenu] = array(
+$linkTree['aboutMenu'] = array(
 'treeDisplay' => array(
-	'display' => $section[$key][display]),
+	'display' => $section[$key]['display']),
 );
 
 foreach($section as $k => $v)
 {
-	$linkTree[aboutMenu][$k] = array(
-		'display' => ':: '.$v[display],
-		'link' => $v[link] );
+	$linkTree['aboutMenu'][$k] = array(
+		'display' => ':: '.$v['display'],
+		'link' => $v['link'] );
 }
 
-$linkTree[S] = array(
-	'mode' => 'S',
-	'spaces' => '9');
-$linkTree[nav2][mode] = 'N2';
-$linkTree[nav][mode] = 'N';
  
-
 include($dir.'include/menu.php');
 	
-echo displayTitle($section[$key][leftBox], $rightBox);	 ?>
+echo displayTitle($section[$key]['leftBox'], $rightBox);	 
+?>
