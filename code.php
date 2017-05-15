@@ -8,7 +8,7 @@ include($dir.'include/index.php');
 ///////////////////////////////////////
 $section = array(
 'index' => array(
-	'meta' => array(		//meta information - such as keywords, title tag, and description tags
+	'meta' => array( //meta information - such as keywords, title tag, and description tags
 		'tags' => 'code geass, code geass r3, code geass episodes',
 		'title' => 'Code Geass Refrain | Code Geass R3 | Episodes | Wallpapers',
 		'desc' => 'Code Geass: Refrain is your #1 source for Code Geass R3 information. We have 
@@ -41,16 +41,6 @@ $section = array(
 	'display' => 'Character Profiles',
 	'title' => 'Character Profiles'
 ),
-'fanlist' => array(
-	'meta' => array(
-		'tag' => 'code geass fanlist, refrain fanlist',
-		'title' => 'Refrain Fanlist - Code Geass Fanlist',
-		'desc' => 'Join our fanlist today!'
-	),
-	'leftBox' => '<h1>Refrain Fanlist</h1><p>All fanlist members</p>',
-	'display' => 'Fanlist Members',
-	'title' => 'Fanlist Members'
-),
 'sitemap' => array(
 	'meta' => array(
 		'tag' => 'code geass sitemap, refrain sitemap',
@@ -63,19 +53,6 @@ $section = array(
 )
 );
 
-//main drop down menu
-foreach($section as $k => $val)
-{
-	$section[$k][link] = $k.'.php';
-}
-
-
-$charBranch = array(
-'mode' => 'L',
-'character' => array(
-	'link' => '../chars.php',
-	'display' => 'Characters')
-);
 
 	 
 $charList = array();
@@ -83,52 +60,8 @@ $charList = array();
 $selC = 'select * from chars order by charName asc';
 $resC = mysql_query($selC, $conn) or die(mysql_error());
 
-while($ch = mysql_fetch_assoc($resC))
-{
-	$charTree[$ch[charName]] = array(
-		'link' => 'characters/'.$ch[charName],
-		'display' => ':: '.$ch[fullName]
-	);
+while($ch = mysql_fetch_assoc($resC)) {
 	array_push($charList, $ch);
-}
-
-
-
-$mainBranch[dis][display] = 'Choose a section';
-foreach($section as $k => $val)
-{
-	$mainBranch[$k] = array(
-		'link' => $val[link],
-		'display' => ' :: '.$val[display]);
-}
-
-switch($key)
-{
-	case 'chars':
-		$linkTree[characters] = $charBranch;
-		$linkTree[charTree] = $charTree;
-		$linkTree[space] = array(
-			'mode' => 'S',
-			'spaces' => '18');
-		$linkTree[branchA][mode] = 'N';
-		break;
-	case 'shopping':
-	case 'peoplestring':
-		$linkTree[mainBranch] = $mainBranch;
-		$linkTree[charTree] = $charTree;
-		$linkTree[space] = array(
-			'mode' => 'S',
-			'spaces' => '20');
-		$linkTree[branchB][mode] = 'N2';
-		$linkTree[branchA][mode] = 'N';
-		break;
-	default: 
-		$linkTree[mainBranch] = $mainBranch;
-		$linkTree[space] = array(
-			'mode' => 'S',
-			'spaces' => '10');
-		$linkTree[branchB][mode] = 'N2';
-		$linkTree[branchA][mode] = 'N';
 }
 
 
@@ -136,7 +69,6 @@ switch($key)
 $rightBox = '<p>Also check out:</p><ul>
 	<li><a href="'.$dir.'chars.php" title="Character Profiles">Character Profiles</a></li>	
 	<li><a href="'.$dir.'about/affiliation/" title="Code Geass Groups">Groups & Organizations</a></li>
-	<li><a href="'.$dir.'fanlist.php" title="Fanlist Members">Fanlist Members</a></li>
 	<li><a href="'.$dir.'sitemap.php" title="Sitemap">Sitemap</a></li>
 	</ul>';
 
