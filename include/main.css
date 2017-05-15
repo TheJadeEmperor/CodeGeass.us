@@ -55,9 +55,10 @@ body {
     vertical-align: top; 
     padding: 10px 10px 5px 10px; 
     overflow: auto;
+	font-size: 14px;
 }
 
-.content:hover, .credits:hover, .linkBranch  {
+.content:hover, .credits:hover  {
     opacity: 0.80;
     filter: alpha(opacity=80);
     background-color: #990000;
@@ -69,15 +70,19 @@ body {
     text-align: left;
     overflow: auto;
     margin: 2px 0px 2px 0px;
-    /*top right bottom left*/
     padding: 5px 5px 2px 5px;	
     float: right;
     width: 130px;
     height: 20px;	
+	font-size: 12px;
 }
 
 #space {
     height: 145px;
+}
+
+.content li {
+	line-height: 20px;
 }
 
 a {
@@ -152,19 +157,19 @@ p {
     text-decoration: none;
 }
 
-.content a:visited, .linkTree a:visited {
+.content a:visited {
     color: #AE8D92; 
     text-decoration: none;
 }
 
-.moduleBlack .top {
-    padding-top: 0px;
+.top {
+	padding-top: 0px;
     text-align: center;
     float: right; 
-    font-size: 12px; 
+    font-size: 12px;
 }
 
-.moduleBlack .top a {
+.top a {
     text-decoration: none; 
 }
 

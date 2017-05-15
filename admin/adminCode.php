@@ -88,7 +88,7 @@ $adir = '';
 include($dir.'include/functions.php');	
 include($dir.'include/mysql.php');  
 include($dir.'include/config.php');  
-include($dir.'include/spmSettings.php');  
+//include($dir.'include/spmSettings.php');  
 include($dir.'include/index.php');  
 	
 $menuB = array(
@@ -213,8 +213,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.or
 <link rel="shortcut icon" type="image/png" href="../include/img/geass_hov.gif"/>';
 
 echo '<script type="text/javascript">
-function popUp(URL, width, height)
-{
+function popUp(URL, width, height) {
 	window.open(URL, "", "menubar=no, scrollbars=yes, resizable=yes, left=0, top=0, width="+width+", height="+height);
 }
 </script>

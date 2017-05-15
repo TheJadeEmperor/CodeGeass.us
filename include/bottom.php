@@ -74,13 +74,11 @@ function topAllies($dir) {
 		'3' => array(
 			'name' => 'Fairy Tale: Guildford and Cornelia',
 			'img' => 'fallingslowly.altervista.org.fairytale.jpg',
-			'url' => 'http://fallingslowly.altervista.org/fairytale/' ),
-		
+			'url' => 'http://fallingslowly.altervista.org/fairytale/' ),		
 		'4' => array(
 			'name' => "Stage 0",
 			'img' => 'stage0.altervista.jpg',
 			'url' => 'http://www.stage0.altervista.org/' ),
-	 
 		'5' => array(
 			'name' => 'Zero Requiem: Code Geass R2',
 			'img' => 'marheavenj.net.cgr2.jpg',
@@ -123,7 +121,7 @@ function topAllies($dir) {
         
     for($a = 5; $a <= 10; $a++) {
 
-        $name = $alliesList[$a][name];
+        $name = $alliesList[$a]['name'];
 		
 		if($name)
 			$alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target="_blank">
@@ -157,7 +155,7 @@ function featuredAmazon($conn) {
 
     $numA = time() % $max;
     
-    $aContent = amazonSearch('').'<center>'.amazonProduct($product[$numA][code]).'
+    $aContent = amazonSearch('').'<center>'.amazonProduct($product[$numA]['code']).'
     <br>'.amazonSearch('Visit Amazon').'
     </center>';
         
