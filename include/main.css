@@ -132,20 +132,22 @@ p {
 }
 
 .content h1 {
-    font-size: 160%;
-    margin-bottom: 7px;
-    margin-top: 5px;
+    font-size: 26px;
+	line-height: 30px;
 }
 
 .content h2 {
-    font-size: 130%;
-    margin-bottom: 7px;
-    margin-top: 5px;
+    font-size: 20px;
+	line-height: 30px;
+}
+
+.content h3 {
+	line-height: 24px;
 }
 
 .content p {
     color: #FFFFFF;
-    margin: 0.5em;
+    margin: 0.5em 0.5em 0.5em 0em;
 }
 
 .content ul, .content li {
