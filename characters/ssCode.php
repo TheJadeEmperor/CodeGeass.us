@@ -1,4 +1,4 @@
-<?
+<?php
 $dir = '../../';
 include('../charsCode.php');
 

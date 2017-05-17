@@ -22,7 +22,6 @@ $section = array(
 
 include($dir.'include/menu.php');
 
-exit;
 ?>
 <div class="moduleBlack" id="ost"><h1>OST Downloads</h1>
 <div>

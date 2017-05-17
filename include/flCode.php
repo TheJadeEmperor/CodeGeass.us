@@ -16,7 +16,7 @@ function showStats($fanlistName, $option)
 
 	mysql_select_db('codegeas_fanlist', $conn) or die(mysql_error()); 
 	
-	$select = 'select * from refrain where dbtable="'.$fanlistName.'" order by added desc';
+	$select = 'select * from owned where dbtable="'.$fanlistName.'" order by listingid desc';
 	$result = mysql_query($select, $conn) or die(mysql_error());
 
 	if($result && mysql_num_rows($result) > 0)
