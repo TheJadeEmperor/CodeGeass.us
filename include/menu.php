@@ -107,19 +107,19 @@ $menu = array(
 		'title' => 'Code Geass Characters',
 		'subMenu' => array(
 			'All Characters' => array(
-				'link' => $dir.'chars/',
+				'link' => $dir.'chars.php',
 				'title' => 'Code Geass Characters'),
 			'Lelouch Lamperouge' => array(
-				'link' => $dir.'characters/Lelouch',
+				'link' => $dir.'characters/Lelouch/',
 				'title' => 'Lelouch Lamperouge'),
 			'Kallen Stadtfeld' => array(
-				'link' => $dir.'characters/Kallen',
+				'link' => $dir.'characters/Kallen/',
 				'title' => 'Kallen Stadtfeld'),
 			'C.C.' => array(
-				'link' => $dir.'characters/CC',
+				'link' => $dir.'characters/CC/',
 				'title' => 'C.C.'),   
 			'Suzaku Kururugi' => array(
-				'link' => $dir.'characters/Suzaku',
+				'link' => $dir.'characters/Suzaku/',
 				'title' => 'Suzaku Kururugi')
 		)
 	),
@@ -187,42 +187,48 @@ $menu = array(
                 'link' => $dir.'season_1.php',
                 'title' => 'The Black Rebellion',
                 'subMenu' => array(
-                    'All Episodes from season 1' => array(
+                    "All Episodes from Season 1" => array(
                         'link' => $dir.'season_1.php',
-                        'title' => 'Code Geass Season 1'
-                    ),
+                        'title' => "Code Geass Season 1"),
                     "Ep 1 - The Day of the Demon's Birth" => array(
                         'link' => $dir.'episodes/main/1_1.php',
-                        'title' => "The Day of the Demon's Birth"
-                    ),
-                    'Ep 2 - The White Knight Awakens' => array(
+                        'title' => "The Day of the Demon's Birth"),
+                    "Ep 2 - The White Knight Awakens" => array(
                         'link' => $dir.'episodes/main/1_2.php',
-                        'title' => "The White Knight Awakens"
-                    ),
-                    'Ep 3 - The Fake Classmate' => array(
+                        'title' => "The White Knight Awakens"),
+                    "Ep 3 - The Fake Classmate" => array(
                         'link' => $dir.'episodes/main/1_3.php',
-                        'title' => 'The Fake Classmate')
+                        'title' => "The Fake Classmate"),
+					"Ep 4 - His Name is Zero" => array(
+                        'link' => $dir.'episodes/main/1_4.php',
+                        'title' => "His Name is Zero"),
+					"Last Ep - Zero" => array(
+                        'link' => $dir.'episodes/main/1_25.php',
+                        'title' => "Zero")
                 )
             ),
             'Season 2 Episodes' => array(
                 'link' => $dir.'season_2.php',
                 'title' => 'The Zero Requiem', 
                 'subMenu' => array(
-                    'All Episodes from season 2' => array(
+                    "All Episodes from Season 2" => array(
                         'link' => $dir.'season_2.php',
-                        'title' => 'Code Geass Season 2'
-                    ),
-                    'Ep 1 - The Day A Demon Awakens' => array(
+                        'title' => 'Code Geass Season 2'),
+                    "Ep 1 - The Day A Demon Awakens" => array(
                         'link' => $dir.'episodes/main/2_1.php',
-                        'title' => "The Day A Demon Awakens"
-                    ),
-                    'Ep 2 - Plan For Independent Japan' => array(
+                        'title' => "The Day A Demon Awakens"),
+                    "Ep 2 - Plan For Independent Japan" => array(
                         'link' => $dir.'episodes/main/2_2.php',
-                        'title' => 'Plan For Independent Japan'
-                    ),
-                    'Ep 3 - Imprisoned in Campus' => array(
-                        'link' => $dir.'episodes/main/3_3.php',
-                        'title' => 'Imprisoned in Campus')
+                        'title' => 'Plan For Independent Japan'),
+                    "Ep 3 - Imprisoned in Campus" => array(
+                        'link' => $dir.'episodes/main/2_3.php',
+                        'title' => "Imprisoned in Campus"),
+                    "Ep 4 - Counterattack at the Gallows" => array(
+                        'link' => $dir.'episodes/main/2_4.php',
+                        'title' => "Counterattack at the Gallows"),
+					"Last Ep - Re;" => array(
+                        'link' => $dir.'episodes/main/2_25.php',
+                        'title' => "Re;"),
                 )  
             ),
             'Season 3 Episodes' => array(
@@ -263,7 +269,7 @@ $menu = array(
                         'title' => 'Plan For Independent Japan'
                     ),
                     'Ep 3 - Imprisoned in Campus' => array(
-                        'link' => $dir.'episodes/ss/3_3.php',
+                        'link' => $dir.'episodes/ss/2_3.php',
                         'title' => 'Imprisoned in Campus')
                 )  
             ),
@@ -277,7 +283,7 @@ $menu = array(
         'title' => 'Code Geass Knightmare Frames'),
     
     'Chat' => array(
-        'link' => $dir.'chat',
+        'link' => $dir.'chat/',
         'title' => 'Chatroom'),
 	'Forum' => array(
         'link' => 'https://www.facebook.com/groups/cgrefrain3/',
