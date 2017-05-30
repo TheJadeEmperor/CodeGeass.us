@@ -1,4 +1,4 @@
-<?
+<?php
 $dir = '../../';
 include('charsCode.php');
 
@@ -29,7 +29,7 @@ mysql_select_db('codegeas_refrain') or print(mysql_error());
 	
 
 if(file_exists($dir.'characters/'.$charName.'/gallery'))
-echo gallery($dir.'characters/'.$charName.'/gallery').'<br><br>';
+	echo gallery($dir.'characters/'.$charName.'/gallery').'<br><br>';
 	
 //show random stuff, if page is short	
 if($bio['showRandom'] == 'Y')

@@ -209,7 +209,9 @@ $featureType = array(
 	'link' => $epath.'main/'.$eFile,
 	'title' => 'Code Geass '.$episode,' Main',
 	'display' => 'Episode '.$episode.' Main',
-	'leftBox' => $info[synopsis]	),
+	'leftBox' => $info[synopsis]	
+),
+	
 'ss' => array(
 	'meta' => array(
 		'tags' => 'code geass '.$episode.', code geass screenshots, '.$info[eng],
@@ -219,18 +221,9 @@ $featureType = array(
 	'title' => 'Code Geass '.$episode.' Gallery',
 	'display' => 'Screenshots Gallery',
 	'leftBox' => 'Gallery page: Use the page numbers to navigate the gallery. Click on an image
-		to open it in full size in a separate window.'	),
-'video' => array(
-	'meta' => array(
-		'tags' => 'code geass '.$episode.', code geass video, '.$info[eng],
-		'title' => 'Code Geass '.$episode.' - Streaming Videos - '.$info[eng],
-		'desc' => $info[eng].' - '.$info[jap]),
-	'link' => $epath.'video/'.$eFile,
-	'title' => 'Episode '.$episode.' Video',
-	'display' => 'Streaming Video',
-	'leftBox' => 'Video Page: click on the video to begin playing. Note: we do not host the 
-		videos on our server, we only stream them. We are not responsible for the content
-		of the videos.'	),
+		to open it in full size in a separate window.'	
+),
+
 'fanlist' => array(
 	'meta' => array(
 		'tags' => 'code geass '.$episode.', code geass fanlist',
@@ -242,6 +235,7 @@ $featureType = array(
 	'display' => 'Fanlist',
 	'leftBox' => 'Fanlist Page: <a href="#join">Join</a> | <a href="#update">Update</a> 
 	| <a href="#lostpass">Lost Password</a> | <a href="#mList">Members</a>'	),
+	
 'join' => array(
 	'link' => $epath.'fanlist/'.$eFile.'#join',
 	'title' => 'Episode '.$episode.' Fanlist',
@@ -282,12 +276,6 @@ $linkTree[season] = array(
 );//$linkTree
 
 
-//current episode # and title
-$linkTree[ep] = array(
-	'treeDisplay' => array(
-		'display' => $episode.' - '.$info[eng])
-);
-
 
 if(is_array($tvEpisodes))
 foreach($tvEpisodes[$season] as $num => $ep)//show all the episodes
@@ -300,26 +288,6 @@ foreach($tvEpisodes[$season] as $num => $ep)//show all the episodes
 
 $fanPath = 'episodes/fanlist/';
 
-$treeBranch = array(
-'Main Menu' => 'episodes/main/'.$eFile,
-'Gallery' => 'episodes/ss/'.$eFile,
-'Video' => 'episodes/video/'.$eFile,
-'Join Fanlist' => $fanPath.$eFile.'#join',
-'Members List' => $fanPath.$eFile.'#mList',
-'Update Profile' => $fanPath.$eFile.'#update',
-'Lost Password' => $fanPath.$eFile.'#lostpass');
 
-$linkTree[feature] = array(
-	'dis' => array(
-		'display' => 'Episode '.$episode.' Menu &nbsp')
-);
-
-
-foreach($treeBranch as $dis => $fileName)//show all the features
-{
-	$linkTree[feature][$dis] = array(
-		'display' => ':: '.$dis,
-		'link' => $fileName);
-}//
-
-$section[$key][meta] = $featureType[$feature][meta];      ?>
+$section[$key][meta] = $featureType[$feature][meta];      
+?>
