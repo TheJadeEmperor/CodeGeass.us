@@ -1,3 +1,0 @@
-<?
-$dir = '../../';
-include('../videoCode.php');  ?>
