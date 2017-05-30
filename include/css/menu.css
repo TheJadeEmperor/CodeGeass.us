@@ -50,19 +50,24 @@ ul.pureCssMenu {
 	top: 200;
 }
 
-* HTML ul.pureCssMenu {position:absolute}
-ul.pureCssMenu ul{
-/*	width:108.15px;*/
-}
-
 ul.pureCssMenu li {
 	display: block;
 	margin: 3px 0px 0px 3px;
 	font-size: 0px;
 }
+
+ul.pureCssMenu li:first-of-type {
+	padding-left: 10px;
+}
+
+ul.pureCssMenu ul li:first-of-type {
+	padding-left: 0px;
+}
+
 ul.pureCssMenu a:active, ul.pureCssMenu a:focus {
 	outline-style: none;
 }
+
 ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
 	display: block;
 	vertical-align: middle;
@@ -79,15 +84,18 @@ ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
+
 ul.pureCssMenu span {
 	overflow: hidden;
 }
+
 ul.pureCssMenu li {
 	float: left;
 }
 ul.pureCssMenu ul li {
 	float: none;
 }
+
 ul.pureCssMenu ul a {
 	text-align: left;
 	white-space: nowrap;
@@ -116,6 +124,7 @@ ul.pureCssMenu ul li.sep span {
 ul.pureCssMenu li:hover {
 	position: relative;
 }
+
 ul.pureCssMenu li:hover > a {
 	background-color: #A3A3A3;
 	border-color: #FFFFFF;
@@ -124,6 +133,7 @@ ul.pureCssMenu li:hover > a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
+
 ul.pureCssMenu li a:hover {
 	position: relative;
 	background-color: #A3A3A3;
@@ -133,6 +143,7 @@ ul.pureCssMenu li a:hover {
 	color: #FFFFFF;
 	text-decoration: none;
 }
+
 ul.pureCssMenu li.dis a {
 	color: #AAAAAA !important;
 }
@@ -154,24 +165,31 @@ ul.pureCssMenu ul img {
 ul.pureCssMenu img.over {
 	display: none
 }
+
 ul.pureCssMenu li.dis a:hover img.over {
 	display: none !important
 }
+
 ul.pureCssMenu li.dis a:hover img.def {
 	display: inline !important
 }
+
 ul.pureCssMenu li:hover > a img.def {
 	display: none
 }
+
 ul.pureCssMenu li:hover > a img.over {
 	display: inline
 }
+
 ul.pureCssMenu a:hover img.over, ul.pureCssMenu a:hover ul img.def, ul.pureCssMenu a:hover a:hover ul img.def, ul.pureCssMenu a:hover a:hover img.over, ul.pureCssMenu a:hover a:hover a:hover img.over {
 	display: inline
 }
+
 ul.pureCssMenu a:hover img.def, ul.pureCssMenu a:hover ul img.over, ul.pureCssMenu a:hover a:hover ul img.over, ul.pureCssMenu a:hover a:hover img.def, ul.pureCssMenu a:hover a:hover a:hover img.def {
 	display: none
 }
+
 ul.pureCssMenu a:hover ul, ul.pureCssMenu a:hover a:hover ul {
 	display: block
 }
@@ -191,9 +209,11 @@ ul.pureCssMenu span {
 ul.pureCssMenu ul span, ul.pureCssMenu a:hover table span {
 	background-image: url(../images/arrowSub1.gif)
 }
+
 ul.pureCssMenu ul li:hover > a span {
 	background-image: url(../images/arrowSub2.gif);
 }
+
 ul.pureCssMenu table a:hover span, ul.pureCssMenu table a:hover a:hover span {
 	background-image: url(../images/arrowSub2.gif)
 }
