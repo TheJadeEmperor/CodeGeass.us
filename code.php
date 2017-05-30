@@ -72,7 +72,7 @@ $rightBox = '<p>Also check out:</p><ul>
 	<li><a href="'.$dir.'sitemap.php" title="Sitemap">Sitemap</a></li>
 	</ul>';
 
-$rightBox = showRightBox($section);
+//$rightBox = showRightBox($section);
 
 
 

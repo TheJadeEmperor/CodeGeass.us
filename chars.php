@@ -4,9 +4,8 @@ include('code.php');
 $selC = 'select * from codegeas_refrain.chars';
 $resC = mysql_query($selC) or print(mysql_error());
 
-while($c = mysql_fetch_assoc($resC))
-{
-	$char[$c[charName]] = $c;
+while($c = mysql_fetch_assoc($resC)) {
+	$char[$c['charName']] = $c;
 }
 
 ////////////////////////////////////
@@ -90,6 +89,5 @@ foreach($group as $key => $value)
 echo '</tr>
 </table></div>';
 
-echo joinForm('refrain');
 
 include($dir.'include/bottom.php'); ?>
