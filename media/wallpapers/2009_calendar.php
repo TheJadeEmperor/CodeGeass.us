@@ -1,5 +1,4 @@
 <?php
-header('Location: ../../memories');
 $dir = '../../';
 include($dir.'media/wallpapers/wallpaperCode.php');
 
