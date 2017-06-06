@@ -70,7 +70,6 @@ $leftBox = '<h1>Code Geass - Music Section</h1><h2>Opening theme songs for both 
 $rightBox = showRightBox($section);
 
 
-$linkTree = mLinkTree('Openings');
 
 $linkTree[op][dis][display] = songName($key);
 foreach($section as $map => $value)

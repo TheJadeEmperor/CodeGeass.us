@@ -60,28 +60,28 @@ echo '<center>
 <fieldset class="fieldBlack">
 	<legend align="center">Music Navigation Menu</legend>
 	<table> 
-	<tr><td>'.menuBlock($index, 'ost_1').'</td><td width="50px"></td>
+	<tr>
+		<td>'.menuBlock($index, 'ost_1').'</td><td width="50px"></td>
 		<td>'.menuBlock($index, 'ost_2').'</td>
-	</tr><tr>
-		<td>'.menuBlock($index, 'album').'</td><td width="50px"></td>
-		<td>'.menuBlock($index, 'sound').'</td>
-	</tr><tr>
-		<td>'.menuBlock($index, 'op').'</td><td width="50px"></td>
-		<td>'.menuBlock($index, 'end').'</td>
+	</tr>
+	<tr>
+		<td><br />'.menuBlock($index, 'album').'</td><td width="50px"></td>
+		<td><br />'.menuBlock($index, 'sound').'</td>
+	</tr>
+	<tr>
+		<td><br />'.menuBlock($index, 'op').'</td><td width="50px"></td>
+		<td><br />'.menuBlock($index, 'end').'</td>
 	</tr>
 	</table>
 </fieldset>
-</td></tr>
+</td>
+</tr>
 </table>
 </center>
-<br><br>';
+<br /><br />';
 
-$contribute = top().'<h3>Thanks to...</h2>
-<p>This music section was created with the help of '.$staff[92][link].'
-Thank you '.$staff[92][link].' for your generous contributions.</p>';
 
-echo div( $contribute ).'<br><br>';
-
-echo randomStuff().'<br><br>';
-echo randomProducts().'<br><br>';
-include($dir.'include/bottom.php');		?>
+echo randomStuff().'<br /><br />';
+echo randomProducts().'<br /><br />';
+include($dir.'include/bottom.php');
+?>
