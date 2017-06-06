@@ -109,20 +109,6 @@ $rightBox = '<ul>Also check out:
 </ul>';
 
 
-$linkTree = mLinkTree($section[$key][display]);
-
-$linkTree[S] = array(
-'mode' => 'S',
-'spaces' => 13);
-
-$linkTree[nav2] = array(
-'mode' => 'N2' );
-
-$linkTree[nav] = array(
-'mode' => 'N' );
-
-
-
 include($dir.'include/menu.php');
 
 echo displayTitle($leftBox, $rightBox); ?>

@@ -160,7 +160,7 @@ $menu = array(
                  )
             ),
             'Music' => array(
-                'link' => 'javascript:void',
+                'link' => $dir.'media/music/',
                 'title' => 'Music Main Menu',
                 'subMenu' => array(
                     'Openings' => array(
@@ -171,6 +171,10 @@ $menu = array(
                         'title' => 'Code Geass Endings'),
                 )
             ), 
+			'Media Home' => array(
+                'link' => $dir.'media/music/',
+                'title' => 'Code Geass Media',
+			)
         )
     ),
    'OSTs' => array(
