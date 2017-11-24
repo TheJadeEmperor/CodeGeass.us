@@ -1,6 +1,6 @@
 <?php
-$dir = '../';
-include($dir.'adminCode.php');
+$adir = '../';
+include($adir.'adminCode.php');
 
 function inputText($varName, $extra)
 {
@@ -182,31 +182,6 @@ $blockB = '<table>
 $blockB = '<fieldset>'.$blockB.'</fieldset>';
 
 
-echo $queryS = 'select * from codegeas_smf.smf_members '.$sort;
-$resultS = mysql_query($queryS, $conn) or die(mysql_error());
-
-while($s = mysql_fetch_assoc($resultS))
-{
-	$staffSel = '';
-	if($_POST[author] == $s[ID_MEMBER])
-		$staffSel = 'selected';
-
-	switch($order)
-	{
-	case 'ID_MEMBER':
-		$optText = $s[ID_MEMBER].' - '.$s[memberName].' - '.$s[realName];
-		break;
-	case 'memberName':
-		$optText = $s[memberName].' - '.$s[realName].' - '.$s[ID_MEMBER];
-		break;
-	case 'realName':
-	default:
-		$optText = $s[realName].' - '.$s[memberName].' - '.$s[ID_MEMBER];
-		break;
-	}
-	
-	$author .= '<option value="'.$s[ID_MEMBER].'" '.$staffSel.'>'.$optText.'</option>';
-}//while
 
 
 $blockC = '<table>
@@ -214,12 +189,6 @@ $blockC = '<table>
 	<td>bio <br><textarea name="bio" cols=50 rows=12 class=input>'.stripslashes($_POST[bio]).'</textarea></td>
 	<td>spoiler <br><textarea name="spoiler" cols=50 rows=5 class=input>'.$_POST[spoiler].'</textarea>
 	<br>meta description<br><textarea name=metaDescription cols=50 rows=5 class=input>'.$_POST[metaDescription].'</textarea>
-	</td>
-</tr><tr>
-	<td colspan="2">author <select name="author"><option></option>'.$author.'</select>
-	<input type=submit name=sort value="realName">
-	<input type=submit name=sort value="ID_MEMBER">
-	<input type=submit name=sort value="memberName">
 	</td>
 </tr><tr>
 	<td colspan="2">'.$submitButtons.'</td>

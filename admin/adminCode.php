@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 /*Generic database functions*/
 function insertRec($cond)
 {
@@ -83,36 +84,11 @@ function updateRec($cond)
 if($_SESSION[login] == '')
 	header('Location: ./');
 
-$dir .= '../';
-$adir = '';
+$dir = $adir.'../';
 include($dir.'include/functions.php');	
 include($dir.'include/mysql.php');  
 include($dir.'include/config.php');  
-//include($dir.'include/spmSettings.php');  
 include($dir.'include/index.php');  
-	
-$menuB = array(
-'bar' => array(
-	'link' => $adir,
-	'title' => 'Settings & Options'),
-'item' => array(
-	'Admin Notes' => array(
-		'link' => $adir.'main.php',
-		'title' => 'Admin Notes' ),
-	'Database List' => array(
-		'link' => $adir.'databaseList.php',
-		'title' => 'Database List' ),
-	'MySQL Query' => array(
-		'link' => $adir.'query.php',
-		'title' => 'MySQL Query'),
-	'Links & Images' => array(
-		'link' => $adir.'links.php',
-		'title' => 'Global Links' ),
-	'Forum Posts' => array(
-		'link' => $adir.'posts.php',
-		'title' => 'Forum Posts'),
-)
-);
 
 
 $menuSite = array(
@@ -120,21 +96,22 @@ $menuSite = array(
 	'link' => '../',
 	'title' => 'Main Site'),
 'item' => array(
-	'Products' => array(
-		'link' => $adir.'products.php',
-		'title' => 'Amazon Products' ),
-	'Episodes' => array(
+	'Episode List' => array(
 		'link' => $adir.'site/episodes.php',
 		'title' => 'Episode Titles'),
-	'Code Abridged' => array(
-		'link' => $adir.'site/abridged.php',
-		'title' => 'Code Abridged'),
+	'Summaries' => array(
+		'link' => $adir.'site/summary.php?epID=2_1',
+		'title' => 'Episode Titles'),
+	'Synopsis' => array(
+		'link' => $adir.'site/synopsis.php?epID=2_1',
+		'title' => 'Episode Titles'),
+
+	'Products' => array(
+		'link' => $adir.'products.php',
+		'title' => 'Amazon Products' ),	
 	'Character Profiles' => array(
 		'link' => $adir.'site/editChars.php',
 		'title' => 'Character Profiles'),
-	'Fanfiction' => array(
-		'link' => $adir.'site/fanfic.php',
-		'title' => 'Fanfiction Section'),
 	'Knightmares' => array(
 		'link' => $adir.'site/generation.php',
 		'title' => 'Knightmare Frames & Generations')
@@ -144,63 +121,25 @@ $menuSite = array(
 $menuAff = array( 
 'bar' => array(
 	'link' => $adir.'site/affiliate.php',
-	'title' => 'Affiliate Management'),
+	'title' => 'Management'),
 'item' => array(
 	'Affiliates' => array(
 		'link' => $adir.'affiliate.php',
 		'title' => 'Affiliates'),
-	'Send Email' => array(
-		'link' => $adir.'sendEmail.php',
-		'title' => 'Send an Email'),
-	'Shared Accounts' => array(
-		'link' => $dir.'site/shared.php',
-		'title' => 'Shared Accounts'),
-)
-);
-
-
-$menuD = array(
-'bar' => array(
-	'link' => $adir,
-	'title' => 'Fanlist Management'),
-'item' => array(
+	'Database List' => array(
+		'link' => $adir.'databaseList.php',
+		'title' => 'Database List' ),
+	'Links & Images' => array(
+		'link' => $adir.'links.php',
+		'title' => 'Global Links' ),
 	'Owned Fanlists' => array(
-		'link' => $adir.'fanlist/owned.php',
+		'link' => $adir.'fanlist/',
 		'title' => 'Owned Fanlistss'),
-	'Members' => array(
-		'link' => $adir.'fanlist/members.php',
-		'title' => 'Fanlist Members'),
-	'Templates' => array(
-		'link' => $adir.'fanlist/templates.php',
-		'title' => 'Email Templates'),
 
 )
 );
 
-$menuMail = array(
-'bar' => array(
-	'link' => $adir.'newsletter.php',
-	'title' => 'Anime Newsletter'),
-'item' => array(
-	'Manage Newsletters' => array(
-		'link' => $adir.'newsletter.php',
-		'title' => 'Newsletter'),
-	),
-);
 
-$menuSEO = array(
-'bar' => array(
-	'link' => $adir,
-	'title' => 'SEO Management'),
-'item' => array(
-	'Keyword Search' => array(
-		'link' => $adir.'keywords.php',
-		'title' => 'Keyword Search'), 
-	'Webmaster Tools' => array(
-		'link' => 'https://www.google.com/webmasters/tools',
-		'title' => 'Google Webmaster Tools')
-)
-);
 
 $fanlistButtons = '<a href="owned.php"><input type=button value=" Owned Fanlists "></a>
 <a href="templates.php"><input type=button value=" Edit Templates "></a>
@@ -223,8 +162,6 @@ echo '<body><center>
 <table>
 <tr valign="top">
 <td align="left" width="150px">
-	'.showMenu($menuSite).'<br> '.showMenu($menuAff).'<br>'.showMenu($menuSEO).'
-</td><td align="left" width="150px">
-	'.showMenu($menuB).'<br>'.showMenu($menuD).'<br>'.showMenu($menuMail).'
+	'.showMenu($menuSite).'<br> '.showMenu($menuAff).'<br>
 </td><td align="left">'; 
 ?>

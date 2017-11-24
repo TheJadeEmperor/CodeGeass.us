@@ -1,6 +1,6 @@
 <?php
-$dir = '../';
-include($dir.'adminCode.php');
+$adir = '../';
+include($adir.'adminCode.php');
 
 if($_POST[update])
 {

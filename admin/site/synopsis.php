@@ -1,6 +1,6 @@
 <?php
-$dir = '../../';
-include($dir.'admin/adminCode.php');
+$adir = '../';
+include($adir.'/adminCode.php');
 
 function getEp($epID)
 {
@@ -24,9 +24,6 @@ if($_POST[edit])
 
 	$res = mysql_query($upd, $conn) or die(mysql_error());	
 }
-
-
-
 
 
 $thisEp = getEp( $_GET[epID] );
@@ -61,13 +58,12 @@ $theLinks = '<input type=submit name=edit value="Submit Changes" '.$editDis.'>
 <a href="episodes.php?epID='.$_GET[epID].'"><input type=button value="Episodes"></a>
 <a href="synopsis.php?epID='.($prevID).'"><input type=button value="<< Prev"></a>
 <a href="synopsis.php?epID='.($nextID).'"><input type=button value="Next >>"></a>
-<a href="'.$dir.'episodes/ep_'.$_GET[epID].'" target=_blank>Direct Link</a>';
+<a href="'.$dir.'episodes/main/'.$_GET[epID].'.php" target=_blank>Direct Link</a>';
 
 
-echo '<form method=POST>Episode '.$_GET[epID].': '.$thisEp[eng].' 
-'.$theLinks.'
-<br><br>'.$view.'<br> '.$theLinks.'
+echo '<form method=POST>
+<h3>Episode '.$_GET[epID].': '.$thisEp[eng].'</h3>  
+<p>'.$theLinks.'</p>
+<p>'.$view.'</p>'.$theLinks.'
 </form>';
-
-
 ?>

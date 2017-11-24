@@ -1,6 +1,6 @@
 <?php
-$dir = '../';
-include($dir.'adminCode.php');
+$adir = '../';
+include($adir.'adminCode.php');
 
 
 function getEp($epID)
@@ -110,22 +110,17 @@ $addEdit = '<table><tr valign=top><td>
 		<td>epID</td><td><input type=text name=epID value="'.$e[epID].'" size="10">
 		<a href="episodes.php?epID='.$prev.'" title="Prev"><< Prev</a> 
 		<a href="episodes.php?epID='.$next.'" title="Next">Next >></a></td>
-	</tr><tr title="English Title">
+	</tr>
+	<tr title="English Title">
 		<td>eng</td><td><input type=text name=eng value="'.$e[eng].'" size="40"></td>
-	</tr><tr title="Japanese Title"">
+	</tr>
+	<tr title="Japanese Title"">
 		<td>jap </td><td><input type=text name=jap value="'.$e[jap].'" size="40"></td>
-	</tr><tr title="Japanese Kanji">
+	</tr>
+	<tr title="Japanese Kanji">
 		<td>kanji </td><td><input type=text name=kanji value="'.$e[kanji].'" size="40"></td>
-	</tr><tr title="Video URL">
-		<td>video</td><td><input type=text name=video value="'.$e[video].'" size="40"></td>
-	</tr><tr title="Video Type">
-		<td>videoType</td><td>
-		<select name=videoType>
-			<option value="youtube" '.$sel[videoType][youtube].'>youtube</option>
-			<option value="stageVu" '.$sel[videoType][stageVu].'>stageVu</option>
-			<option value="megaVideo" '.$sel[videoType][megaVideo].'>megaVideo</option>
-		</select></td>
-	</tr><tr>
+	</tr>
+	<tr>
 		<td colspan=2 align=center>
 			<input type=submit name="add" value="Add" '.$dis[add].'>
 			<input type=submit name="update" value="Update" '.$dis[edit].'>
@@ -155,32 +150,16 @@ $addEdit = '<table><tr valign=top><td>
 	</tr>
 	</table>
 </td><td>
-	<fieldset><legend>Test Video</legend>';
+';
 
-switch($e[videoType])
-{
-	case 'megaVideo':
-		$addEdit .= embedMegaVideo($e[video], 200, 200);
-		break;
-	case 'stageVu':
-		$addEdit .= embedStageVu($e[video], 200, 240);
-		break;
-	case'youtube':
-	default:
-		$addEdit .= embedYoutube($e[video], 220, 200);
-		break;
-}
-
-
-	
-$addEdit .= '</fieldset></td>
+$addEdit .= '</td>
 </tr><tr>
 	<td></td>
 </tr>
 </table>';
 
 $tHead = '<tr><th>epID</th><th>Eng / Jap</th>
-<th class="moduleHead">Kanji</th><th class="moduleHead">Video</th>
+<th class="moduleHead">Kanji</th>
 <th class="moduleHead">Synopsis</th><th class="moduleHead">Summary</th></tr>';
 
 
@@ -211,7 +190,7 @@ foreach($ep as $id => $arr)
 	<td><a href="?epID='.$id.'" title="Click to edit">'.$arr[eng].'</a><br>
 	<a href="?epID='.$id.'" title="Click to edit">'.$arr[jap].'</a></td>
 	<td>'.$arr[kanji].'</td>
-	<td><a href="'.$dir.'episodes/video/'.$id.'.php" target=_blank>'.$disp[video].'</a></td>
+
 	<td><a href="synopsis.php?epID='.$id.'" title="Synopsis">'.$disp[synopsis].'</a></td>
 	<td><a href="summary.php?epID='.$id.'" title="Summary">'.$disp[summary].'</a></td>
 	</tr>';

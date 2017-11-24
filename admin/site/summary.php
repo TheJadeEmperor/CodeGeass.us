@@ -1,6 +1,6 @@
 <?php
-$dir = '../../';
-include($dir.'admin/adminCode.php');
+$adir = '../';
+include($adir.'adminCode.php');
 
 function getEp($epID)
 {
@@ -26,28 +26,9 @@ if($_POST[edit])
 }
 
 
-
-
-
 $thisEp = getEp( $_GET[epID] );
 
 $thisEp[summary] = stripslashes($thisEp[summary]);
-
-
-
-
-$selM = 'select * from codegeas_smf.smf_members order by realName';
-$resM = mysql_query($selM, $conn) or die(mysql_error());
-
-while($rowM = mysql_fetch_assoc($resM))
-{
-	$authorOpt .= '<option value="'.$rowM[ID_MEMBER].'">'.$rowM[realName].' - '.
-	$rowM[ID_MEMBER].'</option>';
-}
-
-$authorSel = '<select>'.$authorOpt.'</select>';
-
-
 
 
 if($_POST[preview])
@@ -58,7 +39,6 @@ if($_POST[preview])
 else
 {
 	$view = '<textarea name="summary" cols=100 rows=25>'.$thisEp[summary].'</textarea>';
-	$author = 'Author: <input name=sAuthor value="'.$thisEp[sAuthor].'">'.$authorSel.'<br>';
 }
 
 
@@ -81,10 +61,9 @@ $theLinks = '<input type=submit name=edit value="Submit Changes" '.$editDis.'>
 <a href="'.$dir.'episodes/ep_'.$_GET[epID].'/summary.php" target=_blank>Direct Link</a>';
 
 
-echo '<form method=POST>Episode '.$_GET[epID].': '.$thisEp[eng].' 
-'.$theLinks.'
-<br><br>'.$view.'<br>'.$author.'<br> '.$theLinks.'
+echo '<form method=POST>
+<h3>Episode '.$_GET[epID].': '.$thisEp[eng].'</h3>  
+<p>'.$theLinks.'</p>
+<p>'.$view.'</p>'.$theLinks.'
 </form>';
-
-
 ?>

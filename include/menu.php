@@ -381,7 +381,8 @@ flush();
 <div id="container">
 <?=mainMenu($menu)?>
 
-<p>&nbsp;</p><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 <table border="0" width="100%">
     <tr valign="top">
