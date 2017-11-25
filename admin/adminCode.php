@@ -135,7 +135,9 @@ $menuAff = array(
 	'Owned Fanlists' => array(
 		'link' => $adir.'fanlist/',
 		'title' => 'Owned Fanlistss'),
-
+	'Sitemap' => array(
+		'link' => $adir.'sitemap/',
+		'title' => 'Sitemap'),
 )
 );
 
