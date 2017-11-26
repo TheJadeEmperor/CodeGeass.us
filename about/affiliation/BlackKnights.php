@@ -1,6 +1,5 @@
 <?php
 include('affiliationCode.php');
-$fanlistName = 'black_knights';
 
 echo '<div class="moduleBlack" title="Black Knights"><h2>The Black Knights in the Opening Theme Song</h2>
 <center><img src="img/blackKnights.jpg" alt="The Black Knights"></center></div><br><br>';
@@ -47,7 +46,7 @@ echo '<table>
 
 $bk = '<table><tr valign=top>
 <td>
-	<table>
+	<table cellpadding="5">
 	<tr>
 		<td>Leader</td><td>Zero</td>
 	</tr><tr>
@@ -56,7 +55,7 @@ $bk = '<table><tr valign=top>
 		<td>Commander</td><td>Ohgi</td>
 	</tr>
 	</table>
-</td><td width="10px"></td><td>
+</td><td width="30px"></td><td>
 	<table>
 	<tr>
 		<td>Commmander</td><td>Tohdoh</td>
@@ -71,24 +70,20 @@ $bk = '<table><tr valign=top>
 </table>';
 
 
-echo '<table><tr valign=top><td>'.showStats('black_knights', 1).'</td>
-<td>'.div( top().$bk ).'</td></tr></table>';
+echo '<table>
+<tr valign=top>
+<td>'.div( top().$bk ).'</td>
+</tr>
+</table>';
 
 $black = array(
 'charsIn' => array('Lelouch', 'Kallen', 'Tamaki', 'Ohgi', 'Inoue',
 	'CC', 'Tohdoh', 'Nagisa', 'Senba', 'Asahina', 'Urabe', 'Kirihara',
 	'Diethard', 'Sayoko', 'Kaguya', 'Rakshata', 'Ayame', 'Hinata', 'Minase'),
-'name' => 'the Black Knights', 
+'name' => 'The Black Knights', 
 );
 
 echo charList($black);
 
-echo joinForm($fanlistName);
-
-echo lostpass($fanlistName);
-
-echo updateForm($fanlistName);
-
-echo membersList($fanlistName);
 
 include($dir.'include/bottom.php'); ?>

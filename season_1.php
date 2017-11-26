@@ -7,7 +7,7 @@ echo '<table><tr><td>
 In the first season, the episodes are called stages. Note that we did not put Stages 8.5 and 17.5, as they are flashback episodes.').'
 </td></tr></table>';
 
-echo theList($tvEpisodes[1], 1).'<br><br>';
+echo theList($tvEpisodes[1], 1, '').'<br><br>';
 
 
 $string = '<h2>Summary of <b>Code Geass</b> R1</h2>

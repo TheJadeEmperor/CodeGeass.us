@@ -264,10 +264,6 @@ function showSpoiler($text) { //show a spoiler about the character
 //name of character, from URL
 $charName = $name = charName();
 
-//database fanlist name
-$fanlistName = strtolower($charName);
-
-
 
 //get info of all chars
 $selC = 'SELECT * from chars ORDER BY charName asc';

@@ -1,5 +1,4 @@
 <?php
-$fanlistName = 'area11';
 include('affiliationCode.php');
 
 
@@ -11,8 +10,6 @@ $text = "Japan is the source of over 70% of the world's supply of the high energ
 echo '<table>
 <tr valign=top>
 <td>
-	'.showStats($fanlistName, 1).'
-</td><td>
 	'.div( processText($text) ).'<br>'.forumAd($links).'
 </td>
 </tr>
@@ -36,12 +33,5 @@ $area11 = array(
 
 echo charList($area11);
 
-echo joinForm($fanlistName);
-
-echo lostpass($fanlistName);
-
-echo updateForm($fanlistName);
-
-echo membersList($fanlistName);
 
 include($dir.'include/bottom.php'); ?>

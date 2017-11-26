@@ -1,5 +1,4 @@
 <?php
-$fanlistName = 'geass_order';
 include('affiliationCode.php');
  
 
@@ -25,12 +24,5 @@ $geass = array(
 
 echo charList($geass);
 
-echo joinForm($fanlistName);
-
-echo lostpass($fanlistName);
-
-echo updateForm($fanlistName);
-
-echo membersList($fanlistName);
 
 include($dir.'include/bottom.php'); ?>

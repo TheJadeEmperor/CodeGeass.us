@@ -1,5 +1,5 @@
 <?php
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');

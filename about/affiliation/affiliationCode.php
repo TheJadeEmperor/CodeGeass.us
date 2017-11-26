@@ -299,8 +299,7 @@ $section = array(
 	),
 	'display' => 'Black Knights / Kuro no Kishidan',
 	'link' => 'BlackKnights.php',
-	'leftBox' => '<h1>Black Knights / Kuro no Kishidan</h1><h2>Code Geass Groups</h2>
-		Fanlisting installed by Admin<br>Owned and managed by Zero'
+	'leftBox' => '<h1>Black Knights / Kuro no Kishidan</h1><h2>Code Geass Groups</h2>'
 ),
 'Area11' => array(
 	'meta' => array(
@@ -310,8 +309,7 @@ $section = array(
 	),
 	'display' => 'Area 11 / Japan',
 	'link' => 'Area11.php',
-	'leftBox' => '<h1>Area 11 / Japan</h1><h2>Code Geass Locations</h2>
-		Fanlisting installed by Admin'
+	'leftBox' => '<h1>Area 11 / Japan</h1><h2>Code Geass Locations</h2>'
 ),
 'GeassOrder' => array(
 	'meta' => array(
@@ -321,8 +319,7 @@ $section = array(
 	),
 	'display' => 'Geass Order / Geass Directorate',
 	'link' => 'GeassOrder.php',
-	'leftBox' => '<h1>Geass Order / Geass Directorate</h1><h2>Code Geass Groups</h2>
-		Fanlisting installed by Admin'
+	'leftBox' => '<h1>Geass Order / Geass Directorate</h1><h2>Code Geass Groups</h2>'
 ),
 );
 
