@@ -4,11 +4,10 @@ include('code.php');
 <table width="100%" border="0">
 <tr valign="top">
     <td>
-        
-        <div class="moduleBlack"><h1>Bokoku no Akito Episode 4 - Trailer Released <?=top()?></h1>
+        <div class="moduleBlack"><h1>Code Geass Season 3 is here at last! <?=top()?></h1>
         <div>
             <center>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/KOevI2TL8z4" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tZw6KXt2Z5g" frameborder="0" allowfullscreen></iframe>
             </center>
         </div>
         </div>
@@ -20,7 +19,7 @@ include('code.php');
 </tr>
 </table>
 
-<?
+<?php
 $whatIsR1 = '
 <p>In the year 2010 a.t.b. The Holy Empire of Britannia completed its takeover of Japan, 
 using its superior technology of the Knightmare Frames, a humanoid type of mecha. Britannia 
@@ -60,7 +59,7 @@ $whatIsR1 = processText($whatIsR1);
             <p>&nbsp;</p>
         </div>
         </div>
-<?
+<?php
 $whatIsR2 = "<p>One year after his failed attack at the Decisive Battle of Tokyo, Lelouch has 
 been brainwashed through the power of his father's Geass into forgetting about his actions as the 
 freedom fighter Zero and his sister Nunnally. He now believes that a young boy named Rolo is his 
@@ -96,11 +95,9 @@ $whatIsR2 = processText($whatIsR2);
     </div>
     </div>
 
-    
 <p>&nbsp;</p>
 
-
-<?
+<?php
 $optinBox = '
 <div class="moduleBlack optin"><h1 id="joinForm">Anime Chat Group</h1>
 <div>
@@ -140,14 +137,13 @@ $optinBox = '
     <tr valign="top">
         <td align="center">
             <?=$optinBox?>
-            
         </td>
         <td><a href="<?=$links[clixsenseReferral][link]?>" title="Make Money with Clixsense" 
         rel="nofollow" target="_blank"><img src="<?=$dir?>images/ad/clixsenseVertical.gif" alt="Clixsense" title="Make Money with Clixsense" /></td>
     </tr>
 </table>
 
-<?
+<?php
 $birthdayCard = '<a href="about/fanart" title="The Emperor\'s Birthday">
 	<h2>Best Fanart Ever</h2></a>
 	'.popUpImg('img/index/emp1.jpg', 'img/index/emp2.jpg', 'The Emperor\'s Birthday').'
