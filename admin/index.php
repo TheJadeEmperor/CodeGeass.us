@@ -6,7 +6,7 @@ if($_POST[login])
 	if($_POST[username] == 'TheEmperor' && md5($_POST[password]) == md5('Military1!'))
 	{
 		$_SESSION[login][username] = 'TheEmperor';
-		header('Location: main.php');
+		header('Location: site/episodes.php');
 	}//if
 	else 
 	{

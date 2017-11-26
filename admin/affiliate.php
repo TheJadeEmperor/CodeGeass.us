@@ -1,5 +1,5 @@
 <?php
-$imgDir = '../allies/sites/';
+$imgDir = '../allies/banners/';
 include('adminCode.php');
 
 function imgFile($url)
@@ -152,7 +152,7 @@ while($rowL = mysql_fetch_assoc($result))
 	}
 
 	$alliesList .= '<tr valign=top><td><a href="affiliate.php?id='.$rowL[id].'">'.$rowL[id].'</a></td>
-		<td><img src = "'.$imgDir.$rowL[category].'/'.$rowL[img].'"></td>
+		<td><img src = "'.$imgDir.'/'.$rowL[img].'"></td>
 		<td><a href="'.$rowL[url].'" title="'.$rowL[url].'" target=_blank>'.$rowL[url].'</a></td>
 		<td>'.$rowL[category].'</td></tr>';
 }

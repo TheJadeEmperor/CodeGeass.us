@@ -10,8 +10,7 @@ function insertRec($cond)
 	$dbFields = $cond[fields];
 	$values = array();
 	
-	foreach($dbFields as $field)
-	{
+	foreach($dbFields as $field) {
 		array_push($values, '"'.addslashes($_POST[$field]).'"');
 	}
 	
@@ -129,9 +128,15 @@ $menuAff = array(
 	'Database List' => array(
 		'link' => $adir.'databaseList.php',
 		'title' => 'Database List' ),
+	'MySQL' => array(
+		'link' => $adir.'mysql.php',
+		'title' => 'Database List' ),
 	'Links & Images' => array(
 		'link' => $adir.'links.php',
 		'title' => 'Global Links' ),
+	'Quick Links' => array(
+		'link' => $adir.'quickLinks.php/',
+		'title' => 'Quick Links'),
 	'Owned Fanlists' => array(
 		'link' => $adir.'fanlist/',
 		'title' => 'Owned Fanlistss'),
@@ -142,10 +147,6 @@ $menuAff = array(
 );
 
 
-
-$fanlistButtons = '<a href="owned.php"><input type=button value=" Owned Fanlists "></a>
-<a href="templates.php"><input type=button value=" Edit Templates "></a>
-<a href="members.php"><input type=button value=" All Members "></a>';
 
 echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">

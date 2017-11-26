@@ -1,12 +1,11 @@
 <?
-$dir = '../';
+$adir = '';
 include('adminCode.php');
 
 list($season, $feature) = explode('_', $_POST[category]);
 
 
-for($e = 1; $e <= 25; $e++)
-{
+for($e = 1; $e <= 25; $e++) {
 	$theLink = 'http://codegeass.us/episodes/'.$feature.'/'.$season.'_'.$e.'.php';
 	$list .= 'Episode '.$e.': <br><a href="'.$theLink.'">'.$theLink.'</a><br><br>';
 }
