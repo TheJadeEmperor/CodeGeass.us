@@ -171,8 +171,6 @@ function feature($url)
 $id = epID($_SERVER[PHP_SELF]);
 /////////////////////////////////////
 
-//db table of fanlist
-$fanlistName = 'ep_'.str_replace('.', '_', $id);
 
 $feature = feature($_SERVER[PHP_SELF]);
 
@@ -209,7 +207,8 @@ $featureType = array(
 	'link' => $epath.'main/'.$eFile,
 	'title' => 'Code Geass '.$episode,' Main',
 	'display' => 'Episode '.$episode.' Main',
-	'leftBox' => $info[synopsis]	
+	'leftBox' => 'Gallery widget: Use the page numbers to navigate the gallery. Click on an image
+		to open it in full size in a separate window.'	
 ),
 	
 'ss' => array(
@@ -217,37 +216,31 @@ $featureType = array(
 		'tags' => 'code geass '.$episode.', code geass screenshots, '.$info[eng],
 		'title' => 'Code Geass '.$episode.' - Screenshots Gallery - '.$info[eng], 
 		'desc' => $info[eng].' - '.$info[jap]),
-	'link' => $epath.'ss/'.$eFile,
+	'link' => $epath.'main/'.$eFile.'#gallery',
 	'title' => 'Code Geass '.$episode.' Gallery',
 	'display' => 'Screenshots Gallery',
-	'leftBox' => 'Gallery page: Use the page numbers to navigate the gallery. Click on an image
-		to open it in full size in a separate window.'	
 ),
 
-'fanlist' => array(
+'synopsis' => array(
 	'meta' => array(
-		'tags' => 'code geass '.$episode.', code geass fanlist',
-		'title' => 'Code Geass '.$episode.' - Fanlist - Join | Members | Update',
-		'desc' => 'Code Geass '.$episode.' - '.$info[eng].'
-			- Fanlist - Join | Members | Update'),
-	'link' => $epath.'fanlist/'.$eFile,
-	'title' => 'Episode '.$episode.' Fanlist',
-	'display' => 'Fanlist',
-	'leftBox' => 'Fanlist Page: <a href="#join">Join</a> | <a href="#update">Update</a> 
-	| <a href="#lostpass">Lost Password</a> | <a href="#mList">Members</a>'	),
-	
-'join' => array(
-	'link' => $epath.'fanlist/'.$eFile.'#join',
-	'title' => 'Episode '.$episode.' Fanlist',
-	'display' => ':: Join Fanlist'	),
-'Members List' => array(
-	'link' => $epath.'fanlist/'.$eFile.'#mList',
-	'title' => 'Episode '.$episode.' Fanlist',
-	'display' => ' :: Members List'	),
-'TAFL' => array(
-	'link' => 'http://www.animefanlistings.org/',
-	'title' => 'The Anime Fanlistings',
-	'display' => ' :: TAFL')
+		'tags' => 'code geass '.$episode.', code geass synopsis',
+		'title' => 'Code Geass '.$episode.' - Synopsis'.$info[eng],
+		'desc' => $info[eng].' - '.$info[jap]),
+	'link' => $epath.'main/'.$eFile.'#synopsis',
+	'title' => 'Episode '.$episode.' Synopsis',
+	'display' => 'Synopsis',
+),
+
+'summary' => array(
+	'meta' => array(
+		'tags' => 'code geass '.$episode.', code geass summary',
+		'title' => 'Code Geass '.$episode.' - Synopsis'.$info[eng],
+		'desc' => $info[eng].' - '.$info[jap]),
+	'link' => $epath.'main/'.$eFile.'#summary',
+	'title' => 'Episode '.$episode.' Summary',
+	'display' => 'Summary',
+)
+
 );
 
 
@@ -285,8 +278,6 @@ foreach($tvEpisodes[$season] as $num => $ep)//show all the episodes
 		'link' => 'episodes/main/'.$ep[epID].'.php');
 }//foreach
 
-
-$fanPath = 'episodes/fanlist/';
 
 
 $section[$key][meta] = $featureType[$feature][meta];      
