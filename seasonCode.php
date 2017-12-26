@@ -1,5 +1,5 @@
 <?php
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -51,7 +51,7 @@ function theList($theArray, $season, $extra) {
         rel="nofollow" target="_blank"><img src="'.$dir.'images/ad/clixsenseVertical.gif" alt="Clixsense" title="Make Money with Clixsense" />
         </td>
     </tr>
-</table>';
+	</table>';
 	
     return $theList;
 }//function 
@@ -125,53 +125,6 @@ $rightBox = showRightBox($section);
 
 //get the season #
 list($crap, $season) = explode('_', $key);
-
-
-//Season #
-$linkTree = array(
-    'seasons' => array(
-        'dis' => array(
-            'display' => $section[$key][display]),
-    )
-);
-
-
-/*foreach($section as $id => $value) {
-    $linkTree[seasons][$id]['display'] = ':: '.$value['display'];
-    $linkTree[seasons][$id]['link'] = $value['link'];
-}	
-*/	
-
-if(is_array($tvEpisodes[$season])) {
-    $linkTree[ep] = array(	
-        'dis' => array(
-        'display' => 'List of Episodes'));
-	
-	foreach($tvEpisodes[$season] as $k => $info)//show all the episodes 
-	{
-		$linkTree[ep][$k] = array(
-			'display' => ':: '.$k.' - '.shortenText($info[eng], 30),
-			'link' => $dir.'episodes/main/'.$season.'_'.$k.'.php'); 
-	}//foreach
-}
-
-if($key == 'index')
-{
-	$linkTree[branchB][mode] = 'N2';
-	
-	$linkTree[S] = array(
-		'mode' => 'S',
-		'spaces' => 18);
-}
-else
-{
- 	$linkTree[S] = array(
-	'mode' => 'S',
-	'spaces' => 9);
-}
-
-
-//$linkTree[N][mode] = 'N';
 
 
 include($dir.'include/menu.php');

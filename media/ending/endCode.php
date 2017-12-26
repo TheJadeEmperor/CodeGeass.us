@@ -1,5 +1,5 @@
 <?
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -310,21 +310,6 @@ So that I won\'t forget that day when I followed your footprints</p>',
 );
 
 
-
-
-/////////////////////////////////////////////////
-$linkTree[end][dis][display] = songName($key);
-/////////////////////////////////////////////////
-
-foreach($section as $map => $value)
-{
-	$linkTree[end][$map] =  array(
-		'display' => ':: ' . songName($map),
-		'link' => $value[link]
-	);
-}
-
-$linkTree[N] = array('mode' => 'N');
 
 include($dir.'include/menu.php');
 

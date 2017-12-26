@@ -250,35 +250,6 @@ $leftBox = '<h1>Code Geass '.$episode.' - Season '.$season.' Episode</h1>
 $rightBox = showRightBox($featureType);
 
 
-//Season #
-$linkTree[season] = array(
-'treeDisplay' => array(
-	'display' => 'Season '.$season),
-'s1' => array(
-	'display' => ':: Season 1',
-	'link' => 'season_1.php'),
-'s2' => array(
-	'display' => ':: Season 2',
-	'link' => 'season_2.php'),
-'s3' => array(
-	'display' => ':: Season 3',
-	'link' => 'season_3.php'),
-'vid' => array(
-	'display' => ':: Watch Videos',
-	'link' => 'episodes')
-);//$linkTree
-
-
-
-if(is_array($tvEpisodes))
-foreach($tvEpisodes[$season] as $num => $ep)//show all the episodes
-{
-	$linkTree[ep][$num] = array(
-		'display' => ':: '.$num.' - '.$ep[eng],
-		'link' => 'episodes/main/'.$ep[epID].'.php');
-}//foreach
-
-
 
 $section[$key][meta] = $featureType[$feature][meta];      
 ?>

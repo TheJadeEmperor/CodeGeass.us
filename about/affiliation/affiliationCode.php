@@ -1,6 +1,6 @@
 <?php
 $dir = '../../';
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -38,40 +38,17 @@ function charList($org)
 }//charList
 
 
-$linkTree = array(
-'root' => array(
-	'mode' => 'L',
-	'org' => array(		
-		'link' => './',
-		'display' => 'Groups'),
-),
-'group' => array(
-	'dis' => array(
-		'display' => 'Groups'),
-),
-
-);
 
 
 $orgContent = array(
 'Area11' => array(
 	'name' => 'Area 11 / Japan',
-	'profile' => "Japan is the source of over 70% of the world's supply of the high energy mineral sakuradite. 
-		Britannia conquered it to gain control over that mineral. Japan was renamed Area 11 under Britannian 
-		rule. Through his alter-ego, Zero, Lelouch attempts to restore Japan's independence as the \"United 
-		States of Japan\", as a step in his quest to overthrow Britannia.",
+	'profile' => "Japan is the source of over 70% of the world's supply of the high energy mineral sakuradite. Britannia conquered it to gain control over that mineral. Japan was renamed Area 11 under Britannian rule. Through his alter-ego, Zero, Lelouch attempts to restore Japan's independence as the \"United States of Japan\", as a step in his quest to overthrow Britannia.",
 	
-	'charsIn' => array('Kallen', 'CC', 'Shirley', 'Milly', 'Rivalz', 'Rolo', 'Villetta',
-	'Sayoko', 'Clovis', 'Lelouch', 'Suzaku', 'Nina', 'Kaguya', 'Kirihara', 'Kusakabe', 'Tohdoh',
-	'Nagisa', 'Senba', 'Asahina', 'Urabe', 'Tamaki', 'Kouzuki')
 ),//Area11
 'AshfordAcademy' => array(
 	'name' => 'Ashford Academy',
-	'profile' => "<p>Ashford Academy is a Britannian private academy in Tokyo, owned and operated by the Ashford 
-		Foundation, a philanthropic organization involved predominantly in the supply of educational services, 
-		founded by the formerly noble Ashford House. It is attended by Lelouch and Nunnally, who, owing to 
-		their mother's past relationship with the Ashfords, have been granted free residence within the 
-		campus's Student Government Clubhouse.</p>",
+	'profile' => "<p>Ashford Academy is a Britannian private academy in Tokyo, owned and operated by the Ashford Foundation, a philanthropic organization involved predominantly in the supply of educational services, founded by the formerly noble Ashford House. It is attended by Lelouch and Nunnally, who, owing to their mother's past relationship with the Ashfords, have been granted free residence within the campus's Student Government Clubhouse.</p>",
 
 	'charsIn' => array('Lelouch', 'Kallen', 'CC', 'Milly', 'Shirley', 'Rivalz', 'Suzaku', 'Arthur', 
 	'Villetta', 'Nina', 'Sayoko', 'Gino', 'Anya', 'Nunnally', 'Meeya'),
@@ -126,6 +103,7 @@ $orgContent = array(
 		their mother's past relationship with the Ashfords, have been granted free residence within the 
 		campus's Student Government Clubhouse.</p>"
 	),
+	
 'ChineseUnion' => array(
 	'name' => 'Chinese Union / CU',
 	'profile' => "<p>The Chinese Federation is an imperial monarchy that spans the Asian and Pacific regions, 
@@ -266,9 +244,6 @@ foreach($orgContent as $url => $org)
 	if($c % 3 == 0)
 		$leftBox .= '</tr><tr>';
 	 
-	$linkTree[group][$url] = array(
-		'display' => ' :: '.$org[name],
-		'link' => 'about/affiliation#'.$url);
 
 	$c++;
 }
@@ -323,21 +298,6 @@ $section = array(
 ),
 );
 
-foreach($section as $k => $v)
-{
-	if($k != 'index')
-	$linkTree[group][$k] = array(
-		'display' => ' :: '.$v[display],
-		'link' => $k.'.php');
-}
-
-$linkTree[S] = array(
-	'mode' => 'S',
-	'spaces' => 19);
-
-$linkTree[N] = array(
-	'mode' => 'N');	
-
 
 $rightBox = showRightBox($section);
 
@@ -346,4 +306,5 @@ include($dir.'include/menu.php');
 
 echo displayTitle($section[$key][leftBox], $rightBox);
 	
-echo $content;      ?>
+echo $content;      
+?>

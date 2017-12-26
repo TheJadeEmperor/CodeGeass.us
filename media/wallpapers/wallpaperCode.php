@@ -1,5 +1,5 @@
 <?php
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -21,7 +21,7 @@ $section = array(
 	'link' => $wdir,
 	'leftBox' => 'Feel free to browse our ever growing wallpaper collection. We will update this 
 	section frequently to ensure you receive the highest quality images, so check back often. If you\'d
-	like to leave a comment drop by the chatroom or visit the forum.'
+	like to leave a comment, drop by our facebook group.'
 ),
 '2009_calendar' => array(
 	'meta' => array(
@@ -101,35 +101,6 @@ $leftBox = '<h1>Code Geass Wallpapers Section</h1><h2>Browse our wallpapers</h2>
 $rightBox = showRightBox($section);
 
 
-$linkTree = array(
-'root' => array(
-	'mode' => 'L',
-	'media' => array(
-		'display' => 'Code Geass Media',
-		'link' => $dir.'media')
-),//root
-'wallpaper' => array(
-	'dis' => array(
-		'display' => $section[$key][display]),
-)
-);
-
-
-foreach($section as $map => $val)
-{
-	$linkTree[wallpaper][$map] = array(
-		'display' => ':: '.$val[display].' ::',
-		'link' => $wdir.''.$val[link]
-	);
-}
-
-$linkTree[S] = array(
-	'mode' => 'S',
-	'spaces' => 16);
-
-$linkTree[N] = array(
-	'mode' => 'N');
-
 
 include($dir.'include/menu.php');
 
@@ -144,4 +115,5 @@ gallery($dir.'media/wallpapers/'.$key);
 $pageContent .= '<br><br>'.div('Note: We do not claim ownership of any of these wallpapers. They are found
 from all over the web, and we are merely putting them up for display.').forumAd($links);
 
-$pageContent .= chatRoom('620', '400').'<br><br>'.randomStuff();   ?>
+$pageContent .= randomStuff();   
+?>

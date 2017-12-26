@@ -337,7 +337,7 @@ $context['meta'] = $meta = $section[$key]['meta'];
 <link href = "<?=$dir?>include/css/menu.css" rel="stylesheet" type="text/css">
 <link href = "<?=$dir?>include/main.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" type="image/png" href="<?=$dir?>images/menu/geassSearch.gif">
-<!-- Different style sheets for different sections (Code Abridged) -->
+<!-- Different style sheets for different sections -->
 <?=$style?>
 <script type="text/javascript" src="<?=$dir?>include/js/popup.js"></script>
 <script type="text/javascript" src="<?=$dir?>include/js/jquery.js"></script>

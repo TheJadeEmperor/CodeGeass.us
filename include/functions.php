@@ -47,35 +47,6 @@ function postMetaTags($url)
 	return $meta; 	
 }
 
-function sendWelcomeEmail($id, $conn)
-{
-	global $context;
-	
-	$selP = 'select * from products where id="'.$id.'"';
-	$resP = mysql_query($selP, $conn) or die(mysql_error());
-	
-	$p = mysql_fetch_assoc($resP);
-	$itemName = $p[itemName];
-	$itemNumber = $p[itemNumber];
-	$salesPercent = $p[salesPercent];
-	
-	$selE = 'select * from emails where name="welcome"';
-	$resE = mysql_query($selE, $conn) or die(mysql_error());
-	
-	$e = mysql_fetch_assoc($resE);
-	
-	$var = array('$itemName', '$itemNumber', '$salesPercent', '$firstName', '$lastName', '$nickname', '$password', '$paypal', '$email');
-	$val = array($itemName, $itemNumber, $salesPercent, $_POST[fname], $_POST[fname], $_POST[username], $_POST[password], $_POST[paypal], $_POST[email] );
-	
-	$message = str_replace($var, $val, $e[message]);
-	$subject = str_replace($var, $val, $e[subject]);
-
-	$headers = "From: ".$context[adminEmail]."\n";
-	$headers .= "Content-type: text/html;";		
-	
-	mail($adminEmail, $subject, $email, $headers);
-	return mail($_POST[email], $subject, $message, $headers);
-}
 
 
 function sendDownloadEmail($id, $conn)

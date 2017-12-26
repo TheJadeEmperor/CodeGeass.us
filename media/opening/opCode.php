@@ -1,5 +1,5 @@
 <?
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -69,19 +69,6 @@ foreach($op as $map)
 $leftBox = '<h1>Code Geass - Music Section</h1><h2>Opening theme songs for both seasons</h2>'.$section[$key][leftBox];
 $rightBox = showRightBox($section);
 
-
-
-$linkTree[op][dis][display] = songName($key);
-foreach($section as $map => $value)
-{
-	$linkTree[op][$map] = array(
-		'display' => ':: '. $value[display],
-		'link' => $value[link]
-	);
-}
-
-$linkTree[N] = array(
-'mode' => 'N');
 
 
 //lyrics

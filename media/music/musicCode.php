@@ -1,5 +1,5 @@
 <?php
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -70,42 +70,6 @@ $section = array(
 $leftBox = '<h3>Code Geass Music & Media</h3>'.$section[$key][leftBox]; 
 $rightBox = showRightBox($section);
 
-
-$linkTree = array(
-'media' => array(
-	'mode' => 'L',
-		'media' => array(
-	'display' => 'Media',
-	'link' => $dir.'media')
-),
-'music' => array(
-	'tree' => array(
-		'display' => $section[$key][display]),
-	'album' => array(
-		'display' => ':: Album Covers',
-		'link' => 'media/music/album.php'),
-	'end' => array(
-		'display' => ':: Ending Themes',
-		'link' => 'media/ending'),
-	'op' => array(
-		'display' => ':: Opening Themes',
-		'link' => 'media/opening'),
-	'ost' => array(
-		'display' => ':: Code Geass OST',
-		'link' => 'media/music/ost.php'),
-	'sound' => array(
-		'display' => ':: Sound Episodes',
-		'link' => 'media/music/sound.php')
-),
-'S' => array(
-	'mode' => 'S',
-	'spaces' => 10),
-'branchB' => array(
-	'mode' => 'N2'),
-'branchA' => array(
-	'mode' => 'N'),
-
-);
 
 include($dir.'include/menu.php');
 

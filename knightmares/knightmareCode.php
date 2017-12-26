@@ -1,7 +1,6 @@
 <?php
-if(!function_exists('showMenu'))
-{
-    //include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+if(!function_exists('showMenu')) {
+    //include all necessary functions such as displayTitle() and FileName() 
     ///////////////////////////////////////
     include($dir.'include/functions.php');
     include($dir.'include/mysql.php');
@@ -94,7 +93,7 @@ $kpath = 'knightmares/';
 $mpath = 'knightmares/models/';
 
 
-//menu options for linkTree()
+// knightMenu()
 $knightMenu = array(
 'root' => array(
 	'mode' => 'L',
@@ -487,10 +486,8 @@ $knightModels = array(
 );//$knightModels
 
 
-foreach($knightModels as $gen => $genArray)
-{
-	foreach($genArray as $model => $modArray)
-	{
+foreach($knightModels as $gen => $genArray) {
+	foreach($genArray as $model => $modArray) {
 		//set the image & link for each model
 		$knightModels[$gen][$model][img] = $mpath.$model.'/small/(1).png';
 		$knightModels[$gen][$model][link] = $mpath.$model.'.php';
@@ -514,7 +511,6 @@ while($g = mysql_fetch_assoc($resG))
 		'link' => '#'.$g[id]
 	);
 }
-
 
 
 ?>

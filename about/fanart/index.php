@@ -17,16 +17,6 @@ $section = array(
 ),
 );
 
-$linkTree = array(
-'fanart' => array(
-	'mode' => 'L',
-	'fanart' => array(
-		'display' => 'Code Geass Fanart',
-		'link' => $dir.'about/fanart')
-),
-'N' => array(
-	'mode' => 'N')
-);
 
 $leftBox = $section[$key][leftBox];
 $rightBox = showRightBox($section);

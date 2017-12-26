@@ -27,17 +27,6 @@ $leftBox = '<h1>Code Geass Knightmare Frames</h1>'.$section[$key][leftBox];
 $rightBox = showRightBox($kMenu);  
 ////////////////////////////////////////
 
-$linkTree[root] = $knightMenu['root'];
-
-$linkTree[gen] = $knightMenu['gen'];
-
-$linkTree[S] = array(
-	'mode' => 'S',
-	'spaces' => 1);
-
-$linkTree[branchB][mode] = 'N2';
-$linkTree[branchA][mode] = 'N';
-
 
 if($knightmare[$genType] != '')	
 	$content = '<table><tr valign="top"><td>'.div( processText($knightmare[$genType]) ).'</td></tr></table>';

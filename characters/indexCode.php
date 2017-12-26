@@ -9,7 +9,7 @@ foreach($white as $space) {
 }
 
 
-//character image and profile, and fanlist stats
+//character image and profile
 echo charProfile($bio[charName], ' ');
 
 

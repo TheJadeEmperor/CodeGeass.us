@@ -2,12 +2,16 @@
 $dir = './';
 include('seasonCode.php');
 
-echo '<table><tr><td>
-'.div( '<h2>Code Geass TV Episodes</h2>Check out the original 25 episodes that started it all.
-In the first season, the episodes are called stages. Note that we did not put Stages 8.5 and 17.5, as they are flashback episodes.').'
-</td></tr></table>';
+$tvEpisodesText = '<h2>Code Geass TV Episodes</h2>Check out the original 25 episodes that started it all.
+In the first season, the episodes are called stages. Note that we did not put Stages 8.5 and 17.5, as they are flashback episodes.';
 
-echo theList($tvEpisodes[1], 1, '').'<br><br>';
+echo '<table>
+<tr>
+<td>'.div( $tvEpisodesText ).'</td>
+</tr>
+</table>';
+
+echo theList($tvEpisodes['1'], 1, '').'<br /><br />';
 
 
 $string = '<h2>Summary of <b>Code Geass</b> R1</h2>
@@ -35,7 +39,7 @@ Britannia, both to get revenge on the Emperor who he hates, and to create a peac
 his sister Nunally can be happy.</p>
 (Developed by Sunrise and Bandai Entertainment)';
 
-echo '<p>&nbsp;</p>'.div( processText($string).'<br>Summary written by '.staff(108, 'L') );
+echo '<p>&nbsp;</p>'.div( processText($string).'<br>Summary written by Staff' );
 
 echo '<p>&nbsp;</p>';
 
@@ -51,12 +55,13 @@ below are added to give you an idea of what the episode is about. </p>
 </div>
 </div>';
 
-echo theList($pictureDrama[1], 1, $extra).'<br /><br />';
+echo theList($pictureDrama['1'], 1, $extra).'<br /><br />';
 
 //episode summaries
-foreach($tvEpisodes[1] as $e) {
-    echo div('<h4><a href="episodes/main/'.$e[epID].'.php">Code Geass '.$e[episode].'</a></h4>
-    '.processText($e[synopsis])).'<br>';
+foreach($tvEpisodes['1'] as $e) {
+    echo div('<h4><a href="episodes/main/'.$e['epID'].'.php">Code Geass '.$e['episode'].'</a></h4>
+    '.processText($e['synopsis'])).'<br>';
 }
 
-include($dir.'include/bottom.php'); ?>
+include($dir.'include/bottom.php'); 
+?>

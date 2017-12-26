@@ -1,5 +1,5 @@
 <?php
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -71,9 +71,6 @@ $rightBox = '<p>Also check out:</p><ul>
 	<li><a href="'.$dir.'about/affiliation/" title="Code Geass Groups">Groups & Organizations</a></li>
 	<li><a href="'.$dir.'sitemap.php" title="Sitemap">Sitemap</a></li>
 	</ul>';
-
-//$rightBox = showRightBox($section);
-
 
 
 include($dir.'include/menu.php');

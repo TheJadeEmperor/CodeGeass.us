@@ -14,7 +14,13 @@ foreach($orgContent as $url => $org)
 	else
 	{
 		$content = '<h2 id="'.$url.'">'.$org[name].'</h2>'.$org[profile];
-		$pageContent .= div(top().$content).charList($org);	
+		
+		$pageContent .= div(top().$content);
+		
+		if(is_array($org['charsIn']))
+			$pageContent .=  charList($org);	
+		
+		
 	}
 }//foreach
 

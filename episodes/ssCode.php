@@ -7,11 +7,7 @@ echo displayTitle($leftBox, $rightBox);
 $ssContent = '<center>'.$nextPreviousButtons.gallery($dir.'episodes/ss/'.$id).
 $nextPreviousButtons.'</center>';
 
-$ssContent.= '<table><tr valign="top"><td>'.chatRoom('620', '470').'</td>
-<td><a href="'.$links[forum][link].'" title="Anime Forum">
-<img src="'.$dir.'images/ad/forumVertical.jpg" alt="Anime Forum"></a>
-</td></tr></table>
-<br><br>'.randomStuff();
+$ssContent.= randomStuff();
 
 echo $ssContent;
 

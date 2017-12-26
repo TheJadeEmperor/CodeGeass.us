@@ -68,29 +68,7 @@ $section = array(
 $rightBox = showRightBox($section);
 
 
-$linkTree = array(
-'about' => array(
-	'mode' => 'L',
-	'about' => array(
-		'display' => 'About',
-		'link' => './')
-)
-);
-
-$linkTree['aboutMenu'] = array(
-'treeDisplay' => array(
-	'display' => $section[$key]['display']),
-);
-
-foreach($section as $k => $v)
-{
-	$linkTree['aboutMenu'][$k] = array(
-		'display' => ':: '.$v['display'],
-		'link' => $v['link'] );
-}
-
- 
-include($dir.'include/menu.php');
+ include($dir.'include/menu.php');
 	
 echo displayTitle($section[$key]['leftBox'], $rightBox);	 
 ?>

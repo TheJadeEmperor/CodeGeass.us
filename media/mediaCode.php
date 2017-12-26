@@ -1,5 +1,5 @@
 <?php
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle(), and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -35,7 +35,7 @@ $section = array(
 		'tags' => 'code geass media, code geass videos',
 		'title' => 'Code Geass Media - Videos, GIFs, Wallpapers, Openings, Endings',
 		'desc' => 'This is the center of all Code Geass media - come check out our animations, 
-			videos, music, galleries, our youtube channel, and our partner, Code Abridged.'
+			videos, music, galleries'
 	),
 ),
 'wallpapers' => array(),
@@ -78,8 +78,7 @@ switch($key)
 	case 'index':
 	{
 		$leftBox = $section[$key][leftBox].'This is the center of all Code Geass media - 
-		come check out our animations, videos, music, galleries, our youtube channel, and our partner, 
-		Code Abridged.';
+		come check out our animations, videos, music, galleries';
 		break;
 	}
 	case 'animation':

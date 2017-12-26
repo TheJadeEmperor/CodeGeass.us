@@ -89,13 +89,6 @@ $sitemap = array(
 		'why.php' => 'Why Become an Ally?'),
 ),//allies
 
-'ca' => array(
-	'div' => 'Code Abridged',
-	'prefix' => 'allies/code_abridged',
-	'loc' => array(
-		'index.php' => 'Code Abridged - Episodes & Specials',
-		'staff.php' => 'Abridged Staff Members'),
-),//ca
 
 'fanfiction' => array(
 	'div' => 'Refrain Fanfiction',

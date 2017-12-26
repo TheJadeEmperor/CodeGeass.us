@@ -19,24 +19,10 @@ $section = array(
 	),
 );//$section
 
- 
-	
-
 
 $leftBox = $section[$key][leftBox];
 $rightBox = showRightBox('', $section);
 
-
-
-$linkTree = array(
-'root' => array(
-	'mode' => 'L',
-	'prod' => array(
-		'display' => 'Code Geass Products',
-		'link' => './'), 
-),//root
-);
- 
 
 include($dir.'include/menu.php'); 
 

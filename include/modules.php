@@ -314,9 +314,7 @@ function youtubeModule($source, $width, $height)
                     <fieldset>
                     <table>
                     <tr>
-                        <td colspan="2">
-                        <a href="mailto:'.staff(1, 'emailAddress').'" title="Contact The Emperor" 
-                        class="downloadLink">Report broken link</a></td>
+                        <td colspan="2"></td>
                     </tr><tr>
                         <td>Link: </td>
                         <td><input type="text" value="http://www.youtube.com/watch?v='.$source.'"

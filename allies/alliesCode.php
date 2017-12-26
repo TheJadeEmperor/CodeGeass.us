@@ -1,5 +1,5 @@
 <?php
-//include all necessary functions such as linkTree(), displayTitle(), and FileName() 
+//include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
 include($dir.'include/mysql.php');
@@ -113,29 +113,6 @@ foreach($section as $map => $val)
 $leftBox = '<h1>Code Geass Affiliates</h1>'.$section[$key][leftBox];
 $rightBox = showRightBox($section);
 
-
-$linkTree = array(
-'allies' => array(
-	'tree' => array(
-		'display' => $section[$key][display]),
-	'apply' => array(
-		'display' => ' :: Become an Affiliate',
-		'link' => 'allies'),
-	'list' => array(
-		'display' => ' :: List of Affiliates',
-		'link' => 'allies/list.php'),
-	'marketing' => array(
-		'display' => ' :: Marketing Division',
-		'link' => 'allies/marketing.php'),
-),
-'S' => array(
-	'mode' => 'S',
-	'spaces' => 16),
-'N2' => array(
-	'mode' => 'N2'),
-'N' => array(
-	'mode' => 'N'),
-);
 
  
 $applyForm = '<form name="aff" action="index.php#aff" method=POST>

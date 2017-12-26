@@ -1465,16 +1465,6 @@ $rightBox = knightmareBlock($knightModels);
 $knightMenu[$mecha[genType]][dis][display] = $mecha[shortName]; //display model name in link tree
 
 
-$linkTree = array(
-'root' => $knightMenu[root], 
-'gType' => $knightMenu[$mecha[genType]],
-'S' => array(
-	'mode' => 'S',
-	'spaces' => 14),
-'N' => array(
-	'mode' => 'N')
-);	
-
 
 if($specs[$key][img] != '') 
 	$specImage .= popUpImg($mpath.$key.'/'.$mecha[img], $mpath.$key.'/big/(1).png', $key);

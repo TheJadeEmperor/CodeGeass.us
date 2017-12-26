@@ -50,11 +50,6 @@ $content = "<table><tr><td><div id = 'content'>".processText($content)."</div></
 
 $content .= gallery($dir."knightmares/models/".$codeName."/ss")."";
 
-//set the linkTree display 
-$knightMenu[gen][dis][display] = generation($genType);  
-$knightMenu[$genType][dis][display] = ":: ".$knightModels[$genType][$codeName][title];
-$linkTree = array($knightMenu[root], $knightMenu[gen], $knightMenu[$genType]);
-
 
 include($dir."include/menu.php");
 
