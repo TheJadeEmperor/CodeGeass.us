@@ -354,9 +354,15 @@ text .input {
 }
 
 .moduleBlack p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 18px; 
-    margin: 1em 0em;
+    margin: 1em 1em;
+}
+
+.moduleBlack.farewell p {
+	font-size: 16px;
+    line-height: 20px; 
+    margin: 1em 1em;
 }
 
 .moduleBlack a {
