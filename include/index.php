@@ -88,24 +88,12 @@ function popUpImg($imgA, $imgB, $title) {
     return '<img src="'.$dir.$imgA.'" alt="'.$title.'" title="'.$title.'" class="crosshair" onclick="javascript:popUp(\''.$dir.'include/popUpImg.php?file='.$imgB.'\');">';
 }//popUpImg
 
-function chatRoom($width, $height) {
-    return '<object width="'.$width.'" height="'.$height.'" id="obj_1284495193229">
-    <param name="movie" value="http://theanimeforum.chatango.com/group"/>
-    <param name="wmode" value="transparent"/><param name="AllowScriptAccess" VALUE="always"/>
-    <param name="AllowNetworking" VALUE="all"/><param name="AllowFullScreen" VALUE="true"/>
-    <param name="flashvars" value="cid=1284495193229&b=60&f=50&l=999999&q=999999&r=100&s=1"/>
-    <embed id="emb_1284495193229" src="http://theanimeforum.chatango.com/group" width="'.$width.'" height="'.$height.'" 
-    wmode="transparent" allowScriptAccess="always" allowNetworking="all" type="application/x-shockwave-flash" 
-    allowFullScreen="true" flashvars="cid=1284495193229&b=60&f=50&l=999999&q=999999&r=100&s=1"></embed></object>';
-}
 
-
-global $conn;
+global $conn;	//db connection
 global $dir;    //directory relative to the root
-global $staff;  //array of staff members
-global $links;  
-global $module;
-global $context; 
+global $links;  //links to outside websites
+global $module;	//random modules
+global $context;  //global variable
 
 //random stuff & amazon products
 //hoverbox gallery script | page_numbers() | gallery()
@@ -122,7 +110,6 @@ while($rowS = mysql_fetch_assoc($resultL)) {
 $context = array(
 	'dir' => $dir,
 	'conn' => $conn,
-	'staff' => $staff,
 	'links' => $links);
 
 //support email address
