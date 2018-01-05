@@ -4,7 +4,7 @@ session_start();
 
 include($dir.'admin/adminCode.php');
 
-$db_list = array('codegeas_refrain', 'codegeas_admin',  'codegeas_fanlist', 'codegeas_smf' );
+$db_list = array( 'codegeas_refrain' );
 
 
 function get_db_table($table_name)

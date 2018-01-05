@@ -33,7 +33,7 @@ function getTable($tableName)
 }//
 
 ///////////////////////////////
-$dbList = array('codegeas_refrain', 'codegeas_admin',  'codegeas_fanlist', 'codegeas_smf');
+$dbList = array('codegeas_refrain');
 ///////////////////////////////
 if($_POST[select_db] && $_POST[select_db] != $_SESSION[select_db])
 {	//select new database
