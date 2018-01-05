@@ -37,7 +37,7 @@ his sister Nunally can be happy.</p>
 (Developed by Sunrise and Bandai Entertainment)<br/>";
 
 echo "<div id = 'content' style = \"height: 200px; overflow: auto;\">".processText($string)."
-Summary written by ".$staff[Greed][link]."</div>";
+Summary written by Staff Member</div>";
 ?>
 
 <table title = "<?=$title?>">
@@ -87,7 +87,7 @@ he is being watched, by not only Rolo but also by his teacher who is actually Vi
 Suzaku who is now an official Knight of the Rounds. (Developed by Sunrise and Bandai Entertainment).</p>";
 
 echo "<div id = 'content' title = \"$title\"><h2>Summary of R2</h2>".processText($string)."
-Summary written by ".$staff[Greed][link]."</div>";
+Summary written by Staff Member</div>";
 
 echo "</td></tr></table>";
 

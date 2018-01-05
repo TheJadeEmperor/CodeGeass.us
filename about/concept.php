@@ -15,7 +15,7 @@ and concept artist, came upon The Emperor\'s throne with an offer that he could 
 <p>"I can transform you glorious kingdom for you, if you allow me to work for you." said he.</p>
 
 <p>After being presented with a glimpse of what the website could look like, The Emperor decided
-to make '.$staff[97][link].' his accomplice.</p>
+to make Kururugi his accomplice.</p>
 
 <p>The Emperor said: "You have my interest. Very well, then. We shall make a "Contract" and become 
 accomplices and forever be glorious on my eternal kingdom."</p>
