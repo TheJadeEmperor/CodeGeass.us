@@ -326,8 +326,8 @@ $context['meta'] = $meta = $section[$key]['meta'];
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head><?=$redir?>
-<title><?=$meta[title]?></title>
+<head>
+<title><?=$meta['title']?></title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta name="keywords" content="<?=$meta['tags']?>">
 <meta name="description" content="<?=$meta['desc']?>">
@@ -337,8 +337,7 @@ $context['meta'] = $meta = $section[$key]['meta'];
 <link href = "<?=$dir?>include/css/menu.css" rel="stylesheet" type="text/css">
 <link href = "<?=$dir?>include/main.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" type="image/png" href="<?=$dir?>images/menu/geassSearch.gif">
-<!-- Different style sheets for different sections -->
-<?=$style?>
+
 <script type="text/javascript" src="<?=$dir?>include/js/popup.js"></script>
 <script type="text/javascript" src="<?=$dir?>include/js/jquery.js"></script>
 <script>

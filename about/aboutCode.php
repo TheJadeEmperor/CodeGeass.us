@@ -17,7 +17,7 @@ $section = array(
 		Geass originate from? What Geass does a certain character have? If you want
 		the answers, then find out below.',
 	'display' => 'The Power of Kings',
-	'link' => $apath,
+	'link' => '.',
 	'title' => 'Geass: The Power of Kings',
 
 ),
@@ -35,7 +35,7 @@ $section = array(
  	Lelouch of the Rebellion, and Renya of the Blackness</h3>',
 	'display' => 'Code Geass Manga',
 	'title' => 'Code Geass Manga',
-	'link' => $apath.'manga.php'
+	'link' => 'manga.php'
 ),
 'version1' => array(
 	'meta' => array(
@@ -46,7 +46,7 @@ $section = array(
 	'leftBox' => '<h1>Refrain: Code Geass</h1><h2>The Original Refrain
 	</h3><h3>Refrain 0 and Refrain 1.0</h3>For those who are
 	interested, this section goes over the history of version 1.0 of this website.',
-	'link' => $apath.'version1.php',
+	'link' => 'version1.php',
 	'display' => 'Refrain 1.0',
 	'title' => 'Refrain 1.0'
 ),	
@@ -58,7 +58,7 @@ $section = array(
 		a new banner, and a new forum.'
 	),
 	'leftBox' => '<h1>Refrain 2.0</h1><h2>No. 1 for Code Geass</h2><p>Official launch: July 4th, 2009</p>',
-	'link' => $apath.'version2.php',
+	'link' => 'version2.php',
 	'display' => 'Refrain 2.0',
 	'title' => 'Refrain Version 2.0'
 )
@@ -68,7 +68,7 @@ $section = array(
 $rightBox = showRightBox($section);
 
 
- include($dir.'include/menu.php');
+include($dir.'include/menu.php');
 	
 echo displayTitle($section[$key]['leftBox'], $rightBox);	 
 ?>

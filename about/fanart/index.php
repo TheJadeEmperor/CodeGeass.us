@@ -18,7 +18,7 @@ $section = array(
 );
 
 
-$leftBox = $section[$key][leftBox];
+$leftBox = $section[$key]['leftBox'];
 $rightBox = showRightBox($section);
 
 
