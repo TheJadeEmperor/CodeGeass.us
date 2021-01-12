@@ -1,7 +1,7 @@
 <?php
 include('code.php');
 
-$selC = 'select * from codegeas_refrain.chars';
+$selC = 'select * from codegeas_info.chars';
 $resC = mysql_query($selC) or print(mysql_error());
 
 while($c = mysql_fetch_assoc($resC)) {
