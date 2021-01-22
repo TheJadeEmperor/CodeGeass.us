@@ -45,11 +45,11 @@ function database1($host, $user, $pw, $dbName)
 	
 	if(is_int(strpos(__FILE__, 'C:\\')))	//connect to database remotely (local server)
 	{ 
-		$conn = mysql_connect($host, $user, $pw) or die(mysql_error().' ('.__LINE__.')');
+		$conn = mysqli_connect($host, $user, $pw) or die(mysql_error().' ('.__LINE__.')');
 	}
 	else //connect to database directly (live server)
 	{
-		$conn = mysql_connect('localhost', $user, $pw) or die(mysql_error().' ('.__LINE__.')');
+		$conn = mysqli_connect('localhost', $user, $pw) or die(mysql_error().' ('.__LINE__.')');
 	}
 	
 	mysql_select_db($dbName) or die(mysql_error());

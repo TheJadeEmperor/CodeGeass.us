@@ -1,5 +1,6 @@
 include/config.php
 admin/index.php
+error_log
 
 # Windows image file caches
 Thumbs.db
