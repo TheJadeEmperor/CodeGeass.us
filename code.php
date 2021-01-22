@@ -2,7 +2,6 @@
 //include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 include($dir.'include/functions.php');
-include($dir.'include/mysql.php');
 include($dir.'include/config.php');
 include($dir.'include/index.php');
 ///////////////////////////////////////
@@ -10,7 +9,7 @@ $section = array(
 'index' => array(
 	'meta' => array( //meta information - such as keywords, title tag, and description tags
 		'tags' => 'code geass, code geass r3, code geass episodes',
-		'title' => 'Code Geass Refrain | Code Geass R3 | Episodes | Wallpapers',
+		'title' => 'Code Geass Characters | Code Geass Episodes | Code Geass Wallpapers',
 		'desc' => 'Code Geass: Refrain is your #1 source for Code Geass R3 information. We have 
 		streaming videos, episodes, wallpapers, fanfictions, and profiles of your favorite characters 
 		such as Kallen, CC, Lelouch, and Suzaku.'

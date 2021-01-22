@@ -1,6 +1,6 @@
 <?php
 /* connect to database, returns resource */
-function database($host, $user, $pw, $dbName)
+function database1($host, $user, $pw, $dbName)
 {
 	global $conn; 
 	
