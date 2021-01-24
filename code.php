@@ -56,10 +56,14 @@ $section = array(
 	 
 $charList = array();
 
-$selC = 'select * from chars order by charName asc';
-$resC = mysql_query($selC, $conn) or die(mysql_error());
+$opt = array(
+	'tableName' => 'chars',
+	'cond' => 'ORDER BY charName asc'
+);
 
-while($ch = mysql_fetch_assoc($resC)) {
+$resC = dbSelectQuery($opt);
+
+while($ch = $resC->fetch_array()) {
 	array_push($charList, $ch);
 }
 

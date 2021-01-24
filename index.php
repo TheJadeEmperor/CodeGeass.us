@@ -4,24 +4,8 @@ include('code.php');
 <table width="100%" border="0">
 <tr valign="top">
     <td>
-        <div class="moduleBlack farewell"><h1>Urgent! We're Moving Our Domain! <?=top()?></h1>
-        <div>
-            <p>Today I have some sad news for you all...This site started way back in 2009 - that's right, this site has been running for 8 years straight. Over the course of my journey, I have encountered many volunteers who were willing to lend a helping hand to make this website as great as it is over these past few years. </p>
-			
-			<p>But all good things must come to an end. Due to life obligations and duties, I can no longer keep this site updated. I have too much on my plate and I need time to focus on my other projects. All of the volunteers are no longer part of the community, they have all gone to college or gotten married, or doing whatever they're doing in the next phase of their lives. So I am shutting down this site.  </p>
-			
-			<p>But it won't be permanently gone. It will merely move to a new domain. </p>
-			
-			<p><a href="http://codegeass.benjaminlouie.com" target="_BLANK">http://codegeass.benjaminlouie.com</a> </p>
-			
-			<p>You can still view the site's contents but it will no longer be updated. And it will probably stay that way. If you're a former staff member, you're welcome to check out the site at the domain listed above for nostalgia. </p>
-			
-			<p>It was a very tough decision to make. I feel like I put my heart and soul into keep this site active. But I must close this chapter in my life. It was a great journey. Thank you all for being part of the community and contributing laughter and silliness, and most importantly, for spending time with me. For now, I will bid you adieu.</p>
-			
-			<p>-The Emperor</p>
-			
-        </div>
-        </div>
+
+
         
         <p>&nbsp;</p>
         <p>&nbsp;</p>
