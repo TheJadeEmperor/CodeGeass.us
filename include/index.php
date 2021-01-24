@@ -100,10 +100,14 @@ global $context;  //global variable
 include($dir.'include/modules.php');
 
 //get outside links
-$queryL = 'select * from links order by category';
-$resultL = mysql_query($queryL, $conn) or mysql_error();
+$opt = array(
+    'tableName' => 'links',
+    'cond' => 'ORDER BY category'
+);
 
-while($rowS = mysql_fetch_assoc($resultL)) {
+$resL = dbSelectQuery($opt);
+
+while($rowS = $resL->fetch_array()) {
     $links[ $rowS['category'] ] = $rowS;
 }//while
 

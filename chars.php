@@ -1,10 +1,15 @@
 <?php
 include('code.php');
 
-$selC = 'select * from codegeas_info.chars';
-$resC = mysql_query($selC) or print(mysql_error());
 
-while($c = mysql_fetch_assoc($resC)) {
+$opt = array(
+	'tableName' => 'chars',
+	'cond' => ''
+);
+
+$resC = dbSelectQuery($opt);
+
+while($c = $resC->fetch_array()) {
 	$char[$c['charName']] = $c;
 }
 
