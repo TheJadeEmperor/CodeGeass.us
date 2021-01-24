@@ -37,7 +37,7 @@ function moduleBlack($content) {
 }
 
 function top() { //a link that directs user to the top of the page
-    return '<div class="top"><a href="#search">[Top]</a></div>';
+    return '<div class="top"><a href="#credits">[Top]</a></div>';
 }
 
 function div($content) { //transparent red blocks

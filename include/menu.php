@@ -364,7 +364,7 @@ flush();
 <body>
 <center>
 <div id="banner">
-    <div class="credits">Banner by <strong>LeftBower</strong></div>
+    <div class="credits" id="credits">Banner by <strong>LeftBower</strong></div>
     <div id="space"></div>
 </div> 
 

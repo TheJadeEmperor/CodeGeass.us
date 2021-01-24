@@ -13,8 +13,7 @@ Requirements:
 */
 
 //display page numbers at top and bottom
-function page_number($numPages, $n, $page)
-{
+function page_number($numPages, $n, $page) {
     //num_pages = total number of pages
     //n = number of images
     //page = current page number
@@ -482,7 +481,7 @@ function amazonImg($p) //returns amazon image
 function amazonProduct($pCode)//returns amazon img & link based on product ID
 {
 	global $conn;
-    mysql_select_db('codegeas_refrain'); 
+//    mysql_select_db('codegeas_refrain'); 
     
 	$selP = 'select * from amazon where code="'.$pCode.'"';
 	$resP = mysql_query($selP, $conn) or print(mysql_error());
@@ -496,7 +495,7 @@ function amazonProduct($pCode)//returns amazon img & link based on product ID
 function randomProducts() //shows 3 random products
 {
 	global $conn;
-    mysql_select_db('codegeas_refrain'); 
+  //  mysql_select_db('codegeas_refrain'); 
     
 	$selP = 'select * from amazon order by series, description';
 	$resP = mysql_query($selP, $conn) or print(mysql_error());
@@ -532,8 +531,7 @@ function randomProducts() //shows 3 random products
  
 
 //process the text and add links
-function processText($input)
-{
+function processText($input) {
 	global $dir;
 	
 	$cpath = $dir.'characters/';
@@ -602,7 +600,7 @@ function processText($input)
 	$cpath."Tamaki" => array("Shinichiro", "Tamaki"),
 	$cpath."Urabe" => array("Kosetsu", "Urabe"),
 	$cpath."VV" => array("VV", "V.V."),
-	$cpath."Villetta" => array("Villetta", "Nu"),
+	$cpath."Villetta" => array("Villetta"),
 	$cpath."Xianglin" => array("Zhou", "Xianglin"),
 	$cpath."Xingke" => array("Li", "Xing-ke", "Xingke"),
 	$cpath."Waldstein" => array("Waldstein", "Bismarck", "Knight of One"),
@@ -714,6 +712,148 @@ function processText($input)
 
 	return $input;
 }//function			
+
+
+
+function featuredTrack($dir) {
+    global $context;
+
+    $count = 0;//array counter
+    for($season = 1; $season <= 2; $season++)//go through each season (1-2)
+    {
+        for($track = 1; $track <= 2; $track++)//go through each track (1-2)
+        {
+            if ($handle = opendir($dir.'media/downloads/ost_'.$season.'_'.$track))
+            {
+                while (false !== ($file = readdir($handle)))    //List all the files
+                {
+                    if($file != 'Thumbs.db' && $file != '..' && $file != '.')
+                    {
+                        list($stuff, $ost, $song, $title) = explode('-', $file);
+
+                        list($title, $ext) = explode('.', $title);//remove .mp3 extention from title
+
+                        $song = str_replace("_", "", $song); //clean up song #
+                        $title = str_replace("_", " ", $title);//clean up title
+
+                        $trackModule[$count]['key'] = $track.'_'.$song;
+                        $trackModule[$count]['season'] = $season;
+                        $trackModule[$count]['track'] = $track;
+                        $trackModule[$count]['song'] = $song;
+                        $trackModule[$count]['title'] = $title;
+                        $trackModule[$count]['file'] = $file;
+                        $trackModule[$count]['download'] = 'ost_'.$season.'_'.$track;
+                        $count++;
+                    }//if
+                }//while
+            }//if
+        }//for
+        closedir($handle);
+    }//for
+
+    $opath = $dir.'images/ost/'; //directory of ost images
+    $random = date('h', time()) % $count;//random number
+    $featured = $trackModule[$random];//featured track array
+    $trackImg = $opath.$featured['season'].'/'.$featured['key'].'.jpg';
+
+    $tContent = '
+    <center><p><a '.$popup.' title="'.$featured['title'].'" target="_blank">
+    Track '.$featured['track'].'-'.$featured['song'].' - '.$featured['title'].'</a><br>';
+
+    if(file_exists($trackImg))
+        $tContent .= '<a href="'.$dir.'media/music/ost.php" target="_blank">
+        <p><img src="'.$trackImg.'" alt="'.$featured['title'].'" title="'.$featured['title'].'" class="crosshair"></a></p>';
+
+    $tContent .= '<p><a href="'.$dir.'media/music/ost.php" title="Download this track">Download this track</a>
+    <br />
+    <a href="'.$dir.'media/music/ost.php" title="View all OSTs">View All OSTs</a></p>';
+    
+    return $tContent;
+}
+
+
+
+function topAllies($dir) {    
+    $alliesList = array(
+		'0' => array(
+			'name' => 'Yuri Fan',
+			'img' => 'yurifan.net.fanlisting.png',
+			'url' => 'http://yurifan.net/fanlisting/' ),
+		'1' => array(
+			'name' => 'Angel Flower Anime',
+			'img' => 'afanime.net.gif',
+			'url' => 'http://afanime.net/' ),
+		'2' => array(
+			'name' => 'Li Xingke: Star in Heaven',
+			'img' => 'xingke.radiant-illusion.net.jpg',
+			'url' => 'http://xingke.radiant-illusion.net/' ),
+		'3' => array(
+			'name' => 'Fairy Tale: Guildford and Cornelia',
+			'img' => 'fallingslowly.altervista.org.fairytale.jpg',
+			'url' => 'http://fallingslowly.altervista.org/fairytale/' ),		
+		'4' => array(
+			'name' => "Stage 0",
+			'img' => 'stage0.altervista.jpg',
+			'url' => 'http://www.stage0.altervista.org/' ),
+		'5' => array(
+			'name' => 'Zero Requiem: Code Geass R2',
+			'img' => 'marheavenj.net.cgr2.jpg',
+			'url' => 'http://www.marheavenj.net/cgr2/' ),
+		'6' => array(
+			'name' => 'Zero\'s Black Knights',
+			'img' => 'zero.jpg',
+			'url' => 'http://www.fanpop.com/spots/followers-of-zero-of-the-revolutio' ),
+		'7' => array(
+			'name' => 'The Second Movement: Lelouch Lamperouge',
+			'img' => 'fan.sakuradreams.net.jpg',
+			'url' => 'http://fan.sakuradreams.net/lelouch' ),
+		'8' => array(
+			'name' => 'Reincarnation',
+			'img' => 'marheavenj.net.reincarnation.jpg',
+			'url' => 'http://www.marheavenj.net/reincarnation' ),
+		
+    ); 
+    
+    $alliesContent = '<center>
+    <table>
+    <tr valign="top">
+        <td align="left">'.$topAllies.'</td>
+    </tr>
+    </table> 
+    
+    <table>
+    <tr valign="top">
+        <td align="left">';
+    
+    for($a = 0; $a <= 4; $a++) {
+        $name = $alliesList[$a]['name'];
+        $alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target="_blank">
+        <img src="'.$dir.'allies/banners/'.$alliesList[$a]['img'].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
+        <br />';
+    }
+            
+    $alliesContent .= '</td>
+        <td>';
+        
+    for($a = 5; $a <= 10; $a++) {
+
+        $name = $alliesList[$a]['name'];
+		
+		if($name)
+			$alliesContent .= '<a href="'.$alliesList[$a]['url'].'" target="_blank">
+			<img src="'.$dir.'allies/banners/'.$alliesList[$a]['img'].'" title="'.$name.'" alt="'.$name.'" class="crosshair"/></a>
+			<br />';
+    }
+        
+    $alliesContent .= '</td>
+    </tr>
+    </table>
+    <p><a href="'.$dir.'allies" title="Become an affiliate">Become an affiliate now!</a>
+    </p></center>';
+    
+    return $alliesContent; 
+}//function
+
 
 
 ?>
