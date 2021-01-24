@@ -3,7 +3,6 @@ if(!function_exists('showMenu')) {
     //include all necessary functions such as displayTitle() and FileName() 
     ///////////////////////////////////////
     include($dir.'include/functions.php');
-    include($dir.'include/mysql.php');
     include($dir.'include/config.php');
     include($dir.'include/index.php');
     ///////////////////////////////////////

@@ -25,7 +25,7 @@ if($bio['spoiler'] != '')
 if($bio['profile'])
 	echo $bio['profile'];	
 
-mysql_select_db('codegeas_refrain') or print(mysql_error());
+//mysql_select_db('codegeas_refrain') or print(mysql_error());
 	
 
 if(file_exists($dir.'characters/'.$charName.'/gallery'))
