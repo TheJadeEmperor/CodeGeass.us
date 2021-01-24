@@ -1,39 +1,61 @@
 <?php
 include('code.php');
-?>
-<table width="100%" border="0">
-<tr valign="top">
-    <td>
 
 
-        
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+$content = '<h1>Lelouch is alive! Lelouch of the Re;surrection is out!'.top().'</h1>
+<div>
+    <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fEiX_69tu2I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+    </div>
+';
+echo moduleBlack($content).'<p>&nbsp;</p>';
 
-    </td>
-</tr>
-</table>
+$content = '<h1>Code Geass Move: Glorification is Out! '.top().'</h1>
+<div>
+    <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BmQHEaBRWWE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+</div>';
+echo moduleBlack($content).'<p>&nbsp;</p>';
+
+$content = '<h1>Code Geass Move: Transgression is Out! '.top().'</h1>
+<div>
+    <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/oK8V_ymqACY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+</div>';
+echo moduleBlack($content).'<p>&nbsp;</p>';
+
+$content = '<h1>Code Geass: Initiation is Out! '.top().'</h1>
+<div>
+    <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TvW8Z5fBl0E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+</div>
+';
+echo moduleBlack($content).'<p>&nbsp;</p>';
 
 
-<table width="100%" border="0">
-<tr valign="top">
-    <td>
-        <div class="moduleBlack"><h1>Code Geass Season 3 is here at last! <?=top()?></h1>
-        <div>
-            <center>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/tZw6KXt2Z5g" frameborder="0" allowfullscreen></iframe>
-            </center>
-        </div>
-        </div>
-        
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
 
-    </td>
-</tr>
-</table>
+$whatIsR2 = "<p>One year after his failed attack at the Decisive Battle of Tokyo, Lelouch has been brainwashed through the power of his father's Geass into forgetting about his actions as the freedom fighter Zero and his sister Nunnally. He now believes that a young boy named Rolo is his brother and has gone back to attending Ashford Academy as a normal student. But when he goes on one of his gambling trips with Rolo, he is captured by terrorists and C.C., the mysterious girl who gave him the Geass of being able to give absolute commands to anyone through direct eye contact. Lelouch regains his memory with the help of C.C. and manages to defeat the government forces that 
+attempt to kill him. <br /><br />
 
-<?php
+Once again, Lelouch dons the mask of Zero in his battle against Britannia, and leads the Black Knights towards a united world where Nunnally can live happily. This time however he is being watched, by not only Rolo but also by his teacher who is actually Villeta, as well as Suzaku who is now an official Knight of the Rounds. (Developed by Sunrise and Bandai Entertainment).</p>";
+
+$whatIsR2 = processText($whatIsR2);
+
+$moduleBlack = '<h1>Code Geass: Lelouch of the Rebellion R2 '.top().'</h1>
+<div>
+    '.$whatIsR2.'
+    <p>Summary written by Pride</p>
+    <a class="morebutt" href="season_2.php" title="Code Geass R2">More...</a></p>
+    <p>&nbsp;</p>
+</div>';
+
+echo moduleBlack($moduleBlack).'<p>&nbsp;</p>';
+
+
 $whatIsR1 = '
 <p>In the year 2010 a.t.b. The Holy Empire of Britannia completed its takeover of Japan, 
 using its superior technology of the Knightmare Frames, a humanoid type of mecha. Britannia 
@@ -52,66 +74,25 @@ refuses, he is shot instead. Lelouch is about to be killed when the girl suddenl
 him the power of Geass, which allows him to give absolute commands to anyone he wishes. 
 Armed with this new power and his already brilliant intellect he directs the terrorists into
 victory against the Britannian troops which were sent against them, so that
-they can escape. Lelouch then assassinates his brother Clovis who was the Viceroy of Area 11,
-before donning a mask and taking up the second identity of Zero, who is a freedom fighter and
-renames the terrorists the Black Knights. Zero leads the Black Knights in a quest to bring down
-Britannia, both to get revenge on the Emperor who he hates, and to create a peaceful world where
-his sister Nunally can be happy.</p>
+they can escape. Lelouch then assassinates his brother Clovis who was the Viceroy of Area 11, before donning a mask and taking up the second identity of Zero, who is a freedom fighter and renames the terrorists the Black Knights. Zero leads the Black Knights in a quest to bring down Britannia, both to get revenge on the Emperor who he hates, and to create a peaceful world where his sister Nunally can be happy.</p>
 
 <p>(Developed by Sunrise and Bandai Entertainment)</p>
-
 ';
 
 $whatIsR1 = processText($whatIsR1); 
-?>
-        <div class="moduleBlack"><h1>Code Geass: Lelouch of the Rebellion<?=top()?></h1>
-        <div>
 
-            <?=$whatIsR1?>
-            <p>Summary written by Pride</p>
-            <a class="morebutt" href="season_1.php" title="Code Geass R2">More...</a></p>
-            <p>&nbsp;</p>
-        </div>
-        </div>
-<?php
-$whatIsR2 = "<p>One year after his failed attack at the Decisive Battle of Tokyo, Lelouch has 
-been brainwashed through the power of his father's Geass into forgetting about his actions as the 
-freedom fighter Zero and his sister Nunnally. He now believes that a young boy named Rolo is his 
-brother and has gone back to attending Ashford Academy as a normal student. But when he goes on 
-one of his gambling trips with Rolo, he is captured by terrorists and C.C., the mysterious girl who 
-gave him the Geass of being able to give absolute commands to anyone through direct eye contact. 
-Lelouch regains his memory with the help of C.C. and manages to defeat the government forces that 
-attempt to kill him. <br /><br />Once again, Lelouch dons the mask of Zero in his battle against Britannia, and 
-leads the Black Knights towards a united world where Nunnally can live happily. This time however 
-he is being watched, by not only Rolo but also by his teacher who is actually Villeta, as well as 
-Suzaku who is now an official Knight of the Rounds. (Developed by Sunrise and Bandai Entertainment).</p>";
+$moduleBlack = '<h1>Code Geass: Lelouch of the Rebellion'.top().'</h1>
+<div>
+    '.$whatIsR1.'
+    <p>Summary written by Pride</p>
+    <a class="morebutt" href="season_1.php" title="Code Geass R2">More...</a></p>
+    <p>&nbsp;</p>
+</div>
+';
 
-$whatIsR2 = processText($whatIsR2);
-?>
+echo moduleBlack($moduleBlack).'<p>&nbsp;</p>';
 
-    <div class="moduleBlack"><h1>Code Geass R2 <?=top()?></h1>
-    <div>
-        <p>One year after his failed attack at the Decisive Battle of Tokyo, Lelouch has 
-        been brainwashed through the power of his father's Geass into forgetting about his actions as the 
-        freedom fighter Zero and his sister Nunnally. He now believes that a young boy named Rolo is his 
-        brother and has gone back to attending Ashford Academy as a normal student. But when he goes on 
-        one of his gambling trips with Rolo, he is captured by terrorists and C.C., the mysterious girl who 
-        gave him the Geass of being able to give absolute commands to anyone through direct eye contact. 
-        Lelouch regains his memory with the help of C.C. and manages to defeat the government forces that 
-        attempt to kill him. <br /><br />Once again, Lelouch dons the mask of Zero in his battle against Britannia, and 
-        leads the Black Knights towards a united world where Nunnally can live happily. This time however 
-        he is being watched, by not only Rolo but also by his teacher who is actually Villeta, as well as 
-        Suzaku who is now an official Knight of the Rounds. (Developed by Sunrise and Bandai Entertainment).</p>  
 
-        <p>Summary written by Pride</p>
-        <a class="morebutt" href="season_2.php" title="Code Geass R2">More...</a></p>
-        <p>&nbsp;</p>
-    </div>
-    </div>
-
-<p>&nbsp;</p>
-
-<?php
 $optinBox = '
 <div class="moduleBlack optin"><h1 id="joinForm">Anime Chat Group</h1>
 <div>

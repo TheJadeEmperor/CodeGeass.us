@@ -855,5 +855,80 @@ function topAllies($dir) {
 }//function
 
 
+function donateButton ($headline) {
+	global $dir;
+
+	return '<div class="moduleGreen" title="'.$headline.'">
+	<h2>Donate to Our Cause</h2>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<center>
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="NSEMYW3SPFA6S">
+		<input type="image" class="crosshair" src="'.$dir.'images/menu/donate.png" width="220"
+		name="submit" alt="Donate Using Paypal">
+		<img alt="Donate to keep this site running!" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />   
+		<p><b>Donations keep our site running!</b></p>
+		</center>
+	</form>
+</div>';
+}
+
+
+function featuredAmazon($conn) {   
+    global $conn;
+    
+    $opt = array(
+        'tableName' => 'amazon',
+        'cond' => 'ORDER BY series, description'
+    );
+    
+    $resP = dbSelectQuery($opt);
+    
+    $pCount = 0;
+    while($p = $resP->fetch_array()) {
+        $product[ $pCount ] = $p;
+        $pCount ++;
+    }
+    
+    $max = sizeof($product);
+
+    $numA = time() % $max;
+    
+    $aContent = amazonSearch('').'<center>'.amazonProduct($product[$numA]['code']).'
+    <br />
+    </center>';
+        
+    return $aContent;
+}
+
+function optinForm () {
+	$optinBox = '
+<div class="moduleBlack optin"><h1 id="joinForm">Download Code Geass OSTs</h1>
+<div>
+    <p><b>Want to find out what the latest and hottest shows are?</b>
+	<br /><b>Subscribe to this group now to chat about anime, and also make some new friends!</b></p>
+
+<center>
+	<img src="'.$dir.'images/redArrow.gif" width="240px" />
+	<br /><br />  
+
+	<img src="images/index/cc_chibi.png" />
+ 
+	<p>Email address: <br />
+	<input type="text" class="input" size="25" value="Enter your email" onclick="this.value=\'\'"></p>
+
+	<br />
+	
+	<center>
+	<input type="button" value=" Join Now " class="joinNow">
+	</center>
+
+	<p>We hate spam and will never sell your email address to others</p>
+</center>
+</div>
+</div>';
+
+	return $optinBox;
+}
 
 ?>

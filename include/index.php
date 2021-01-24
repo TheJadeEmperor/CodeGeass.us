@@ -23,10 +23,10 @@
 function forumAd($links) {
     global $context;
 
-    $content = '<a href="'.$links[forum][link].'" title="Anime Empire Forum">
-    <h2>Anime Empire Forum</h2></a><center>
-    <p><a href="'.$links[forum][link].'" title="Anime Empire Forum">
-    <img src="'.$context[dir].'images/ad/forum.jpg" alt="Anime Forum" class="crosshair"></a>
+    $content = '<a href="'.$links['forum']['link'].'" title="Anime Empire Newsletter">
+    <h2>Anime Empire Newsletter</h2></a><center>
+    <p><a href="'.$links['forum']['link'].'" title="Anime Empire Forum">
+    <img src="'.$context['dir'].'images/ad/forum.jpg" alt="Anime Forum" class="crosshair"></a>
     </p></center>';
     
     return moduleBlack($content);
@@ -35,6 +35,7 @@ function forumAd($links) {
 function moduleBlack($content) {
     return '<div class="moduleBlack" title="Code Geass">'.$content.'</div>';
 }
+
 
 function top() { //a link that directs user to the top of the page
     return '<div class="top"><a href="#credits">[Top]</a></div>';
@@ -118,6 +119,10 @@ $context = array(
 
 //support email address
 $supportEmail = 'support@bestpayingsites.com';
+
+//paypal email address
+$paypalEmail = 'robinsonpp@protonmail.com';
+
 
 //delete error logs, if applicable
 if(file_exists('error_log')) 

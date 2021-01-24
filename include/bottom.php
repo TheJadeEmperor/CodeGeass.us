@@ -1,34 +1,5 @@
 <?php
 
-function featuredAmazon($conn) {   
-    global $conn;
-    
-   // mysqli_select_db('codegeass_refrain');
-    
-    $opt = array(
-        'tableName' => 'amazon',
-        'cond' => 'ORDER BY series, description'
-    );
-    
-    $resP = dbSelectQuery($opt);
-    
-    $pCount = 0;
-    while($p = $resP->fetch_array()) {
-        $product[ $pCount ] = $p;
-        $pCount ++;
-    }
-    
-    $max = sizeof($product);
-
-    $numA = time() % $max;
-    
-    $aContent = amazonSearch('').'<center>'.amazonProduct($product[$numA]['code']).'
-    <br />
-    </center>';
-        
-    return $aContent;
-}
-
 ?>
 </td>
 <td width="5px"></td>
@@ -52,29 +23,18 @@ function featuredAmazon($conn) {
     <?
     }
     ?>
- 
-    
+  
     <div class="moduleGreen"><a href="<?$dir?>media/music/ost.php" title="Code Geass OST">
         <h2>Featured Track</h2></a>
         <div><?=featuredTrack($dir)?></div>
     </div>
     <br />
+
+    <?
+    $headline = 'Donate to Our Cause';
+    echo donateButton ($headline);
+    ?>
    
-    <div class="moduleGreen" title="Donate to keep this site running!">
-        <h2>Paypal Donations</h2>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-            <center>
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="NSEMYW3SPFA6S">
-            <input type="image" class="crosshair" src="<?=$dir?>images/menu/donate.png" width="220"
-            name="submit" alt="Donate Using Paypal" title="Donate to keep this site running!">
-            <img alt="Donate to keep this site running!" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" 
-            width="1" height="1">   
-            <b>Donations keep our site running! </b> 
-            </center>
-        </form>
-    </div>
-    
     <br />
 
 
