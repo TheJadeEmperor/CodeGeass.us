@@ -140,13 +140,18 @@ function topAllies($dir) {
 
 
 function featuredAmazon($conn) {   
-    mysql_select_db('codegeas_refrain');
-    $selP = 'select * from amazon order by series, description';
-    $resP = mysql_query($selP, $conn) or print(mysql_error());
+    global $conn;
+    mysqli_select_db('codegeass_refrain');
+    
+    $opt = array(
+        'tableName' => 'amazon',
+        'cond' => 'ORDER BY series, description'
+    );
+    
+    $resP = dbSelectQuery($opt);
     
     $pCount = 0;
-    while($p = mysql_fetch_assoc($resP))
-    {
+    while($p = $resP->fetch_array()) {
         $product[ $pCount ] = $p;
         $pCount ++;
     }
@@ -156,7 +161,7 @@ function featuredAmazon($conn) {
     $numA = time() % $max;
     
     $aContent = amazonSearch('').'<center>'.amazonProduct($product[$numA]['code']).'
-    <br>'.amazonSearch('Visit Amazon').'
+    <br />
     </center>';
         
     return $aContent;
@@ -168,25 +173,29 @@ function featuredAmazon($conn) {
 <td align="right" width="220">
     <div id="left">
 
-    
-    <div class="moduleGreen"><h2>Featured Amazon Product</h2>
+    <div class="moduleGreen"><h2>Featured Product</h2>
         <div><?=featuredAmazon($conn)?></div>
     </div>
         
     <br />
 
-    <div class="moduleGreen" title="Code Geass Sites">
-        <a href="<?=$dir?>allies/list.php"><h2>Top Affiliates</h2></a>
-        <div><?=topAllies($dir)?></div>
-    </div>
+    <?
+    if(0) {
+    ?>
+        <div class="moduleGreen" title="Code Geass Sites">
+            <a href="<?=$dir?>allies/list.php"><h2>Top Affiliates</h2></a>
+            <div><?=topAllies($dir)?></div>
+        </div>
+        <br />
+    <?
+    }
+    ?>
+ 
     
-    <br />
-        
     <div class="moduleGreen"><a href="<?$dir?>media/music/ost.php" title="Code Geass OST">
         <h2>Featured Track</h2></a>
         <div><?=featuredTrack($dir)?></div>
     </div>
-    
     <br />
    
     <div class="moduleGreen" title="Donate to keep this site running!">
@@ -206,23 +215,11 @@ function featuredAmazon($conn) {
     
     <br />
 
-    <div class="moduleGreen"><h2>Featured Donators </h2>
-        <div>
-
-        <p>Here is a list of people who care about our cause enough to be a featured donator</p>
-
-        <p><a href="mailto:zerooftherevolution@hotmail.com">Zero-</a></p>
-
-        <p><a href="mailto:spaulding24317@gmail.com">Spaulding</a></p>
-        </div>
-    </div>
-    
-    <br />  
 
     <div class="moduleBlack">
         <?php
         echo '
-            <a href="'.$dir.'about/fanart" title="The Emperors Birthday"><h2>Best Fanart Ever</h2></a>
+            <a href="'.$dir.'about/fanart" title="Lelouch Fanart"><h2>Featured Fanart</h2></a>
             <center>'.popUpImg('images/menu/emp1.jpg', 'images/menu/emp2.jpg', "The Emperor's Birthday").'
             <br /><p>Picture drawn by Kaito_Shion</p></center>';
         ?>
@@ -241,21 +238,19 @@ function featuredAmazon($conn) {
                     <tr valign="top">
                         <td width="5px"></td>
                         <td id="rights" width="300px">
-                            CodeGeass.us &copy; Copyright by <a href="mailto:<?=$supportEmail?>">TheEmperor</a><br />
+                            CodeGeass.info &copy; Copyright by <a href="mailto:<?=$supportEmail?>">TheEmperor</a><br />
                             Concept design by Shadowboy
                         </td><td width="20px"></td>
                         <td>
                             
-                            CodeGeass.us belongs to the following directories: <a href="http://www.animefanlistings.org/" title="The Anime Fanlistings" target="_blank" rel="nofollow">TAFL</a>
-                            <br />
-                            This website is a fan site and is not affiliated with the official series
+                            CodeGeass.info is part of the <a href="https://AnimeFanservice.rg">Anime Empire</a>
                             
                         </td><td width="150px">
                         </td>
                         <td align="right" valign="center" rowspan="2">
 
                             <div id="eXTReMe"><a href="http://extremetracking.com/open?login=geass" target="_blank">
-                                <img src="http://t1.extreme-dm.com/i.gif" style="border: 0;"
+                                <img src="https://t1.extreme-dm.com/i.gif" style="border: 0;"
                                     height="38" width="41" id="EXim" alt="eXTReMe Tracker" /></a>
                                 <script type="text/javascript"><!--
                                 var EXlogin='geass' // Login

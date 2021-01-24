@@ -366,23 +366,14 @@ flush();
 <div id="banner">
     <div class="credits">Banner by <strong>LeftBower</strong></div>
     <div id="space"></div>
-    <br /><br /><br />
-    <div id="search">
-	<table width="900px">
-            <tr valign=bottom>
-		<td align="left" width="235px"><?=googleSearch($dir)?></td>
-		<td width="700px"></td>
-            </tr>
-	</table>
-    </div>
 </div> 
 
 <div id="container">
-<?=mainMenu($menu)?>
+    <?=mainMenu($menu)?>
 
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
 
-<table border="0" width="100%">
-    <tr valign="top">
-        <td>
+    <table border="0" width="100%">
+        <tr valign="top">
+            <td>
