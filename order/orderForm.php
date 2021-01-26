@@ -29,7 +29,7 @@ $paidToEmail = 'robinsonpp@protonmail.com'; //paypal email
 $itemName = $prod['itemName'];
 $itemNumber = $prod['itemNumber'];
 $itemPrice = $prod['itemPrice'];
-$ipnURL = $cancelURL = $_SERVER["SERVER_NAME"].'/order/'.$ipnFile;
+$ipnURL = $cancelURL = 'http://'.$_SERVER["SERVER_NAME"].'/order/'.$ipnFile;
 
 if($_GET['debug'] == 1) {
 	print_r($prod); 
