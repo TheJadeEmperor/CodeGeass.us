@@ -332,10 +332,11 @@ $context['meta'] = $meta = $section[$key]['meta'];
 <meta name="keywords" content="<?=$meta['tags']?>">
 <meta name="description" content="<?=$meta['desc']?>">
 <meta name="author" content="The Emperor">
-<meta name="google-site-verification" content="fbXXyQMtiDc80jDwOq2rRqCDY8R5n6PvIVqo3itDkFI"><!-- Google verification -->
+
 <link href = "<?=$dir?>include/css/popup.css" rel="stylesheet" type="text/css">
 <link href = "<?=$dir?>include/css/menu.css" rel="stylesheet" type="text/css">
 <link href = "<?=$dir?>include/main.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- Font Awesome -->
 <link rel="shortcut icon" type="image/png" href="<?=$dir?>images/menu/geassSearch.gif">
 
 <script type="text/javascript" src="<?=$dir?>include/js/popup.js"></script>

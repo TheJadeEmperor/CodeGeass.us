@@ -7,7 +7,7 @@
     <div id="left">
 
     <div class="moduleGreen"><h2>Featured Product</h2>
-        <div><?=featuredAmazon($conn)?></div>
+        <div><?=featuredProduct($conn)?></div>
     </div>
         
     <br />
@@ -53,47 +53,25 @@
 <br /><br />
 
 <div id="page_footer" title="Code Geass">
-    <table border="0" width="900px">
-        <tr valign="middle">
-            <td>
-                <table border="0" height="" width="100%">
-                    <tr valign="top">
-                        <td width="5px"></td>
-                        <td id="rights" width="300px">
-                            CodeGeass.info &copy; Copyright by <a href="mailto:<?=$supportEmail?>">TheEmperor</a><br />
-                            Concept design by Shadowboy
-                        </td><td width="20px"></td>
-                        <td>
-                            
-                            CodeGeass.info is part of the <a href="https://AnimeFanservice.rg">Anime Empire</a>
-                            
-                        </td><td width="150px">
-                        </td>
-                        <td align="right" valign="center" rowspan="2">
 
-                            <div id="eXTReMe"><a href="http://extremetracking.com/open?login=geass" target="_blank">
-                                <img src="https://t1.extreme-dm.com/i.gif" style="border: 0;"
-                                    height="38" width="41" id="EXim" alt="eXTReMe Tracker" /></a>
-                                <script type="text/javascript"><!--
-                                var EXlogin='geass' // Login
-                                var EXvsrv='s10' // VServer
-                                EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
-                                EXb=EXs.colorDepth:EXb=EXs.pixelDepth;EXsrc="src";
-                                navigator.javaEnabled()==1?EXjv="y":EXjv="n";
-                                EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
-                                EXd.write("<img "+EXsrc+"=http://e1.extreme-dm.com",
-                                "/"+EXvsrv+".g?login="+EXlogin+"&amp;",
-                                "jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
-                                "l="+escape(EXd.referrer)+" height=1 width=1>");//-->
-                                </script><noscript><div id="neXTReMe"><img height="1" width="1" alt="" src="http://e1.extreme-dm.com/s10.g?login=geass&amp;j=n&amp;jv=n" />
-                                </div></noscript></div>
+    <div class="footer_item copyright"> CodeGeass.info &copy; Copyright by <a href="mailto:<?=$supportEmail?>">TheEmperor</a><br />Concept design by Shadowboy</div>
+    
+    <div class="footer_item empire">CodeGeass.info is part of the <a href="https://AnimeFanservice.rg">Anime Empire</a></div>
+    
+    <div class="footer_item social_media">   
+        <div class="social_media_header">
+            <ul>
+                <li><a href="https://www.youtube.com/channel/UCoUMU1nKObhrVmnN7RKdtmg" target="_BLANK"><i class="fa fa-youtube"></i></a></li>
+                
+                <li><a href="https://www.instagram.com/anime.motivation.quotes/" target="_BLANK"><i class="fa fa-instagram"></i></a></li>
 
-                        </td> 
-                    </tr> 
-                </table>        
-            </td>
-        </tr>
-    </table>
+                <li><a href="https://www.etsy.com/shop/AnimeEmpireShop"><i class="fa fa-cart-plus"></i></a></li>
+                
+                <li><a href="<?php echo $site_url?>/download"><i class="fa fa-envelope-open"></i></a></li>
+            </ul>
+        </div>
+    </div>
+ 
 </div>
 </div><!--Container-->
 </center>
