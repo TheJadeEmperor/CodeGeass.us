@@ -2,23 +2,21 @@
 $adir = '../';
 include($adir.'adminCode.php');
 
-if($_POST[update])
-{
+if($_POST['update']) {
 	$dbFields = array(
-	'genType' => $_POST[genType],
-	'genDisplay' => $_POST[genDisplay],
-	'description' => $_POST[description]);
+	'genType' => $_POST['genType'],
+	'genDisplay' => $_POST['genDisplay'],
+	'description' => $_POST['description']);
 	
 	$set = array();
 	
-	foreach($dbFields as $fld => $val)
-	{
+	foreach($dbFields as $fld => $val) {
 		array_push($set, $fld.'="'.addslashes($val).'"');	
 	}
 	
 	$theSet = implode(',', $set);
 	
-	$upd = 'update generation set '.$theSet.' where id="'.$_POST[id].'"';
+	$upd = 'update generation set '.$theSet.' where id="'.$_POST['id'].'"';
 	
 	$res = mysql_query($upd) or print(mysql_error());
 }
@@ -51,12 +49,15 @@ $editForm = '<form method=POST><fieldset>
 </table></fieldset>
 </form>';
 
+ 
+$opt = array(
+	'tableName' => 'generation',
+	'cond' => 'ORDER BY id'
+);
 
-$selG = 'select * from generation order by id';
-$resG = mysql_query($selG) or print(mysql_error());
-
-while($g = mysql_fetch_assoc($resG))
-{
+$res = dbSelectQuery($opt);
+ 
+while($g = $res->fetch_array()) {
 	if($bgcolor == '#bad6ee') 
 		$bgcolor = '#fffaa';
 	else

@@ -497,8 +497,16 @@ foreach($knightModels as $gen => $genArray) {
 $selG = 'select * from generation order by id';
 $resG = mysql_query($selG, $conn) or print(mysql_error());
 
-while($g = mysql_fetch_assoc($resG))
-{
+ 
+$opt = array(
+	'tableName' => 'generation',
+	'cond' => 'ORDER BY id'
+);
+
+$res = dbSelectQuery($opt);
+ 
+while($g = $res->fetch_array()) {
+
 	//format the descriptions
 	$g[description] = stripslashes($g[description]);
 	

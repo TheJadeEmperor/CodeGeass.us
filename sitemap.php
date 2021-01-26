@@ -175,19 +175,23 @@ $sitemap = array(
 
 
 
-$sitemap[characters] = array(
+$sitemap['characters'] = array(
     'div' => 'Code Geass Characters',
     'prefix' => 'characters/',
     'loc' => array(
         '../../chars.php' => 'Characters List')
-);//
+); 
 
-$selC = 'select * from chars order by charName asc';
-$resC = mysql_query($selC, $conn) or die(mysql_error());
 
-while($ch = mysql_fetch_assoc($resC))
-{
-    $sitemap[characters][loc][$ch[charName]] = $ch[fullName].' - Profile';
+$opt = array(
+	'tableName' => 'chars',
+	'cond' => 'ORDER BY charName asc'
+);
+
+$resC = dbSelectQuery($opt);
+
+while($ch = $resC->fetch_array()) {
+    $sitemap['characters']['loc'][$ch['charName']] = $ch['fullName'].' - Profile';
 }
 
 
@@ -211,15 +215,14 @@ foreach($knightModels as $gen => $type)
 }//foreach
 
 
+$opt = array(
+	'tableName' => 'episodes',
+	'cond' => 'ORDER BY episode asc'
+);
 
+$res = dbSelectQuery($opt);
 
-
-
-$selE = 'select * from episodes order by episode asc';
-$resE = mysql_query($selE, $conn) or die(mysql_error());
-
-while($tv = mysql_fetch_assoc($resE))
-{
+while($tv = $res->fetch_array()) {
 	list($season, $episode) = explode('_', $tv[epID]);
 
 	if(	strrpos($episode, '.') == '')

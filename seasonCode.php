@@ -55,10 +55,16 @@ function theList($theArray, $season, $extra) {
     return $theList;
 }//function 
 
-$selE = 'select * from episodes order by episode asc';
-$resE = mysql_query($selE, $conn) or die(mysql_error());
 
-while($tv = mysql_fetch_assoc($resE)) {
+ 
+$opt = array(
+	'tableName' => 'episodes',
+	'cond' => 'ORDER BY episode asc'
+);
+
+$res = dbSelectQuery($opt);
+
+while($tv = $res->fetch_array()) {
     list($season, $episode) = explode('_', $tv['epID']);
 
     if(	strrpos($episode, '.') == '')

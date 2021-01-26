@@ -811,7 +811,6 @@ function topAllies($dir) {
 			'name' => 'Reincarnation',
 			'img' => 'marheavenj.net.reincarnation.jpg',
 			'url' => 'http://www.marheavenj.net/reincarnation' ),
-		
     ); 
     
     $alliesContent = '<center>
@@ -856,14 +855,14 @@ function topAllies($dir) {
 
 
 function donateButton ($headline) {
-	global $dir;
+	global $dir; 
 
 	return '<div class="moduleGreen" title="'.$headline.'">
 	<h2>Donate to Our Cause</h2>
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 		<center>
 		<input type="hidden" name="cmd" value="_s-xclick">
-		<input type="hidden" name="hosted_button_id" value="NSEMYW3SPFA6S">
+		<input type="hidden" name="hosted_button_id" value="379TRPFY6NDSS">
 		<input type="image" class="crosshair" src="'.$dir.'images/menu/donate.png" width="220"
 		name="submit" alt="Donate Using Paypal">
 		<img alt="Donate to keep this site running!" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />   
@@ -873,32 +872,55 @@ function donateButton ($headline) {
 </div>';
 }
 
+function randomProduct ($productsList) {
+    $random = rand() % 8;
+    $site_url = get_site_url();
+    
+    $prodMain = $productsList[$random];
 
-function featuredAmazon($conn) {   
-    global $conn;
+    $prod_img = $site_url.'/wp-content/uploads/'.$prodMain['image'];
+
+    $output = '<div class="randomProduct">
+    <a href="'.$prodMain['url'].'" target="_BLANK"><img src="'.$prod_img.'" />
+    <p>'.$prodMain['name'].'</p></a> 
+    </div>';
+
+    return $output;
+}
+
+
+function productsModule () {
+    global $productsList;
+
+    $output = '<div class="productsModule"><div class="headline">Products of the Day</div>
+    '.randomProduct ($productsList).randomProduct ($productsList).randomProduct ($productsList).'</div>'; 
+
+    return $output;
+}
+
+
+function featuredProduct($conn) {   
+    global $dir;
     
     $opt = array(
-        'tableName' => 'amazon',
-        'cond' => 'ORDER BY series, description'
+        'tableName' => 'products',
+        'cond' => 'ORDER BY name'
     );
     
     $resP = dbSelectQuery($opt);
-    
-    $pCount = 0;
+	
+	$pCount = 0;
     while($p = $resP->fetch_array()) {
-        $product[ $pCount ] = $p;
+        $productsList[ $pCount ] = $p;
         $pCount ++;
-    }
-    
-    $max = sizeof($product);
+    } 
+	
+	$random = time() % $pCount;
 
-    $numA = time() % $max;
-    
-    $aContent = amazonSearch('').'<center>'.amazonProduct($product[$numA]['code']).'
-    <br />
-    </center>';
-        
-    return $aContent;
+	$thisProd = $productsList[$random];
+
+	return '<p><a href="'.$thisProd['url'].'"><img src="'.$dir.$thisProd['image'].'" width="100%" /></a></p>
+	<center><p><a href="'.$thisProd['url'].'">'.$thisProd['name'].'</a></p></center>';
 }
 
 function optinForm () {
