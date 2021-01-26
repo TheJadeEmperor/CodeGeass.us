@@ -4,7 +4,7 @@ include($dir.'include/functions.php');
 include($dir.'include/config.php');
 include($dir.'include/spmSettings.php'); 
 
-$conn = $connNUSOld; 
+$conn = $connNUS; 
 $websiteURL = 'https://neobuxultimatestrategy.com';
 
 $headers = "From: ".$adminEmail."\n";
@@ -74,10 +74,14 @@ if (strcmp ($res, "VERIFIED") == 0) {
     // check that payment_amount/payment_currency are correct
     // process payment 
     
-    $selP = 'SELECT * from products WHERE itemName="'.$itemName.'"';
-    $resP = mysql_query($selP, $conn) or die(mysql_error());
+    $opt = array(
+        'tableName' => 'products',
+        'cond' => ' WHERE itemName="'.$itemName.'"'
+    );
     
-    $p = mysql_fetch_assoc($resP); 
+    $res = dbSelectQuery($opt);
+    $p = $res->fetch_array();
+    
     $productID = $p['id'];
     $folder = $p['folder']; 
     $itemPrice = $p['itemPrice'];
@@ -117,8 +121,16 @@ if (strcmp ($res, "VERIFIED") == 0) {
 
             //update account status: C = Cancelled
             if($payerEmail) {
-                $updA = 'UPDATE users SET status="C" where paypal="'.$payerEmail.'" OR email="'.$payerEmail.'"';
-                $resA = mysql_query($updA) or die(mysql_error); 
+                 
+                $opt = array(
+                    'tableName' => 'users', 
+                    'dbFields' => array(
+                        'status' => "C",
+                    ),
+                    'cond' => 'WHERE paypal="'.$payerEmail.'" OR email="'.$payerEmail.'"'
+                );
+            
+                dbUpdate($opt); 
             }
 			
             break; 
@@ -157,11 +169,14 @@ if (strcmp ($res, "VERIFIED") == 0) {
                 );
                 
                 //check for existing sale
-                $sel = 'SELECT transID FROM sales WHERE transID="'.$transID.'"';
-                $res = mysql_query($sel, $conn) or die(mysql_error()); 
+                $opt = array(
+                    'tableName' => 'sales',
+                    'cond' => ' WHERE transID="'.$transID.'"'
+                );
                 
-                if(mysql_num_rows($res) == 0) {
-                    
+                $res = dbSelectQuery($opt);
+
+                if($res->num_rows == 0) {
                     //add sales record into database
                     dbInsert($opt); 
                     
