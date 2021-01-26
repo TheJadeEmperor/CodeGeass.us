@@ -5,7 +5,7 @@ include($dir.'include/config.php');
 include($dir.'include/spmSettings.php'); 
 
 $conn = $connBPS; 
-$websiteURL = 'https://bestpayingsites.com';
+$websiteURL = 'https://bestpayingsites.com/';
 
 $headers = "From: ".$adminEmail."\n";
 $headers .= "Content-type: text/html;";
@@ -112,7 +112,7 @@ if (strcmp ($res, "VERIFIED") == 0) {
     
             <p>The following are details of the order:
             <br><br>
-            <p> Payer ID: '.$_POST[payer_id].'<br> 
+            <p> Payer ID: '.$_POST['payer_id'].'<br> 
             Txn ID: '.$transID.'<br>
             Paypal Email: '.$payerEmail.'<br>
             Item Name: '.$itemName.'<br>
@@ -149,7 +149,7 @@ if (strcmp ($res, "VERIFIED") == 0) {
             //check if price matches and if amount is fake
             if(($itemPrice != $paymentAmount) && ($paymentAmount == '0.01')) {
                 //redirect to fraud page 
-                $downloadLink = $websiteURL.'fraud.html';
+                $downloadLink = $websiteURL.'?action=fraud';
             }
             
             if($itemNumber) {
@@ -216,7 +216,7 @@ else { //bad transaction
     $stringData = "Problem with order\n".$message;
     fwrite($fh, $stringData);
     
-    $downloadLink = $websiteURL.'/?action=thankyou';
+    $downloadLink = $websiteURL.'?action=thankyou';
 }
 
 $stringData = "timestamp: ".date('m/d/Y h:i a', time())."\n\n";
