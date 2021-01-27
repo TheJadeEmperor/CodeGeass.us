@@ -147,7 +147,7 @@ if (strcmp ($res, "VERIFIED") == 0) {
             fwrite($fh, $stringData);
             
             //check if price matches and if amount is fake
-            if(($itemPrice != $paymentAmount) && ($paymentAmount == '0.01')) {
+            if(($itemPrice != $paymentAmount) /*&& ($paymentAmount == '0.01')*/ ) {
                 //redirect to fraud page 
                 $downloadLink = $websiteURL.'?action=fraud';
             }
