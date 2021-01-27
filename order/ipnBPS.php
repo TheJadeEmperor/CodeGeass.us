@@ -2,7 +2,6 @@
 $dir = '../';
 include($dir.'include/functions.php');
 include($dir.'include/config.php');
-include($dir.'include/spmSettings.php'); 
 
 $conn = $connBPS; 
 $websiteURL = 'https://bestpayingsites.com/';
