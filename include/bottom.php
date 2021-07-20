@@ -67,7 +67,7 @@
 
                 <li><a href="https://www.etsy.com/shop/AnimeEmpireShop"><i class="fa fa-cart-plus"></i></a></li>
                 
-                <li><a href="<?php echo $site_url?>/download"><i class="fa fa-envelope-open"></i></a></li>
+                <li><a href="mailto:<?php echo $supportEmail?>"><i class="fa fa-envelope-open"></i></a></li>
             </ul>
         </div>
     </div>

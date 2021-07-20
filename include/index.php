@@ -119,10 +119,7 @@ $context = array(
 
 //support email address
 $supportEmail = 'support@bestpayingsites.com';
-
-//paypal email address
-$paypalEmail = 'robinsonpp@protonmail.com';
-
+//$supportEmail = 'animefavoritechannel@gmail.com';
 
 //delete error logs, if applicable
 if(file_exists('error_log')) 
