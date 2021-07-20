@@ -94,7 +94,7 @@ echo moduleBlack($moduleBlack).'<p>&nbsp;</p>';
 
 
 $optinBox = '
-<div class="moduleBlack optin"><h1 id="joinForm">Anime Chat Group</h1>
+<div class="moduleBlack optin"><h1 id="joinForm">Anime Newsletter</h1>
 <div>
     <p><b>Want to find out what the latest and hottest shows are?</b>
         <br /><b>Subscribe to this group now to chat about anime, and also make some new friends!</b></p>
@@ -133,8 +133,7 @@ $optinBox = '
         <td align="center">
             <?=$optinBox?>
         </td>
-        <td><a href="<?=$links[clixsenseReferral][link]?>" title="Make Money with Clixsense" 
-        rel="nofollow" target="_blank"><img src="<?=$dir?>images/ad/clixsenseVertical.gif" alt="Clixsense" title="Make Money with Clixsense" /></td>
+        
     </tr>
 </table>
 

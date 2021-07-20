@@ -3,9 +3,9 @@ $dir = '../';
 include('alliesCode.php');
 
 $selA = 'select * from allies order by category, id';
-$resA = mysql_query($selA, $conn) or mysql_error();
+$resA = mysqli_query($selA, $conn) or mysqli_error();
 
-while($rowA = mysql_fetch_assoc($resA))
+while($rowA = mysqli_fetch_assoc($resA))
 {
 	$cat = $rowA[category];
 	

@@ -346,8 +346,7 @@ function youtubeModule($source, $width, $height)
 }//
 
 
-function randomBlock($number)
-{
+function randomBlock($number) {
 	global $module;
 
 	switch( rand() % 2 )//random feature
@@ -368,18 +367,16 @@ function randomBlock($number)
 }//function
 
 
-
-function randomStuff()	//Display pieces of random things from the show
-{
+function randomStuff() { //Display pieces of random things from the show
 	global $module, $conn, $dir;
 
-	$total = 0;
-	$selE = 'select epID from episodes order by episode asc';
-	$resE = mysql_query($selE, $conn) or die(mysql_error());
+	$total = 0; //total episodes
+
+	$selE = 'SELECT epID FROM episodes ORDER BY episode ASC';
+	$resE = $conn->query($selE) or mysqli_error();
 	
-	while($tv = mysql_fetch_assoc($resE))
-	{
-		$id = $tv[epID];
+	while($tv = mysqli_fetch_assoc($resE)) {
+		$id = $tv['epID'];
 		list($season, $episode) = explode('_', $id);
 		
 		if($season == 2)
@@ -416,31 +413,30 @@ function randomStuff()	//Display pieces of random things from the show
 	<table cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
-			<a href="'.$blockA[link].'" title="'.$blockA[caption].'">
-			<img src="'.$blockA[img].'" alt="'.$blockA[caption].'" width="213" height="146"></a>
+			<a href="'.$blockA['link'].'" title="'.$blockA['caption'].'">
+			<img src="'.$blockA['img'].'" alt="'.$blockA['caption'].'" width="213" height="146"></a>
 		</td><td>
-			<a href="'.$blockB[link].'" title="'.$blockB[caption].'">
-			<img src="'.$blockB[img].'" alt="'.$blockB[caption].'" width="213" height="146"></a>
+			<a href="'.$blockB['link'].'" title="'.$blockB['caption'].'">
+			<img src="'.$blockB['img'].'" alt="'.$blockB['caption'].'" width="213" height="146"></a>
 		</td><td>
-			<a href="'.$blockC[link].'" title="'.$blockC[caption].'">
-			<img src="'.$blockC[img].'" alt="'.$blockC[caption].'" width="213" height="146"></a>
+			<a href="'.$blockC['link'].'" title="'.$blockC['caption'].'">
+			<img src="'.$blockC['img'].'" alt="'.$blockC['caption'].'" width="213" height="146"></a>
 		</td>
 	</tr><tr>
-		<td align="center"><a href="'.$blockA[link].'" title="'.$blockA[caption].'">
-			'.$blockA[caption].'</a></td>
- 		<td align="center"><a href="'.$blockB[link].'" title="'.$blockB[caption].'">
- 			'.$blockB[caption].'</a></td>
- 		<td align="center"><a href="'.$blockB[link].'" title="'.$blockB[caption].'">
- 			'.$blockC[caption].'</a></td>
+		<td align="center"><a href="'.$blockA['link'].'" title="'.$blockA['caption'].'">
+			'.$blockA['caption'].'</a></td>
+ 		<td align="center"><a href="'.$blockB['link'].'" title="'.$blockB['caption'].'">
+ 			'.$blockB['caption'].'</a></td>
+ 		<td align="center"><a href="'.$blockB['link'].'" title="'.$blockB['caption'].'">
+ 			'.$blockC['caption'].'</a></td>
 	</tr>
 	</table>
 	</fieldset>
 	</div>';
-}//
+} //randomStuff
 
 
-function amazonSearch($text)
-{
+function amazonSearch($text) {
 	$search = '<a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fs%3Fie%
 	3DUTF8%26x%3D0%26ref_%3Dnb%5Fsb%5Fnoss%26y%3D0%26field-keywords%3Dcode%2520geass%26url%3Dsearch-alias%253Daps&tag=
 	profwebsofben-20&linkCode=ur2&camp=1789&creative=390957" target="_blank" rel="nofollow" title="'.$text.'"
@@ -494,7 +490,7 @@ function amazonProduct($pCode)//returns amazon img & link based on product ID
 
 function randomProducts() //shows 3 random products
 {
-	global $conn;
+/*	global $conn;
   //  mysql_select_db('codegeas_refrain'); 
     
 	$selP = 'select * from amazon order by series, description';
@@ -526,7 +522,8 @@ function randomProducts() //shows 3 random products
 		</table>
 	</td>
 	</tr>
-	</table></div>';
+	</table></div>';*/
+	
 }//function
  
 
@@ -719,16 +716,12 @@ function featuredTrack($dir) {
     global $context;
 
     $count = 0;//array counter
-    for($season = 1; $season <= 2; $season++)//go through each season (1-2)
-    {
-        for($track = 1; $track <= 2; $track++)//go through each track (1-2)
-        {
-            if ($handle = opendir($dir.'media/downloads/ost_'.$season.'_'.$track))
-            {
-                while (false !== ($file = readdir($handle)))    //List all the files
-                {
-                    if($file != 'Thumbs.db' && $file != '..' && $file != '.')
-                    {
+    for($season = 1; $season <= 2; $season++) { //go through each season (1-2)
+        for($track = 1; $track <= 2; $track++) { //go through each track (1-2)
+            if ($handle = opendir($dir.'media/downloads/ost_'.$season.'_'.$track)) {
+				while (false !== ($file = readdir($handle))) { //List all the files
+                    if($file != 'Thumbs.db' && $file != '..' && $file != '.') {
+
                         list($stuff, $ost, $song, $title) = explode('-', $file);
 
                         list($title, $ext) = explode('.', $title);//remove .mp3 extention from title
@@ -764,14 +757,12 @@ function featuredTrack($dir) {
         $tContent .= '<a href="'.$dir.'media/music/ost.php" target="_blank">
         <p><img src="'.$trackImg.'" alt="'.$featured['title'].'" title="'.$featured['title'].'" class="crosshair"></a></p>';
 
-    $tContent .= '<p><a href="'.$dir.'media/music/ost.php" title="Download this track">Download this track</a>
+    $tContent .= '<p><a href="'.$dir.'media/music/ost.php" title="Listen to this track">Listen to this track</a>
     <br />
     <a href="'.$dir.'media/music/ost.php" title="View all OSTs">View All OSTs</a></p>';
     
     return $tContent;
 }
-
-
 
 function topAllies($dir) {    
     $alliesList = array(
@@ -859,16 +850,12 @@ function donateButton ($headline) {
 
 	return '<div class="moduleGreen" title="'.$headline.'">
 	<h2>Donate to Our Cause</h2>
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-		<center>
-		<input type="hidden" name="cmd" value="_s-xclick">
-		<input type="hidden" name="hosted_button_id" value="379TRPFY6NDSS">
-		<input type="image" class="crosshair" src="'.$dir.'images/menu/donate.png" width="220"
-		name="submit" alt="Donate Using Paypal">
-		<img alt="Donate to keep this site running!" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />   
-		<p><b>Donations keep our site running!</b></p>
-		</center>
-	</form>
+	
+	<a href="https://commerce.coinbase.com/checkout/e0c11645-a8dd-421b-aa47-bde40f92f0bd" target="_BLANK"><img src="'.$dir.'images/menu/donate.png" /></a>
+	<div>
+	<center><p><b>Thank you for donating!</b></p></center>
+	</div>
+	 
 </div>';
 }
 
@@ -887,7 +874,6 @@ function randomProduct ($productsList) {
 
     return $output;
 }
-
 
 function productsModule () {
     global $productsList;

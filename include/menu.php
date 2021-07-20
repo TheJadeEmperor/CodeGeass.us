@@ -85,17 +85,12 @@ $menu = array(
 			'Version 2.0' => array(
 				'link' => $dir.'about/version2.php',
 				'title' => 'Version 2 of Refrain'),
-			'Allies' => array(
-				'link' => $dir.'allies/', 
-				'title' => 'Allies', 
-				'subMenu' => array(
-					'Allies List' => array(
-						'link' => $dir.'allies/list.php'),
-					'Apply Here' => array(
-						'link' => $dir.'allies/'),
-					'Marketing Division' => array()
-				)
-			)
+            'Marketing Division' => array(
+                'link' => $dir.'allies/marketing.php.php',
+				'title' => 'Code Geass Marketing Materials'),
+            'Allies List' => array(
+                'link' => $dir.'allies/list.php',
+                'title' => 'Code Geass Allies'),
 		)
 	),
 	'Characters' => array(

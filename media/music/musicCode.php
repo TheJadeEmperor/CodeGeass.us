@@ -45,9 +45,7 @@ $section = array(
 	'leftBox' => "<h1>Code Geass OSTs</h1><h2>R1 & R2 OST's</h2>".$leftBox."
 		<p>The proud members of Anime Empire have compiled a list of the entire Code Geass Soundtrack! 
 		Desperate and frustrated looking for lyrics of Code Geass songs all over the web? Your search ends here! 
-		We have the lyrics, names, artists, and downloads available! If you are unable to find a song that you're 
-		looking for, please sign up and send in a request for us on the forum, we will get it on here as soon 
-		as possible!!</p>",
+		We have the lyrics, names, artists, and downloads available! </p>",
 	'display' => 'Code Geass OSTs',
 	'title' => 'Code Geass OSTs',
 	'link' => $dir.'media/music/ost.php'),
@@ -57,16 +55,14 @@ $section = array(
 		'title' => 'Code Geass Sound Episodes | Code Geass Media'),
 	'leftBox' => "<h2>Sound Episodes</h2><p>This is your one-stop source for 
 		all your <b>Code Geass</b> music related needs. Ever wonder where to find the lyrics of your 
-		favorite song? Then look no further, because we have it all! Even if we don't have what you're
-		looking for, we will have it eventually, in our continuing effort to make this website the 
-		place for anything <b>Code Geass</b> related.</p>",
+		favorite song? Then look no further, because we have it all! ",
 	'display' => 'Sound Episodes',
 	'title' => 'Code Geass Sound Episodes',
 	'link' => $dir.'media/music/sound.php')
-);//$section
+); //$section
 
 
-$leftBox = '<h3>Code Geass Music & Media</h3>'.$section[$key][leftBox]; 
+$leftBox = '<h3>Code Geass Music & Media</h3>'.$section[$key]['leftBox']; 
 $rightBox = showRightBox($section);
 
 

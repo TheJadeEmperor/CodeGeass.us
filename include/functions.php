@@ -39,40 +39,7 @@
 ###############################################################*/
 
 
-function database1($host, $user, $pw, $dbName)
-{
-	global $conn; 
-	
-	if(is_int(strpos(__FILE__, 'C:\\')))	//connect to database remotely (local server)
-	{ 
-		$conn = mysqli_connect($host, $user, $pw) or die(mysql_error().' ('.__LINE__.')');
-	}
-	else //connect to database directly (live server)
-	{
-		$conn = mysqli_connect('localhost', $user, $pw) or die(mysql_error().' ('.__LINE__.')');
-	}
-	
-	mysql_select_db($dbName) or die(mysql_error());
-	
-	return $conn;
-}
 
-// connect to database, returns resource 
-function database($host, $user, $pw, $dbName) {
-
-	if(!is_int(strpos(__FILE__, 'C:\\'))) { //connect to db remotely (local server)
-		$host = 'localhost';
-	}
-	
-	$conn = new mysqli($host, $user, $pw, $dbName);
-	// Check connection
-	if ($conn -> connect_errno) {
-	  echo __LINE__." ". $conn -> connect_error;
-	  exit();
-	}
-
-	return $conn;
-}
 
 //code for popup in splash/popUp.php and popup.css
 function popUpWindow($dir) {
@@ -376,6 +343,45 @@ function stripAllSlashes($array) {
     return $newArray;
 }
 
+//connect using mysqli
+/*
+function database1($host, $user, $pw, $dbName) {
+	global $conn; 
+	
+	if(is_int(strpos(__FILE__, 'C:\\')))	//connect to database remotely (local server)
+	{ 
+		$conn = mysqli_connect($host, $user, $pw) or die(mysql_error().' ('.__LINE__.')');
+	}
+	else //connect to database directly (live server)
+	{
+		$conn = mysqli_connect('localhost', $user, $pw) or die(mysql_error().' ('.__LINE__.')');
+	}
+	
+	mysql_select_db($dbName) or die(mysql_error());
+	
+	return $conn;
+}
+*/
+
+// connect to database, returns resource 
+function database($host, $user, $pw, $dbName) {
+
+	if(!is_int(strpos(__FILE__, 'C:\\'))) { //connect to db remotely (local server)
+		$host = 'localhost';
+	}
+	
+	$conn = new mysqli($host, $user, $pw, $dbName);
+	
+	// Check connection
+	if ($conn -> connect_errno) {
+	  echo __LINE__." ". $conn -> connect_error;
+	  exit();
+	}
+
+	return $conn;
+}
+
+
 /*
 $opt = array(
  	'tableName' => $tableName,
@@ -422,7 +428,8 @@ function dbSelect($opt) {
 	if($opt['cond'])
 		$sel .= ' '.$opt['cond']; 
 	
-	$res = $conn->query($sel);
+	$res = $conn->query($sel) or die($conn->mysql_error());
+
 
 	while($rows = $res->fetch_array()) {
 		foreach($rows as $fld => $val) {	//remove slashes 
@@ -449,11 +456,11 @@ function dbSelectQuery($opt) {
 	global $conn; 
 	
 	$sel = 'SELECT * FROM '.$opt['tableName']; 
-	
+
 	if($opt['cond'])
 		$sel .= ' '.$opt['cond']; 
 
-	$res = $conn->query($sel);
+	$res = $conn->query($sel) or $conn->mysqli_error;
 
 	if($_GET['debug'] == 1) {
 		echo '<pre>'.$sel.'</pre>';
