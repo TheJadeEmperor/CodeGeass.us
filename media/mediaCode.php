@@ -6,13 +6,14 @@ include($dir.'include/config.php');
 include($dir.'include/index.php');
 ///////////////////////////////////////
 
-include($dir.'media/mCode.php');
+function songKey($key) {
+	$key = str_replace('_v1', '', $key);
+	$key = str_replace('_v2', '', $key);
+	return $key;
+}
 
-
-function mediaDisplay($key)
-{
-	switch ($key)
-	{
+function mediaDisplay($key) {
+	switch ($key) {
 		case 'index':
 			return 'Media';
 		case 'animation':
@@ -58,38 +59,33 @@ $section = array(
 
 //echo $key;
 
-foreach($section as $map => $val)
-{
+foreach($section as $map => $val) {
 	if(file_exists($dir.'media/'.$map.'/index.php')) 
 		$link = $dir.'media/'.$map;
 	else
 		$link = $dir.'media/'.$map.'.php';
 
-	$section[$map][display] = mediaDisplay($map);
-	$section[$map][title] = mediaDisplay($map);
-	$section[$map][link] = $link;	
-	$section[$map][leftBox] = '<h1>Code Geass '.mediaDisplay($map).'</h1><h2>Code Geass Media</h2>';
+	$section[$map]['display'] = mediaDisplay($map);
+	$section[$map]['title'] = mediaDisplay($map);
+	$section[$map]['link'] = $link;	
+	$section[$map]['leftBox'] = '<h1>Code Geass '.mediaDisplay($map).'</h1><h2>Code Geass Media</h2>';
 }
 
-$leftBox = $section[$key][leftBox];
-switch($key)
-{
-	case 'index':
-	{
-		$leftBox = $section[$key][leftBox].'This is the center of all Code Geass media - 
+$leftBox = $section[$key]['leftBox'];
+switch($key) {
+	case 'index': {
+		$leftBox = $section[$key]['leftBox'].'This is the center of all Code Geass media - 
 		come check out our animations, videos, music, galleries';
 		break;
 	}
-	case 'animation':
-	{
-		$leftBox = $section[$key][leftBox].'Check out our collection of Code Geass animations we have
+	case 'animation': {
+		$leftBox = $section[$key]['leftBox'].'Check out our collection of Code Geass animations we have
 		found over the internet. If you\'d like to see more you may request it from us, or if you\'d 
 		like to submit some animated gifs, drop us an email at TheEmperor@codegeass.us';
 		break;
 	}
-	case 'videos':
-	{
-		$leftBox = $section[$key][leftBox].'Stream all the episodes or buy them in high quality 
+	case 'videos': {
+		$leftBox = $section[$key]['leftBox'].'Stream all the episodes or buy them in high quality 
 		directly from amazon.com';
 		break;
 	}

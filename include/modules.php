@@ -373,7 +373,7 @@ function randomStuff() { //Display pieces of random things from the show
 	$total = 0; //total episodes
 
 	$selE = 'SELECT epID FROM episodes ORDER BY episode ASC';
-	$resE = $conn->query($selE) or mysqli_error();
+	$resE = $conn->query($selE) or die($conn->error);
 	
 	while($tv = mysqli_fetch_assoc($resE)) {
 		$id = $tv['epID'];
