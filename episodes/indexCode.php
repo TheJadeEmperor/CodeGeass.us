@@ -47,8 +47,8 @@ function episodeQuad($id) {
 
 $s = $info;
 
-$s[summary] = stripslashes( $s[summary] );
-$s['synopsis'] = stripslashes( $s[synopsis] );
+$s['summary'] = stripslashes( $s['summary'] );
+$s['synopsis'] = stripslashes( $s['synopsis'] );
 
 if($season == 1)
 	$opt = 1;
@@ -67,13 +67,13 @@ else {
 	<p>Synopsis not available</p>');
 }
 
-if($s[summary]) {
-	$summaryContent = div('<h2 id="summary">Code Geass '.$episode.' Summary</h2><h3>Hangyaku no Lelouch '.$episode.' - '.$s[jap].' - '.$s[kanji].'</h3>
-	'.processText($s[summary]) ).'
+if($s['summary']) {
+	$summaryContent = div('<h2 id="summary">Code Geass '.$episode.' Summary</h2><h3>Hangyaku no Lelouch '.$episode.' - '.$s['jap'].' - '.$s['kanji'].'</h3>
+	'.processText($s['summary']) ).'
 	<table><tr><td>'.div('Summary written by Staff').'</td></tr></table>';
 }
 else {
-	$summaryContent = div('<h2 id="summary">Code Geass '.$episode.' Summary</h2><h3>Hangyaku no Lelouch '.$episode.' - '.$s[jap].' - '.$s[kanji].'</h3>
+	$summaryContent = div('<h2 id="summary">Code Geass '.$episode.' Summary</h2><h3>Hangyaku no Lelouch '.$episode.' - '.$s['jap'].' - '.$s['kanji'].'</h3>
 	
 	<p>Summary not available</p>' );
 }

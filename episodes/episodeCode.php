@@ -6,8 +6,7 @@ include($dir.'include/config.php');
 include($dir.'include/index.php');
 ///////////////////////////////////////
 
-function featureType($feature)
-{
+function featureType($feature) {
 	switch($feature)
 	{
 		case 'review':
@@ -171,21 +170,20 @@ $id = epID($_SERVER[PHP_SELF]);
 /////////////////////////////////////
 
 
-$feature = feature($_SERVER[PHP_SELF]);
+$feature = feature($_SERVER['PHP_SELF']);
 
 //get season and episode #
 list($season, $episode) = explode('_', $id);
 
-$selE = 'select * from episodes order by episode asc';
-$resE = mysql_query($selE, $conn) or die(mysql_error().__LINE__);
+$selE = 'SELECT * FROM episodes ORDER BY episode ASC';
+$resE = $conn->query($selE) or die($conn->error);
 
-while($tv = mysql_fetch_assoc($resE))
-{
-	list($s, $ep) = explode('_', $tv[epID]);
+while($tv = mysqli_fetch_assoc($resE)) {
+	list($s, $ep) = explode('_', $tv['epID']);
 
 	$tvEpisodes[$s][$ep] = $tv;	
 		
-	if($tv[epID] == $id) //the current episode we are viewing
+	if($tv['epID'] == $id) //the current episode we are viewing
 		$info = $tv;
 }
 
@@ -196,13 +194,12 @@ $nextPreviousButtons = nextPrevButtons($id, $file);
 $eFile = $id.'.php';
 $epath = $dir.'episodes/';
 
-
 $featureType = array(
 'main' => array(
 	'meta' => array(
-		'tags' => 'code geass '.$episode.', code geass episodes, '.$info[eng],
-		'title' => 'Code Geass '.$episode.' - Code Geass Episodes - '.$info[eng],
-		'desc' => $info[eng].' - '.$info[jap]),
+		'tags' => 'code geass '.$episode.', code geass episodes, '.$info['eng'],
+		'title' => 'Code Geass '.$episode.' - Code Geass Episodes - '.$info['eng'],
+		'desc' => $info['eng'].' - '.$info['jap']),
 	'link' => $epath.'main/'.$eFile,
 	'title' => 'Code Geass '.$episode,' Main',
 	'display' => 'Episode '.$episode.' Main',
@@ -212,9 +209,9 @@ $featureType = array(
 	
 'ss' => array(
 	'meta' => array(
-		'tags' => 'code geass '.$episode.', code geass screenshots, '.$info[eng],
-		'title' => 'Code Geass '.$episode.' - Screenshots Gallery - '.$info[eng], 
-		'desc' => $info[eng].' - '.$info[jap]),
+		'tags' => 'code geass '.$episode.', code geass screenshots, '.$info['eng'],
+		'title' => 'Code Geass '.$episode.' - Screenshots Gallery - '.$info['eng'], 
+		'desc' => $info['eng'].' - '.$info['jap']),
 	'link' => $epath.'main/'.$eFile.'#gallery',
 	'title' => 'Code Geass '.$episode.' Gallery',
 	'display' => 'Screenshots Gallery',
@@ -223,8 +220,8 @@ $featureType = array(
 'synopsis' => array(
 	'meta' => array(
 		'tags' => 'code geass '.$episode.', code geass synopsis',
-		'title' => 'Code Geass '.$episode.' - Synopsis'.$info[eng],
-		'desc' => $info[eng].' - '.$info[jap]),
+		'title' => 'Code Geass '.$episode.' - Synopsis'.$info['eng'],
+		'desc' => $info['eng'].' - '.$info['jap']),
 	'link' => $epath.'main/'.$eFile.'#synopsis',
 	'title' => 'Episode '.$episode.' Synopsis',
 	'display' => 'Synopsis',
@@ -233,8 +230,8 @@ $featureType = array(
 'summary' => array(
 	'meta' => array(
 		'tags' => 'code geass '.$episode.', code geass summary',
-		'title' => 'Code Geass '.$episode.' - Synopsis'.$info[eng],
-		'desc' => $info[eng].' - '.$info[jap]),
+		'title' => 'Code Geass '.$episode.' - Synopsis'.$info['eng'],
+		'desc' => $info['eng'].' - '.$info['jap']),
 	'link' => $epath.'main/'.$eFile.'#summary',
 	'title' => 'Episode '.$episode.' Summary',
 	'display' => 'Summary',
@@ -244,11 +241,9 @@ $featureType = array(
 
 
 $leftBox = '<h1>Code Geass '.$episode.' - Season '.$season.' Episode</h1>
-<h2>'.$info[eng].'</h2>'.$featureType[$feature][leftBox];
+<h2>'.$info['eng'].'</h2>'.$featureType[$feature]['leftBox'];
 
 $rightBox = showRightBox($featureType);
 
-
-
-$section[$key][meta] = $featureType[$feature][meta];      
+$section[$key]['meta'] = $featureType[$feature]['meta'];      
 ?>
