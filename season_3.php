@@ -34,5 +34,8 @@ echo popUpImg('images/gaiden_3.gif', 'images/gaiden_3.gif', 'Code Geass Gaiden')
 <?
 echo gallery($dir.'episodes/ss/3_1');
 ?>
+
+
+
 <?
 include($dir.'include/bottom.php'); ?>
