@@ -1,6 +1,8 @@
 <?php
 $dir = '../../';
+
 include('charsCode.php');
+
 
 $white = array('bio', 'spoiler', 'profile'); 
 
@@ -10,7 +12,7 @@ foreach($white as $space) {
 
 
 //character image and profile
-echo charProfile($bio[charName], ' ');
+echo charProfile($bio['charName'], ' ');
 
 
 //the main bio

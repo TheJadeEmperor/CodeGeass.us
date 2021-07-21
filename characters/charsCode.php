@@ -7,12 +7,34 @@ include($dir.'include/config.php');
 include($dir.'include/index.php');
 ///////////////////////////////////////
 
+/*
 function charName() {
 	$server = str_replace('codegeass.us', '', $_SERVER['PHP_SELF']);
 
 	list($crap, $crap, $crap, $code) = explode('/', $server);
 
 	return $code;
+}
+*/
+
+function curPageURL() {
+    $pageURL = 'http';
+    if ($_SERVER["HTTPS"] == "on") {
+        $pageURL .= "s";
+    }
+    $pageURL .= "://";
+    if ($_SERVER["SERVER_PORT"] != "80") {
+        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
+    } 
+    else {
+        $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+    }
+
+	list($crap, $code) = explode('//', $pageURL);
+	list($crap1, $crap2, $charName) = explode('/', $code);
+
+   //echo $crap1.' '.$crap2.' '. $charName.' ';
+	return $charName;
 }
 
 function charProfile($name, $extra) {
@@ -82,14 +104,13 @@ function charProfile($name, $extra) {
 		$p .= '</td></tr>';
 	}	
 		
-	if($char['nationality'] != '')
-	{
+	if($char['nationality'] != '') {
 		$p .= '<tr><td><strong>Nationality</strong>:</td>
 		<td>'.getNationality($char['nationality']).'</td></tr>';
 	}
 
-	if($char['occupation'] != '')//occupation
-	{
+	if($char['occupation'] != '') { //occupation
+	
 		$p .= '<tr valign="top">
 		<td><strong>Occupation(s)</strong>:</td><td>';
 		
@@ -97,8 +118,7 @@ function charProfile($name, $extra) {
 
 		$job = explode(', ', $occ);
 		
-		foreach($job as $occ)
-		{
+		foreach($job as $occ) {
 			if( end($job) == $occ )	//end of array, no commas
 				$p .= getOccupation($occ);
 			else
@@ -260,15 +280,16 @@ function showSpoiler($text) { //show a spoiler about the character
 	return div('<h3>Spoiler</h3>'.processText($text));
 }//function
 
-//name of character, from URL
-$charName = $name = charName();
+//get name of character from URL
+$charName = curPageURL();
 
+//echo $charName;
 
 //get info of all chars
 $selC = 'SELECT * from chars ORDER BY charName asc';
-$resC = mysql_query($selC, $conn) or die(mysql_error());
+$resC = $conn->query($selC) or die($conn->error);
 
-while($ch = mysql_fetch_assoc($resC)) {
+while($ch = mysqli_fetch_assoc($resC)) { 
 	if($charName == $ch['charName']) { //current character
 		$bio = $ch;
 		$fullName = $bio['fullName'];
@@ -279,27 +300,27 @@ while($ch = mysql_fetch_assoc($resC)) {
 $leftContent = '<h1>'.$fullName.'</h1><h2>'.$displayName.'</h2>'; 
 
 $section = array(
-'index'  => array(
-	'meta' => array(
-		'tags' => $charName.', '.$fullName.', code geass character',
-		'title' => $fullName.' - Code Geass Character Profile',
-		'desc' => $fullName.' - read more about '.$charName.' here...'
+	'index'  => array(
+		'meta' => array(
+			'tags' => $charName.', '.$fullName.', code geass character',
+			'title' => $fullName.' - Code Geass Character Profile',
+			'desc' => $fullName.' - read more about '.$charName.' here...'
+		),
+		'display' => $fullName.' Profile',
+		'title' => $fullName.' Profile',
+		'link' => 'index.php',
+		'leftBox' => $leftContent.'<h3>Code Geass Character Profile</h3>'
 	),
-	'display' => $fullName.' Profile',
-	'title' => $fullName.' Profile',
-	'link' => 'index.php',
-	'leftBox' => $leftContent.'<h3>Code Geass Character Profile</h3>'
-),
-'all' => array(
-	'display' => 'All Code Geass Characters',
-	'title' => 'All Code Geass Characters',
-	'link' => $dir.'chars.php',
-)
+	'all' => array(
+		'display' => 'All Code Geass Characters',
+		'title' => 'All Code Geass Characters',
+		'link' => $dir.'chars.php',
+	)
 );
 
 
 if(file_exists('gallery.php')) {
-	$section[gallery] = array(
+	$section['gallery'] = array(
 		'display' => $fullName.' Gallery',
 		'title' => $fullName.' Gallery',
 		'link' => 'index.php#gallery',
