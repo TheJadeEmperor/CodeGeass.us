@@ -309,9 +309,9 @@ $menu = array(
     'Season 3' => array(
         'link' => $dir.'season_3.php',
         'title' => 'Code Geass R3'),
-	'Chat' => array(
-        'link' => 'https://www.facebook.com/groups/cgrefrain3/',
-        'title' => 'Refrain on Facebook'),
+	'Store' => array(
+        'link' => 'https://www.etsy.com/shop/AnimeEmpireShop',
+        'title' => 'Anime Empire Shop'),
 )//item
 );//$menu
 
@@ -369,19 +369,23 @@ flush();
 <div id="container">
     <?=mainMenu($menu)?>
 
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    <!-- Adsense Header -->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- CodeGeass Header -->
-<ins class="adsbygoogle"
+
+    <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-9979225970120201"
      data-ad-slot="9089608410"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-	
-    <p>&nbsp;</p>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!-- Adsense Header -->
+
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     
