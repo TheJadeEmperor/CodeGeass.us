@@ -1452,22 +1452,22 @@ $specs = array(
 $mecha = $specs[$key];
 ////////////////////////
 //meta information 
-$section[$key][meta] = array(
-	'tags' => $mecha[shortName].', knightmare frames',
-	'title' => $mecha[shortName].' - Knightmare Frames - Code Geass' 
-);//
+$section[$key]['meta'] = array(
+	'tags' => $mecha['shortName'].', knightmare frames',
+	'title' => $mecha['shortName'].' - Knightmare Frames - Code Geass' 
+); //
 
-$leftBox = '<h1>Code Geass Knightmare Frames</h1><h2>'.$mecha[longName].'</h2>
-<h3>'.generation($mecha[genType]).generationDisplay($mecha[genType]).'</h3>';
+$leftBox = '<h1>Code Geass Knightmare Frames</h1><h2>'.$mecha['longName'].'</h2>
+<h3>'.generation($mecha[genType]).generationDisplay($mecha['genType']).'</h3>';
 
 $rightBox = knightmareBlock($knightModels);
 
-$knightMenu[$mecha[genType]][dis][display] = $mecha[shortName]; //display model name in link tree
+$knightMenu[$mecha['genType']]['dis']['display'] = $mecha['shortName']; //display model name in link tree
 
 
 
-if($specs[$key][img] != '') 
-	$specImage .= popUpImg($mpath.$key.'/'.$mecha[img], $mpath.$key.'/big/(1).png', $key);
+if($specs[$key]['img'] != '') 
+	$specImage .= popUpImg($mpath.$key.'/'.$mecha['img'], $mpath.$key.'/big/(1).png', $key);
 else //default profile image
 	$specImage .= popUpImg($mpath.$key.'/small/(1).png', $mpath.$key.'/big/(1).png', $key).'<br>'.
 		popUpImg($mpath.$key.'/small/(2).png', $mpath.$key.'/big/(2).png', $key);
@@ -1476,8 +1476,7 @@ else //default profile image
 $specTable .= '<table><tr valign="top"><td>'.$specImage.'</td>
 	<td><div class="content"><table>';
 
-foreach($specs[categories] as $cat => $category)
-{
+foreach($specs['categories'] as $cat => $category) {
 	if($specs[$key][$cat] != '')
 		$specTable .= '<tr valign="top"><td>'.$category.': </td><td>'.processText($specs[$key][$cat]).'</td></tr>';
 }//foreach
@@ -1486,27 +1485,25 @@ $specTable .= '</table><br></div></td>
 </tr>
 </table>'.randomProducts().'<br>';
 
-if($specs[$key][desc] != '')//knightmare description
-	$specTable .= div( top().'<h3>Knightmare Profile</h3>'.processText($specs[$key][desc]) );
+if($specs[$key]['desc'] != '')//knightmare description
+	$specTable .= div( top().'<h3>Knightmare Profile</h3>'.processText($specs[$key]['desc']) );
 
 	
 if(file_exists($key.'/ss')) //if gallery folder exists
 	$specTable .= gallery($dir.'knightmares/models/'.$key.'/ss').'<br><br>';	
 
 	
-if(is_array($specs[$key]['var'])) //model variations
-{
+if(is_array($specs[$key]['var'])) { //model variations
+
 	$specTable .= 'Below is a list of all '.$key.' model variations: <table><tr>';
-	foreach($specs[$key]['var'] as $k => $val)
-	{
-		$specTable .= '<td>'.popUpImg('knightmares/models/'.$key.'/small/'.$val[img], 
+	foreach($specs[$key]['var'] as $k => $val) {
+		$specTable .= '<td>'.popUpImg('knightmares/models/'.$key.'/small/'.$val['img'], 
 		'knightmares/models/'.$key.'/big/'.$val[img], $key).'</td>
 		<td width="10px"></td>';
 	}//foreach
 	$specTable .= '</tr><tr>';
-	foreach($specs[$key]['var'] as $k => $value)
-	{
-		$specTable .= '<td>'.$value[desc].'</td><td width="10px"></td>';
+	foreach($specs[$key]['var'] as $k => $value) {
+		$specTable .= '<td>'.$value['desc'].'</td><td width="10px"></td>';
 	}//foreach
 	
 	$specTable .= '</tr></table>';

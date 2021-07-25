@@ -8,15 +8,12 @@ if(!function_exists('showMenu')) {
     ///////////////////////////////////////
 }
 
-function knightmareBlock($knightModels)
-{
+function knightmareBlock($knightModels) {
 	global $dir;
 	
 	$k = 0;
-	foreach($knightModels as $generation => $genType)
-	{
-		foreach($genType as $model => $specs)	
-		{	
+	foreach($knightModels as $generation => $genType) {
+		foreach($genType as $model => $specs) {	
 			$section[$k] = $specs;//generate array for random knightmares
 			$k++;
 		}//foreach
@@ -27,19 +24,17 @@ function knightmareBlock($knightModels)
 	$randC = (rand()/time()) % $k;
 	
 	return 'Also check out:<ul>
-	<li><a href="'.$dir.$section[$randA][link].'" title="'.$section[$randA][title].'">
-	'.$section[$randA][title].'</a></li>
-	<li><a href="'.$dir.$section[$randB][link].'" title="'.$section[$randB][title].'">
-	'.$section[$randB][title].'</a></li>
-	<li><a href="'.$dir.$section[$randC][link].'" title="'.$section[$randC][title].'">
-	'.$section[$randC][title].'</a></li>
+	<li><a href="'.$dir.$section[$randA]['link'].'" title="'.$section[$randA]['title'].'">
+	'.$section[$randA]['title'].'</a></li>
+	<li><a href="'.$dir.$section[$randB]['link'].'" title="'.$section[$randB]['title'].'">
+	'.$section[$randB]['title'].'</a></li>
+	<li><a href="'.$dir.$section[$randC]['link'].'" title="'.$section[$randC]['title'].'">
+	'.$section[$randC]['title'].'</a></li>
 	</ul>';
 }//function
 
-function generation($genType)
-{
-	switch($genType)
-	{
+function generation($genType) {
+	switch($genType) {
 		case '3rd':
 			return '3rd Generation';
 		case '4th':
@@ -65,10 +60,8 @@ function generation($genType)
 	}//switch
 }//function
 
-function generationDisplay($genType)
-{
-	switch($genType)
-	{	
+function generationDisplay($genType) {
+	switch($genType) {	
 		case '3rd':
 			return ' - Archetype';
 		case '4th':
@@ -348,8 +341,6 @@ $knightMenu = array(
 );//$knightMenu
 
 
-
-
 $knightModels = array(
 '3rd' => array(
 	'ganymede' => array(
@@ -488,34 +479,30 @@ $knightModels = array(
 foreach($knightModels as $gen => $genArray) {
 	foreach($genArray as $model => $modArray) {
 		//set the image & link for each model
-		$knightModels[$gen][$model][img] = $mpath.$model.'/small/(1).png';
-		$knightModels[$gen][$model][link] = $mpath.$model.'.php';
+		$knightModels[$gen][$model]['img'] = $mpath.$model.'/small/(1).png';
+		$knightModels[$gen][$model]['link'] = $mpath.$model.'.php';
 	}//foreach
 }//foreach
 
 
-$selG = 'select * from generation order by id';
-$resG = mysql_query($selG, $conn) or print(mysql_error());
-
- 
 $opt = array(
 	'tableName' => 'generation',
-	'cond' => 'ORDER BY id'
+	'cond' => 'ORDER BY id asc'
 );
 
-$res = dbSelectQuery($opt);
- 
-while($g = $res->fetch_array()) {
+$resG = dbSelectQuery($opt);
+
+while($g = $resG->fetch_array()) {
 
 	//format the descriptions
-	$g[description] = stripslashes($g[description]);
+	$g['description'] = stripslashes($g['description']);
 	
-	$knightmares[$g[id]] = $g; //knightmares array
+	$knightmares[$g['id']] = $g; //knightmares array
 	
 	//right side menu
-	$kMenu[$g[id]] = array(
-		'display' => $g[genType],
-		'link' => '#'.$g[id]
+	$kMenu[$g['id']] = array(
+		'display' => $g['genType'],
+		'link' => '#'.$g['id']
 	);
 }
 
