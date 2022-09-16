@@ -56,7 +56,7 @@
 
     <div class="footer_item copyright"> CodeGeass.info &copy; Copyright by <a href="mailto:<?=$supportEmail?>">TheEmperor</a><br />Concept design by Shadowboy</div>
     
-    <div class="footer_item empire">CodeGeass.info is part of the <a href="https://AnimeFanservice.rg">Anime Empire</a></div>
+    <div class="footer_item empire">CodeGeass.info is part of the <a href="https://AnimeFanservice.org">Anime Empire</a></div>
     
     <div class="footer_item social_media">   
         <div class="social_media_header">

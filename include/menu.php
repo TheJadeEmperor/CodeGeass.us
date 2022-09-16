@@ -3,6 +3,7 @@ function mainMenu($menu) {
     $content = '<ul class="pureCssMenu pureCssMenum">';
     
     foreach($menu['item'] as $name => $value) {
+        //if(isset($value['subMenu']))
         if(sizeof($value['subMenu']) > 0) { //if there is a sub-menu
         
             $content .= '<li class="pureCssMenui" title="'.$value['title'].'">

@@ -1,17 +1,11 @@
 <?
 //include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
-include($dir.'include/functions.php');
-include($dir.'include/config.php');
-include($dir.'include/index.php');
+include($dir.'media/mediaCode.php');
 ///////////////////////////////////////
-include($dir.'media/mCode.php');
 
-
-function songName($key)
-{
-	switch($key)
-	{
+function songName($key) {
+	switch($key) {
 		case 'index':
 			return 'Main Menu';
 		case 'mosaic_kakera':
@@ -69,7 +63,7 @@ $rightBox = showRightBox($section);
 
 
 
-$lyrics[mosaic_kakera] = array(
+$lyrics['mosaic_kakera'] = array(
 'jap' => '<p>Mozaiku kakera hitotsu hitotsu tsunagiawasete egaite yuku<br>
 	Anata ga kureta deai to wakare mo</p>
 	
@@ -134,7 +128,7 @@ $lyrics[mosaic_kakera] = array(
 );
 
 
-$lyrics[yuukyou_seishunka] = array(
+$lyrics['yuukyou_seishunka'] = array(
 'jap' => '<p>Ikedomo kemonomichi Shishi yo tora yo to hoe<br>
 	Akane sasu sora no Kanata ni mahoroba<br>
 	Yuushuu no kodoku ni Samayou seishun wa<br>
@@ -247,7 +241,7 @@ $lyrics[yuukyou_seishunka] = array(
 	The truth of this esteemed world shall be there</p>'
 );
 
-$lyrics[shiawase_neiro] = array(
+$lyrics['shiawase_neiro'] = array(
 'jap' => '<p>Mune no naka itsuka hirotta shiawase no kakera atsumete miyou<br>
 wasurekakete ita MERODII iroasezu boku no mannaka ni</p>
 
@@ -310,7 +304,7 @@ So that I won\'t forget that day when I followed your footprints</p>',
 
 
 
-include($dir.'include/menu.php');
+// include($dir.'include/menu.php');
 
 echo displayTitle($leftBox, $rightBox); 
  
@@ -321,11 +315,11 @@ if(file_exists($galleryFolder.'/big'))
 $songKey = songKey($key);
 
 if($lyrics[$songKey]['jap'])
-	$content .= div( top().'<h2 id="jap">'.$section[$key][display].' Lyrics - Japanese Romanji</h2>
+	$content .= div( top().'<h2 id="jap">'.$section[$key]['display'].' Lyrics - Japanese Romanji</h2>
 	'.$lyrics[$songKey]['jap'] );	
 	
 if($lyrics[$songKey]['eng'])
-	$content .= div( top().'<h2 id="eng">'.$section[$key][display].' Lyrics - English Translation</h2>
+	$content .= div( top().'<h2 id="eng">'.$section[$key]['display'].' Lyrics - English Translation</h2>
 	'.$lyrics[$songKey]['eng'] );	
 	
 ?>

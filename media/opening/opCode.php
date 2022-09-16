@@ -1,14 +1,11 @@
 <?
 //include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
-include($dir.'include/functions.php');
-include($dir.'include/config.php');
-include($dir.'include/index.php');
+include($dir.'media/mediaCode.php'); 
 ///////////////////////////////////////
-include($dir.'media/mCode.php');
 
-function songName($key)
-{
+
+function songName($key) {
 	//return the op name, based on the key
 	switch($key)
 	{
@@ -304,8 +301,7 @@ $lyrics[world_end][eng] = "
 <p>So to let the sky that I saw back then reach ahead of my wishes
 <p>In the morning that creates the world's beginning, we're pure white, now we become the wind</p>";
 
-
-include($dir.'include/menu.php');
+ 
 
 if(function_exists('displayTitle'))
 	echo displayTitle($leftBox, $rightBox);
