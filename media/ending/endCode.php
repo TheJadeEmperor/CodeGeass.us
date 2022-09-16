@@ -1,8 +1,18 @@
 <?
 //include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
-include($dir.'media/mediaCode.php');
+$dir = '../../';
+include($dir.'include/functions.php');
+include($dir.'include/config.php');
+include($dir.'include/index.php');
 ///////////////////////////////////////
+
+
+function songKey($key) {
+	$key = str_replace('_v1', '', $key);
+	$key = str_replace('_v2', '', $key);
+	return $key;
+}
 
 function songName($key) {
 	switch($key) {
@@ -28,15 +38,15 @@ function songName($key) {
 }//function
 
 
-
 $end = array(
-'index',
-'mosaic_kakera_v1',
-'mosaic_kakera_v2',
-'yuukyou_seishunka', 
-'shiawase_neiro', 
-'waga_routashi_aku_no_hana_v1', 
-'waga_routashi_aku_no_hana_v2');
+	'index',
+	'mosaic_kakera_v1',
+	'mosaic_kakera_v2',
+	'yuukyou_seishunka', 
+	'shiawase_neiro', 
+	'waga_routashi_aku_no_hana_v1', 
+	'waga_routashi_aku_no_hana_v2'
+);
 
 
 foreach($end as $map)
@@ -57,7 +67,7 @@ foreach($end as $map)
 }
 
 
-$leftBox = '<h1>Code Geass - Music Section</h1><h2>Ending theme songs for both seasons</h2>'.$section[$key][leftBox];
+$leftBox = '<h1>Code Geass - Music Section</h1><h2>Ending theme songs for both seasons</h2>'.$section[$key]['leftBox'];
 $rightBox = showRightBox($section);
 
 
@@ -304,7 +314,7 @@ So that I won\'t forget that day when I followed your footprints</p>',
 
 
 
-// include($dir.'include/menu.php');
+include($dir.'include/menu.php');
 
 echo displayTitle($leftBox, $rightBox); 
  
