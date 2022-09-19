@@ -604,3 +604,31 @@ table tr td span, moduleBlack span {
 .social_media_header a:hover {
     color: #fec34d;
 }
+
+.responsiveModule {
+    width: 46%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+    .responsiveModule img {
+        width: 100%;
+    }
+
+    .responsiveModule a {
+        font-size: 1rem;
+    }
+
+@media only screen and (max-width: 768px) {
+        
+    .responsiveModule {
+        width: 90% !important;
+        display: block;
+    }
+
+    .responsiveModule a {
+        font-size: 2rem;
+        margin: 16px 0;
+        display: block;
+    }
+}

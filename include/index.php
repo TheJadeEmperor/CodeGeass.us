@@ -23,11 +23,13 @@
 function forumAd($links) {
     global $context;
 
-    $content = '<a href="'.$links['forum']['link'].'" title="Anime Empire Newsletter">
-    <h2>Anime Empire Newsletter</h2></a><center>
-    <p><a href="'.$links['forum']['link'].'" title="Anime Empire Forum">
-    <img src="'.$context['dir'].'images/ad/forum.jpg" alt="Anime Forum" class="crosshair"></a>
-    </p></center>';
+    //echo $context['dir'];
+
+    $content = '<a href="'.$links['forum']['link'].'" title="Anime Empire Youtube">
+    <h2>Anime Empire on Youtube</h2></a>
+
+    
+    <a><img src="'.$context['dir'].'images/ad/youtube.jpg" /></a>';
     
     return moduleBlack($content);
 }

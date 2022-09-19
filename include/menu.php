@@ -314,6 +314,7 @@ $context['meta'] = $meta = $section[$key]['meta'];
 <head>
 <title><?=$meta['title']?></title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="<?=$meta['tags']?>">
 <meta name="description" content="<?=$meta['desc']?>">
 <meta name="author" content="The Emperor">
