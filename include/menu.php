@@ -134,9 +134,19 @@ $menu = array(
 		'link' => 'javascript:void',
 		'title' => 'Code Geass Media',
 		'subMenu' => array(
+            'Media Home' => array(
+                'link' => $dir.'media/music/',
+                'title' => 'Code Geass Media',
+			),
             'Sound Episodes' => array(
                 'link' => $dir.'media/music/sound.php',
                 'title' => 'Sound Episodes'),
+            'Openings' => array(
+                'link' => $dir.'media/opening/',
+                'title' => 'Code Geass Openings'),
+            'Endings' => array(
+                'link' => $dir.'media/ending/',
+                'title' => 'Code Geass Endings'),
             'Graphics' => array(
                 'link' => 'javascript:void',
                 'title' => 'Graphics',
@@ -147,30 +157,12 @@ $menu = array(
                     'Fanart' => array(
                         'link' => $dir.'about/fanart/',
                         'title' => 'Code Geass Fanart'),
-                    'GIF Animations' => array(
-                        'link' => $dir.'media/animation.php',
-                        'title' => 'Code Geass Animations'),
                     'Album Covers' => array(
                         'link' => $dir.'media/music/album.php',
                         'title' => 'Album Covers'),
                  )
             ),
-            'Music' => array(
-                'link' => $dir.'media/music/',
-                'title' => 'Music Main Menu',
-                'subMenu' => array(
-                    'Openings' => array(
-                        'link' => $dir.'media/opening/',
-                        'title' => 'Code Geass Openings'),
-                    'Endings' => array(
-                        'link' => $dir.'media/ending/',
-                        'title' => 'Code Geass Endings'),
-                )
-            ), 
-			'Media Home' => array(
-                'link' => $dir.'media/music/',
-                'title' => 'Code Geass Media',
-			)
+			
         )
     ),
    'OSTs' => array(
@@ -237,7 +229,7 @@ $menu = array(
         'subMenu' => array(
             'Season 1 Gallery' => array(
                 'link' => $dir.'season_1.php',
-                'title' => 'Bokuko no Akito',
+                'title' => 'Season 1',
                 'subMenu' => array(
                     "Ep 1 - The Day of the Demon's Birth" => array(
                         'link' => $dir.'episodes/ss/1_1.php',
@@ -307,12 +299,9 @@ $menu = array(
         'link' => $dir.'knightmares/',
         'title' => 'Code Geass Knightmare Frames'),
     
-    'Season 3' => array(
+    'Bokuko no Akito' => array(
         'link' => $dir.'season_3.php',
-        'title' => 'Code Geass R3'),
-	'Store' => array(
-        'link' => 'https://www.etsy.com/shop/AnimeEmpireShop',
-        'title' => 'Anime Empire Shop'),
+        'title' => 'Akito'),
 )//item
 );//$menu
 
