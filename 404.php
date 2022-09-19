@@ -1,8 +1,9 @@
-<?
-include($dir.'include/functions.php');
+<?php
+/*include($dir.'include/functions.php');
 include($dir.'include/config.php');
 include($dir.'include/index.php');
 include($dir.'include/menu.php');
+*/
 ?>
 <div class="moduleBlack"> <h1>ZOMG! 404 Error!!!</h1>
 <table>
@@ -21,6 +22,6 @@ include($dir.'include/menu.php');
 </div>
 <p>&nbsp;</p>
 
-<meta http-equiv="refresh" content="6; ./" />
-<?
-include($dir.'include/bottom.php'); ?>
+<meta http-equiv="refresh" content="8; ./" />
+<?php
+//include($dir.'include/bottom.php'); ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 //include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
 $dir = '../../';
@@ -6,7 +6,6 @@ include($dir.'include/functions.php');
 include($dir.'include/config.php');
 include($dir.'include/index.php');
 ///////////////////////////////////////
-
 
 function songKey($key) {
 	$key = str_replace('_v1', '', $key);
@@ -16,8 +15,6 @@ function songKey($key) {
 
 function songName($key) {
 	switch($key) {
-		case 'index':
-			return 'Main Menu';
 		case 'mosaic_kakera':
 			return 'Mosaic Kakera';
 		case 'mosaic_kakera_v1':
@@ -34,12 +31,20 @@ function songName($key) {
 			return 'Waga Routashi Aku no Hana Version 2';
 		case 'yuukyou_seishunka':
 			return 'Yuukyou Seishunka';
+		case '':
+			return 'Main Menu';
 	}//switch
 }//function
 
 
+$uri = explode('/', $_SERVER['REQUEST_URI']);
+//echo "    "; //echo $uri[4]; //echo "    ";
+
+$key = $uri[4];
+
+
 $end = array(
-	'index',
+	'',
 	'mosaic_kakera_v1',
 	'mosaic_kakera_v2',
 	'yuukyou_seishunka', 
@@ -49,8 +54,7 @@ $end = array(
 );
 
 
-foreach($end as $map)
-{
+foreach($end as $map) {
 	$section[$map] = array(
 		'meta' => array(
 			'tags' => 'code geass op, '.songName($map),
@@ -59,8 +63,8 @@ foreach($end as $map)
 		'song' => songKey($map),
 		'display' => songName($map),
 		'title' => songName($map),
-		'link' => $dir.'media/ending/'.$map.'.php',
-		'leftBox' => '<h3>'.songName($map).'</h3><br><br/><br/>
+		'link' => $dir.'media/ending/'.$map,
+		'leftBox' => '<h3>'.songName($map).'</h3><br /><br /><br />
 		<a href="#gallery">Gallery</a> :: <a href="#jap">Japanese Lyrics</a> :: 
 		<a href="#eng">English Lyrics</a>',
 	);
@@ -71,41 +75,39 @@ $leftBox = '<h1>Code Geass - Music Section</h1><h2>Ending theme songs for both s
 $rightBox = showRightBox($section);
 
 
-
-
 $lyrics['mosaic_kakera'] = array(
-'jap' => '<p>Mozaiku kakera hitotsu hitotsu tsunagiawasete egaite yuku<br>
-	Anata ga kureta deai to wakare mo</p>
-	
-	<p>Konna hazu ja nai sou omotte nemuri<br>
-	Mezamereba itsumo no kawaranai karamawari<br>
-	Imi mo naku kurikaeshi</p>
-	
-	<p>Mozaiku kakera hiroi atsumeteta "Umaku ikiru tame no sube"<br>
-	Ibitsu na sore ga utsukushiku mietan da<br>
-	Tsuyogarinagara tsumazukinagara erabinuita michi no ue de<br>
-	Hagare ochite wa umaranai kakera</p>
-	
-	<p>Sorezore no iji wo shikitsumeta sekai<br>
-	Dare ni mo yuzurenai mono ga aru hazu nano ni<br>
-	Irodori wo ki ni shiteru</p>
-	
-	<p>Mozaiku kakera samazama na iro ya katachi ni miserarenagara<br>
-	Nozomi sugiteta "Wakage no itari" yo<br>
-	Kokoro no sukima ai no semento wo shinjite wa nagashikonde<br>
-	Keshite tokeau koto no nai kakera</p>
-	
-	<p>Kontorasuto ga kirei dakara gyaku ni dekoboko de ii<br>
-	Nantonaku junban wo matte naide jibun nari no kotae wo mitsukeyou</p>
-	
-	<p>Mozaiku kakera azayaka ni utsusu kako no uso mo ayamachi mo<br>
-	Keshite shimaitai to omoeba omou hodo<br>
-	Furikaereba soko ni aru sutaato rain mada susunja inai<br>
-	Mou ichido yume wo hiroi atsumete miyou<br>
-	Mozaiku kakera hitotsu hitotsu tsunagiawasete egaite yuku<br>
-	Anata ga kureta deai to wakare mo</p>',
-	
-'eng' => '<p>I\'ll put together the mosaic pieces one by one<br>
+	'jap' => '<p>Mozaiku kakera hitotsu hitotsu tsunagiawasete egaite yuku<br>
+		Anata ga kureta deai to wakare mo</p>
+		
+		<p>Konna hazu ja nai sou omotte nemuri<br>
+		Mezamereba itsumo no kawaranai karamawari<br>
+		Imi mo naku kurikaeshi</p>
+		
+		<p>Mozaiku kakera hiroi atsumeteta "Umaku ikiru tame no sube"<br>
+		Ibitsu na sore ga utsukushiku mietan da<br>
+		Tsuyogarinagara tsumazukinagara erabinuita michi no ue de<br>
+		Hagare ochite wa umaranai kakera</p>
+		
+		<p>Sorezore no iji wo shikitsumeta sekai<br>
+		Dare ni mo yuzurenai mono ga aru hazu nano ni<br>
+		Irodori wo ki ni shiteru</p>
+		
+		<p>Mozaiku kakera samazama na iro ya katachi ni miserarenagara<br>
+		Nozomi sugiteta "Wakage no itari" yo<br>
+		Kokoro no sukima ai no semento wo shinjite wa nagashikonde<br>
+		Keshite tokeau koto no nai kakera</p>
+		
+		<p>Kontorasuto ga kirei dakara gyaku ni dekoboko de ii<br>
+		Nantonaku junban wo matte naide jibun nari no kotae wo mitsukeyou</p>
+		
+		<p>Mozaiku kakera azayaka ni utsusu kako no uso mo ayamachi mo<br>
+		Keshite shimaitai to omoeba omou hodo<br>
+		Furikaereba soko ni aru sutaato rain mada susunja inai<br>
+		Mou ichido yume wo hiroi atsumete miyou<br>
+		Mozaiku kakera hitotsu hitotsu tsunagiawasete egaite yuku<br>
+		Anata ga kureta deai to wakare mo</p>',
+		
+	'eng' => '<p>I\'ll put together the mosaic pieces one by one<br>
 	And make up the picture of the encounter and parting that you gave me</p>
 	
 	<p>"That wasn\'t supposed to happen", I think as I go to sleep<br>
@@ -139,62 +141,62 @@ $lyrics['mosaic_kakera'] = array(
 
 
 $lyrics['yuukyou_seishunka'] = array(
-'jap' => '<p>Ikedomo kemonomichi Shishi yo tora yo to hoe<br>
-	Akane sasu sora no Kanata ni mahoroba<br>
-	Yuushuu no kodoku ni Samayou seishun wa<br>
-	Yowasa to ikari ga sugata naki teki desu ka<br>
-	Chichi yo Mada ware wa<br>
-	Onore o shirigatashi</p>
-	
-	<p>Sakidatsu anira no<br>
-	Mienai senaka o oeba<br>
-	Mayoi no hitoyo ni myoujou wa izanau</p>
-	
-	<p>Shishite owaranu<br>
-	Yume o kogaredomo<br>
-	Tashika na kimi koso wagainochi</p>
-	
-	<p>Reppuu no kouya de Chou yo hana yo to iki<br>
-	Tokoshie no haru ni Saki sou maboroshi<br>
-	Kondaku no junketsu Kono mi wa yogorete mo<br>
-	Kokoro no nishiki o shinjite ite kudasai<br>
-	Haha yo Keshite ware wa<br>
-	Namida o misenedomo<br>
-	Ashimoto no kusa ni tsuyu wa kiemosede</p>
-	
-	<p>Umareta igi nara<br>
-	Yagate shiru toki ga koyou<br>
-	Kono ima Semete no giki<br>
-	Chishio ni hitashi</p>
-	
-	<p>Tada kimi o aishi<br>
-	Mune ni kizanda<br>
-	Shisei no you na kizu o daite</p>
-	
-	<p>Ikedomo kemonomichi Shishi yo tora yo to hoe<br>
-	Akane sasu sora no Kanata ni mahoroba<br>
-	Yuukyou no shi to nari Tatakau seishun wa<br>
-	Hono aoki hodo ni oroka na mono deshou ka<br>
-	Chichi yo Mada ware wa<br>
-	Ai hitotsu mamorezu<br>
-	Karisome no kono yo no makoto wa izuko</p>
-	
-	<p>Reppuu no kouya de Chou yo hana yo to iki<br>
-	Tokoshie no haru ni Maichiru maboroshi<br>
-	Kondaku no junketsu Kono mi wa yogorete mo<br>
-	Kokoro no nishiki o shinjite ite kudasai<br>
-	Haha yo Itsuka ware o<br>
-	Sazukarishi homare to</p>
-	
-	<p>Ikedomo kemonomichi Shishi yo tora yo to hoe<br>
-	Akane sasu sora no Kanata wa mahoroba<br>
-	Kouketsu no shi no moto Tatakau seishun wa<br>
-	Hakanaki toki yue utsukushiki mono to are<br>
-	Chichi yo Itsuka ware wa<br>
-	Onore ni uchikatan<br>
-	Tattobi no kono yo no makoto wa soko ni</p>',
+	'jap' => '<p>Ikedomo kemonomichi Shishi yo tora yo to hoe<br>
+		Akane sasu sora no Kanata ni mahoroba<br>
+		Yuushuu no kodoku ni Samayou seishun wa<br>
+		Yowasa to ikari ga sugata naki teki desu ka<br>
+		Chichi yo Mada ware wa<br>
+		Onore o shirigatashi</p>
+		
+		<p>Sakidatsu anira no<br>
+		Mienai senaka o oeba<br>
+		Mayoi no hitoyo ni myoujou wa izanau</p>
+		
+		<p>Shishite owaranu<br>
+		Yume o kogaredomo<br>
+		Tashika na kimi koso wagainochi</p>
+		
+		<p>Reppuu no kouya de Chou yo hana yo to iki<br>
+		Tokoshie no haru ni Saki sou maboroshi<br>
+		Kondaku no junketsu Kono mi wa yogorete mo<br>
+		Kokoro no nishiki o shinjite ite kudasai<br>
+		Haha yo Keshite ware wa<br>
+		Namida o misenedomo<br>
+		Ashimoto no kusa ni tsuyu wa kiemosede</p>
+		
+		<p>Umareta igi nara<br>
+		Yagate shiru toki ga koyou<br>
+		Kono ima Semete no giki<br>
+		Chishio ni hitashi</p>
+		
+		<p>Tada kimi o aishi<br>
+		Mune ni kizanda<br>
+		Shisei no you na kizu o daite</p>
+		
+		<p>Ikedomo kemonomichi Shishi yo tora yo to hoe<br>
+		Akane sasu sora no Kanata ni mahoroba<br>
+		Yuukyou no shi to nari Tatakau seishun wa<br>
+		Hono aoki hodo ni oroka na mono deshou ka<br>
+		Chichi yo Mada ware wa<br>
+		Ai hitotsu mamorezu<br>
+		Karisome no kono yo no makoto wa izuko</p>
+		
+		<p>Reppuu no kouya de Chou yo hana yo to iki<br>
+		Tokoshie no haru ni Maichiru maboroshi<br>
+		Kondaku no junketsu Kono mi wa yogorete mo<br>
+		Kokoro no nishiki o shinjite ite kudasai<br>
+		Haha yo Itsuka ware o<br>
+		Sazukarishi homare to</p>
+		
+		<p>Ikedomo kemonomichi Shishi yo tora yo to hoe<br>
+		Akane sasu sora no Kanata wa mahoroba<br>
+		Kouketsu no shi no moto Tatakau seishun wa<br>
+		Hakanaki toki yue utsukushiki mono to are<br>
+		Chichi yo Itsuka ware wa<br>
+		Onore ni uchikatan<br>
+		Tattobi no kono yo no makoto wa soko ni</p>',
 
-'eng' => '<p>As one walks an animal trail, roar out, "O lion, o tiger!"<br>
+	'eng' => '<p>As one walks an animal trail, roar out, "O lion, o tiger!"<br>
 	My spiritual homeland is on the other side the glowing sky<br>
 	Are weakness and rage enemies without form<br>
 	To youth wandering in the solitude of imprisonment?<br>
@@ -252,63 +254,62 @@ $lyrics['yuukyou_seishunka'] = array(
 );
 
 $lyrics['shiawase_neiro'] = array(
-'jap' => '<p>Mune no naka itsuka hirotta shiawase no kakera atsumete miyou<br>
-wasurekakete ita MERODII iroasezu boku no mannaka ni</p>
+	'jap' => '<p>Mune no naka itsuka hirotta shiawase no kakera atsumete miyou<br>
+	wasurekakete ita MERODII iroasezu boku no mannaka ni</p>
 
-<p>Karitamama no manga sousaku chuu tama tama mitsuketa iroaseta bunshuu<br>
-Tenka o tsukamu nante ware nagara AHO rashikute warai ga deta<br>
-Tenka janakute densha no tsurikawa o tsukamu hibi<br>
-Ano koro no BOKU ni gomen nasai ne to hohoemi nagara atama o sageta</p>
+	<p>Karitamama no manga sousaku chuu tama tama mitsuketa iroaseta bunshuu<br>
+	Tenka o tsukamu nante ware nagara AHO rashikute warai ga deta<br>
+	Tenka janakute densha no tsurikawa o tsukamu hibi<br>
+	Ano koro no BOKU ni gomen nasai ne to hohoemi nagara atama o sageta</p>
 
-<p>Arigatou kokoro kara<br>
-Boku ni ima ga aru no wa minna no okage sa<br>
-Arigatou kokoro kara<br>
-Tsugi wa boku ga minna ni HAPPY okuru yo Wow</p>
+	<p>Arigatou kokoro kara<br>
+	Boku ni ima ga aru no wa minna no okage sa<br>
+	Arigatou kokoro kara<br>
+	Tsugi wa boku ga minna ni HAPPY okuru yo Wow</p>
 
-<p>Nani mo kamo wasurenai yo ano hi no BOKU mo BOKU dakara<br>
-Daisuki da yo tte itsumo itte agenakya DAME da ne<br>
-Tsurakereba nigete mo ii yo mata koko ni kaette kuru no nara<br>
-Iro iro yori michi mo shite ikou ORIJINARU na hibi o</p>
+	<p>Nani mo kamo wasurenai yo ano hi no BOKU mo BOKU dakara<br>
+	Daisuki da yo tte itsumo itte agenakya DAME da ne<br>
+	Tsurakereba nigete mo ii yo mata koko ni kaette kuru no nara<br>
+	Iro iro yori michi mo shite ikou ORIJINARU na hibi o</p>
 
-<p>Tomaranai machi no mannaka de itsu ka kara ka kimi wa utsumuki kagen<br>
-Kakaeru kimochi ga oosugite hitori kiri de PANKU shichatteru<br>
-Dakara boku no kotoba o kiite shiawase wo kureta kimi no tame<br>
-Chikara wo okuru yo DAY BY DAY</p>
+	<p>Tomaranai machi no mannaka de itsu ka kara ka kimi wa utsumuki kagen<br>
+	Kakaeru kimochi ga oosugite hitori kiri de PANKU shichatteru<br>
+	Dakara boku no kotoba o kiite shiawase wo kureta kimi no tame<br>
+	Chikara wo okuru yo DAY BY DAY</p>
 
-<p>Mune no naka afuresou na shiawase no kakera tsunagete miyou<br>
-Chikara dzuyoku naru MERODII kuri kasareteku MESSEEJI<br>
-Namida ga koboresouna nagai yoru wa futto furi kaette<br>
-Ashiato wo tadorunda ano hi wo wasurenai you ni</p>',
+	<p>Mune no naka afuresou na shiawase no kakera tsunagete miyou<br>
+	Chikara dzuyoku naru MERODII kuri kasareteku MESSEEJI<br>
+	Namida ga koboresouna nagai yoru wa futto furi kaette<br>
+	Ashiato wo tadorunda ano hi wo wasurenai you ni</p>',
 
+	'eng' => '<p>I\'ll try collecting the shards of happiness I once had gathered in my chest<br>
+	At my very core, where a melody I\'d started to forget plays, without having faded</p>
 
-'eng' => '<p>I\'ll try collecting the shards of happiness I once had gathered in my chest<br>
-At my very core, where a melody I\'d started to forget plays, without having faded</p>
+	<p>I\'m in the middle of hunting down the manga I lent out, and sometimes I 
+	find a faded anthology<br>
+	If I say so myself, I made a pretty stupid laugh when I went, "I shall seize the world"<br>
+	In those days when I seized not the world, but a train strap<br>
+	I smiled and bowed my head to the me of back then, and said, "Sorry about that"</p>
 
-<p>I\'m in the middle of hunting down the manga I lent out, and sometimes I 
-find a faded anthology<br>
-If I say so myself, I made a pretty stupid laugh when I went, "I shall seize the world"<br>
-In those days when I seized not the world, but a train strap<br>
-I smiled and bowed my head to the me of back then, and said, "Sorry about that"</p>
+	<p>Thank you, from the bottom of my heart<br>
+	The reason I\'m here now is because of everybody<br>
+	Thank you, from the bottom of my heart<br>
+	Next time, I\'ll send everyone happiness, wow</p>
 
-<p>Thank you, from the bottom of my heart<br>
-The reason I\'m here now is because of everybody<br>
-Thank you, from the bottom of my heart<br>
-Next time, I\'ll send everyone happiness, wow</p>
+	<p>I won\'t forget anything, because who I was that day is still me<br>
+	You mustn\'t always tell someone you love them, right?<br>
+	If it hurts, it\'s okay to run away, as long as you return here again<br>
+	Let\'s drop in on various people along the way, through our original days</p>
 
-<p>I won\'t forget anything, because who I was that day is still me<br>
-You mustn\'t always tell someone you love them, right?<br>
-If it hurts, it\'s okay to run away, as long as you return here again<br>
-Let\'s drop in on various people along the way, through our original days</p>
+	<p>How long have you been face-down in the dead center of the unstopping town?<br>
+	The "feelings" you hold are too great, and so you\'re puncturing them all by yourself<br>
+	So listen to my words for your own sake--you, who gave me happiness<br>
+	I\'ll send you power day by day</p>
 
-<p>How long have you been face-down in the dead center of the unstopping town?<br>
-The "feelings" you hold are too great, and so you\'re puncturing them all by yourself<br>
-So listen to my words for your own sake--you, who gave me happiness<br>
-I\'ll send you power day by day</p>
-
-<p>I\'ll try connecting the shards of happiness that are about to overflow from my chest<br>
-The melody that\'s grown reassuring is a message that\'s been put on repeat<br>
-On a long night where I\'m about to spill tears, I abruptly look over my shoulder<br>
-So that I won\'t forget that day when I followed your footprints</p>',
+	<p>I\'ll try connecting the shards of happiness that are about to overflow from my chest<br>
+	The melody that\'s grown reassuring is a message that\'s been put on repeat<br>
+	On a long night where I\'m about to spill tears, I abruptly look over my shoulder<br>
+	So that I won\'t forget that day when I followed your footprints</p>',
 
 );
 
@@ -318,7 +319,7 @@ include($dir.'include/menu.php');
 
 echo displayTitle($leftBox, $rightBox); 
  
-$galleryFolder = $dir.'media/ending/'.$key;
+$galleryFolder = $dir.'media/gallery/'.$key;
 if(file_exists($galleryFolder.'/big'))	
 	$content = gallery($galleryFolder).'<br><br>';
 	
