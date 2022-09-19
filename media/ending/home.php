@@ -30,6 +30,7 @@ $ending = array(
 $count = 1;
 foreach ( $ending as $song => $val )
 {
+	/*
 	$endContent .= '<td><a href="'.$song.'.php" title="'.$val['song'].'">
 	<img src="../gallery/index/'.$song.'.jpg" alt="'.$val['song'].'"></a>
 	<br><a href="'.$song.'.php" title="'.$val['song'].'">'.$val['song'].'</a><br /><br /></td>';
@@ -37,21 +38,22 @@ foreach ( $ending as $song => $val )
 	if($count % 3 == 0)
 		$endContent .= '</tr><tr valign="top">';
 	$count ++;
-
+*/
 
 	$responsiveContent .= '<div class="responsiveModule">
 	<a href="'.$song.'.php" title="'.$val['song'].'">
 	<img src="../gallery/index/'.$song.'.jpg" alt="'.$val['song'].'"></a>
-	<br><a href="'.$song.'.php" title="'.$val['song'].'">'.$val['song'].'</a>
+	<a href="'.$song.'.php" title="'.$val['song'].'">'.$val['song'].'</a>
 	</div>';
 } //foreach
 
+/*
 echo '<div class="moduleBlack"><h2>Code Geass Endings</h2>
 <table width="100%">
 	<tr valign="top">'.$endContent.'</tr>
 	</table>
 </div>';
-
+*/
 
 echo '<div class="moduleBlack"><h2>Code Geass Endings</h2>'.$responsiveContent ;
 
