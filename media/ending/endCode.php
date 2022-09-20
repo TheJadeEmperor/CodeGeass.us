@@ -38,7 +38,9 @@ function songName($key) {
 
 
 $uri = explode('/', $_SERVER['REQUEST_URI']);
-//echo "    "; //echo $uri[4]; //echo "    ";
+if($_GET['debug'] == 1) {
+	echo "  | "; echo $uri[4]; echo "  |  ";
+}
 
 $key = $uri[4];
 

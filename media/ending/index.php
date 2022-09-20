@@ -1,10 +1,15 @@
 <?php
 include('endCode.php');
  
+if($_GET['debug'] == 1) {
+	echo __FILE__.' | '.__LINE__.' '.$key." <br> ";
+}
 
 //$key needed for song arrays
 if(in_array($key, $end)) {
-//	echo $key; 
+	if($_GET['debug'] == 1) {
+		echo __FILE__.' | '.__LINE__.' '.$key." <br> ";
+	}
 
 	if($key == '') {
 		include('home.php');
