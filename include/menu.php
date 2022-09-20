@@ -3,15 +3,15 @@ function mainMenu($menu) {
     $content = '<ul class="pureCssMenu pureCssMenum">';
     
     foreach($menu['item'] as $name => $value) {
-        //if(isset($value['subMenu']))
-        if(sizeof($value['subMenu']) > 0) { //if there is a sub-menu
+        
+        if(is_countable($value['subMenu'])) { //if there is a sub-menu
         
             $content .= '<li class="pureCssMenui" title="'.$value['title'].'">
             <a class="pureCssMenui" href="'.$value['link'].'"><span>'.$name.'</span></a>
             <ul class="pureCssMenum">';
           
             foreach($value['subMenu'] as $name1 => $val1) {
-                if(sizeof($val1['subMenu']) > 0) { //sub-menu
+                if(is_countable($value['subMenu'])) { //sub-menu
                     $content .= '<li class="pureCssMenui" title="'.$val1['title'].'">
                     <a class="pureCssMenui" href="'.$val1['link'].'"><span>'.$name1.'</span></a>
                     <ul class="pureCssMenum">';
@@ -33,8 +33,8 @@ function mainMenu($menu) {
             </li>';
         }
         else {
-            $content .= '<li class="pureCssMenui" title="'.$value[title].'">
-            <a class="pureCssMenui" href="'.$value[link].'">'.$name.'</a></li>';
+            $content .= '<li class="pureCssMenui" title="'.$value['title'].'">
+            <a class="pureCssMenui" href="'.$value['link'].'">'.$name.'</a></li>';
         }
     }
     
