@@ -1,9 +1,17 @@
-<?
+<?php
 //include all necessary functions such as displayTitle() and FileName() 
 ///////////////////////////////////////
-include($dir.'media/mediaCode.php'); 
+$dir = '../../';
+include($dir.'include/functions.php');
+include($dir.'include/config.php');
+include($dir.'include/index.php');
 ///////////////////////////////////////
 
+function songKey($key) {
+	$key = str_replace('_v1', '', $key);
+	$key = str_replace('_v2', '', $key);
+	return $key;
+}
 
 function songName($key) {
 	//return the op name, based on the key
@@ -33,15 +41,15 @@ function songName($key) {
 
 
 $op = array(
-'index',
-'colors_v1',
-'colors_v2',
-'kaidoku_funou_v1',
-'kaidoku_funou_v2',
-'hitomi_no_tsubasa',
-'o2',
-'world_end_v1',
-'world_end_v2'
+	'index',
+	'colors_v1',
+	'colors_v2',
+	'kaidoku_funou_v1',
+	'kaidoku_funou_v2',
+	'hitomi_no_tsubasa',
+	'o2',
+	'world_end_v1',
+	'world_end_v2'
 );//music
 
 foreach($op as $map)
@@ -62,13 +70,13 @@ foreach($op as $map)
 }
 
 
-$leftBox = '<h1>Code Geass - Music Section</h1><h2>Opening theme songs for both seasons</h2>'.$section[$key][leftBox];
+$leftBox = '<h1>Code Geass - Music Section</h1><h2>Opening theme songs for both seasons</h2>'.$section[$key]['leftBox'];
 $rightBox = showRightBox($section);
 
 
 
 //lyrics
-$lyrics[colors] = array(
+$lyrics['colors'] = array(
 'jap' => '<p>Jibun wo sekai sae mo kaete shimaesou na<br/> 
 	Shunkan wa itsumo sugu soba ni<br/> 
 	<p>Kakusenu iradachi to tachitsukusu jibun wo mitsume</p>  
@@ -136,7 +144,7 @@ $lyrics[colors] = array(
 
 
 
-$lyrics[kaidoku_funou] = array(
+$lyrics['kaidoku_funou'] = array(
 'jap' => '<p>Yumemiteta, yume<br/>
 	Hate naki tooku<br/>
 	Kawaita hibi no sorairo te no naka</p>
@@ -192,7 +200,7 @@ $lyrics[kaidoku_funou] = array(
 
 
 
-$lyrics[o2][jap] = "<p>Vocals: ORANGE RANGE</p>
+$lyrics['o2']['jap'] = "<p>Vocals: ORANGE RANGE</p>
 <p>Asa mo yoru mo koi kogarete   <br/>
 hoshi ni naru yo   <br/>
 kimi mamoru   <br/>
@@ -229,7 +237,7 @@ Ashita to kinou no kousaten de   majiwaranai   kimi to boku   sadame o kirisaku 
 <p>Hakanaku kiete naku naru koto sae   kowakunai</p>";
 
 
-$lyrics[world_end][jap] = "<p>Vocals: FLOW</p>
+$lyrics['world_end']['jap'] = "<p>Vocals: FLOW</p>
 <p>Sekai no owari de umareta hikari   ima   kaze no naka</p>
 <p>Kireigoto dake ja ikirenai</p>
 <p>Yasashisa dake ja iyasenai</p>
@@ -265,7 +273,7 @@ $lyrics[world_end][jap] = "<p>Vocals: FLOW</p>
 <p>Sekai no hajimari   souzou no asa ni   bokura masshiroi   ima   kaze ni naru</p>";
 
 
-$lyrics[world_end][eng] = "
+$lyrics['world_end']['eng'] = "
 <p>The light that was born at the world's end is now in the wind</p>
 
 <p>I can't live just by whitewashing</p>
@@ -302,6 +310,7 @@ $lyrics[world_end][eng] = "
 <p>In the morning that creates the world's beginning, we're pure white, now we become the wind</p>";
 
  
+include($dir.'include/menu.php');
 
 if(function_exists('displayTitle'))
 	echo displayTitle($leftBox, $rightBox);
@@ -313,11 +322,11 @@ if(file_exists($dir.'media/opening/'.$key))
 	
 $songKey = songKey($key);
 
-if($lyrics[$songKey][jap] != '')
-	$content .= div( '<h2 id="jap">'.$section[$key][display].' Lyrics - Japanese Romanji</h2>
-	'.$lyrics[$songKey][jap] );	
+if($lyrics[$songKey]['jap'] != '')
+	$content .= div( '<h2 id="jap">'.$section[$key]['display'].' Lyrics - Japanese Romanji</h2>
+	'.$lyrics[$songKey]['jap'] );	
 	
-if($lyrics[$songKey][eng] != '')
-	$content .= div( '<h2 id="eng">'.$section[$key][display].' Lyrics - English Translation</h2>
-	'.$lyrics[$songKey][eng] );	
+if($lyrics[$songKey]['eng'] != '')
+	$content .= div( '<h2 id="eng">'.$section[$key]['display'].' Lyrics - English Translation</h2>
+	'.$lyrics[$songKey]['eng'] );	
 ?>

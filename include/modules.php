@@ -53,7 +53,7 @@ function page_number($numPages, $n, $page) {
 function gallery($directory)//
 {    
     global $context; 
-    $dir = $context[dir];
+    $dir = $context['dir'];
     
     $big = 1;   //big images
     if ($handle = opendir($directory.'/big'))   //read all files in directory
@@ -82,24 +82,24 @@ function gallery($directory)//
         closedir($handle);
     }//if
     
-    if($_POST[num_images])
+    if($_POST['num_images'])
     {
-        $_GET[n] = $_POST[num_images];
-        $sel[ $_GET[n] ] = 'selected';
+        $_GET['n'] = $_POST['num_images'];
+        $sel[ $_GET['n'] ] = 'selected';
     }
-    else if($_GET[n])
+    else if($_GET['n'])
     {   
-        $sel[ $_GET[n] ] = 'selected';
+        $sel[ $_GET['n'] ] = 'selected';
     }
     else
     {
         $sel[20] = 'selected';  //default images per page
-        $_GET[n] = 20;
+        $_GET['n'] = 20;
     }//
 
  
     //show drop down list and signature
-    $galleryContent .= '<div class="moduleBlack" id="gallery"><h2>'.$context[meta][title].' | Image Gallery</h2>
+    $galleryContent .= '<div class="moduleBlack" id="gallery"><h2>'.$context['meta']['title'].' | Image Gallery</h2>
     <table>
     <tr valign="top">
         <td>
@@ -122,27 +122,27 @@ function gallery($directory)//
     $total = $big - 1;
     $num_pages = 1;
 
-    if($_GET[n] > 0)    //determine number of pages
-        $num_pages = ceil($total/$_GET[n]);
+    if($_GET['n'] > 0)    //determine number of pages
+        $num_pages = ceil($total/$_GET['n']);
     else
         $_GET[n] = $total;//one page
 
-    $galleryContent .= '<center>'.page_number($num_pages, $_GET[n], $_GET[p]).'<br><br><br>
+    $galleryContent .= '<center>'.page_number($num_pages, $_GET['n'], $_GET['p']).'<br><br><br>
     
     <table><tr valign="top"><td><ul class="hoverbox">';
     
-    if($_GET[p] == '')//first page
+    if($_GET['p'] == '')//first page
     {   //first and last image of each page
         $first = 1;
-        $last = $_GET[n];
+        $last = $_GET['n'];
 
         if($last > $total)
             $last = $total;
     }//if
     else    //all other pages
     {   //first and last image of each page
-        $first =  ($_GET[n] * ($_GET[p] - 1)) + 1; 
-        $last = $_GET[n] * $_GET[p];    
+        $first =  ($_GET['n'] * ($_GET['p'] - 1)) + 1; 
+        $last = $_GET['n'] * $_GET['p'];    
         if($last > $total)
             $last = $total;
     }//else
@@ -175,7 +175,7 @@ function gallery($directory)//
     }//for
     
     $galleryContent .= '</ul></td>
-    </tr></table><br>'.page_number($num_pages, $_GET[n], $_GET[p]).'<br><br>
+    </tr></table><br>'.page_number($num_pages, $_GET['n'], $_GET['p']).'<br><br>
     Gallery script developed by <a href="mailto:'.$supportEmail.'&subject=Code Geass Gallery" 
     title="The Emperor">The Emperor</a></center><br></div>';
     
